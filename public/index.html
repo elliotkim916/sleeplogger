@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Sleep Log</title>
-    <link href="index.css" rel="stylesheet" type="text/css"/>
-</head>
-
-<body>
-    <p>Hello World!</p>
-</body>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <h1>Sleep Log</h1>
+    </header>
+    
+    <div>
+      <form>
+      <h3>New Sleep Entry</h3>
+      <legend>How was your sleep?</legend>
+        <label for="goodSleep">Good</label>
+        <input type="radio" id="goodSleep" name="sleepRating">
+      
+        <label for="badSleep">Bad</label>
+        <input type="radio" id="badSleep" name="sleepRating"><br>
+        
+        <label for="describeSleep">Describe your sleep</label><br>
+        <input type="text" id="describeSleep">
+      </form>
+      
+      <div>
+      <h3>
+        Previous Sleep Entries
+      </h3>
+      </div>
+    </div>
+    
+    <script src="index.js"></script>
+  </body>
 </html>
