@@ -8,30 +8,33 @@
   </head>
   <body>
     <header>
-      <h1>Sleep Log</h1>
+      <h1>Sleep Logger</h1>
     </header>
     
-    <div>
-      <form>
-      <h3>New Sleep Entry</h3>
-      <legend>How was your sleep?</legend>
+    <section>
+    <form>
+    <h3>New Sleep Entry</h3>
+    <fieldset>
+        <legend>How was your sleep?</legend>
         <label for="goodSleep">Good</label>
-        <input type="radio" id="goodSleep" name="sleepRating">
+        <input type="radio" id="goodSleep" name="sleepRating" value="Good">
       
         <label for="badSleep">Bad</label>
-        <input type="radio" id="badSleep" name="sleepRating"><br>
+        <input type="radio" id="badSleep" name="sleepRating" value="Bad"><br>
         
         <label for="describeSleep">Describe your sleep</label><br>
-        <input type="text" id="describeSleep">
-      </form>
+        <input type="text" id="describeSleep" class="js-sleep-log">
+        <button type="submit" role="button" class="submit-log">Submit</button>
+    </fieldset>
+    </form>
+    </section>
       
-      <div>
-      <h3>
-        Previous Sleep Entries
-      </h3>
-      </div>
-    </div>
+    <section>
+      <h3>Previous Sleep Entries</h3>
+      <ul id="sleepLogs" class="sleep-logs-list"></ul>
+    </section>
     
-    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>

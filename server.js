@@ -2,8 +2,36 @@
 
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
+
+// all the routing for the sleepLog API lives in this file
+const logsRouter = require('./routes/logs');
+
+const {SleepLog} = require('./models');
 
 app.use(express.static('public'));
+
+// We mount the logsRouter at `/api/logs`
+app.use('/api/logs', logsRouter);
+
+app.get('/', (req, res) => {
+    // res.send('hello');
+    res.sendFile(__dirname + '/public/index.html');
+});
+
+app.post('/', jsonParser, (req, res) => {
+//    SleepLog
+//     .create(req.body)
+//     .then((log) => res.status(201).json(log.serialize()))
+//     .catch(err => {
+//         console.error(err);
+//         res.status(500).json({message: 'Internal server error'});
+//     });
+});
 
 // if server.js is called directly (aka, with `node server.js`), this block runs.
 // but we also export the runServer command so other code (for instance, test code) can start the server as needed.
@@ -15,6 +43,7 @@ if (require.main === module) {
         console.info(`App is listening on ${this.address().port}`);
     });
 }
+
 
 // let server;
 
