@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica;
+    margin: 25px;
+}
+
+.log-container {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    background-color: deepskyblue;
+}
+
+#describeSleep {
+    width: 300px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+/* buttons */
+.submit-log, .update-log, .delete-log {
+    width: 75px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+
+.delete-log {
+    margin-left: 10px;
+}
+
+fieldset {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(212, 232, 233);
+}
