@@ -1,0 +1,14 @@
+[
+    { 
+        "quality": "Good",
+        "description": "Slept a full 8 hours with no interruptions!"
+    },
+    {   
+        "quality": "Bad",
+        "description": "Barely got any sleep, and it was hard to fall asleep because of noisy neighbors!"
+    },
+    { 
+        "quality": "Good",
+        "description": "Sleep was amazing! Felt so energized when I woke up."
+    }
+]
