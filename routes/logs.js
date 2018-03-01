@@ -49,6 +49,7 @@ router.post('/', jsonParser, function(req, res) {
 });
 
 router.delete('/:id', (req, res) => {
+    console.log(req.params.id);
     SleepLog
         .findByIdAndRemove(req.params.id)
         .then(() => {
