@@ -2,7 +2,7 @@
 
 const SLEEPLOG_ENDPOINT = '/api/logs';
 
-// gets our sample data
+// gets current state of database & renders onto the DOM
 function getSleepLogs() {
     $.get(SLEEPLOG_ENDPOINT, renderSleepLog);
 }
@@ -42,19 +42,65 @@ function putSleepLog(path, newQuality, newDescription, callback) {
     });
 }
 
-function updateEventListener() {
-    $('.sleep-logs-list').on('click', '.update-log', function() {
-        console.log('clicked');
-        const toUpdateLogInput = $(this).closest('.log-container');
-        const newQuality = toUpdateLogInput.find('.quality').val();
-        const newDescription = toUpdateLogInput.find('.description').val();
-      
-        const toUpdateID = toUpdateLogInput.attr('logID');
+function updateGenerateSleepLog(log) {
+    return `
+    <form class="updated-log-js" logID="${log._id}">
+        <h3 class="date update-date">${log.created}</h3>
+        <label class="sleep-label">How was your sleep?</label><br>
+        <input class="update-quality" value="${log.quality}"><br>
+        <label class="sleep-label">Describe your sleep</label><br>
+        <input class="update-description" value="${log.description}"><br>
+        <button class="cancel-log" role="button">Cancel</button>
+        <button class="save-log" type="submit" role="button">Save</button>
+    </form>
+    `;
+}
 
-    putSleepLog(SLEEPLOG_ENDPOINT + '/' + toUpdateID, newQuality, newDescription, function(response) {
-        console.log(response);
-   
-        });        
+function updateEventListener() {
+    // clicking on the update button
+    $('.sleep-logs-list').on('click', '.update-log', function(event) {
+        const toUpdateLogInput = $(event.currentTarget).closest('.log-container');
+        const currentDate = toUpdateLogInput.find('.date').text();
+        const currentQuality = toUpdateLogInput.find('.quality').text();
+        const currentDescription = toUpdateLogInput.find('.description').text();
+        const currentID = toUpdateLogInput.attr('logID');
+
+        const currentLogObj = {
+            quality: currentQuality,
+            description: currentDescription,
+            created: currentDate,
+            _id: currentID
+        }
+        
+        const currentInput = toUpdateLogInput.html(updateGenerateSleepLog(currentLogObj));
+        $('.log-container').append(currentInput);
+    
+    // clicking on the cancel button if updating
+    $('.sleep-logs-list').on('click', '.cancel-log', function(event) {
+       event.preventDefault();
+       getSleepLogs();
+    });
+    
+    // clicking on the save button if updating 
+    $('.updated-log-js').on('click', '.save-log', function(event) {
+        event.preventDefault();
+        const editedLogInput = $(event.currentTarget).closest('.updated-log-js');
+        const editedQuality = editedLogInput.find('.update-quality').val();
+        const editedDescription = editedLogInput.find('.update-description').val();
+        const sameDate = editedLogInput.find('.update-date').text();
+        const sameID = editedLogInput.attr('logID');
+        
+        const newLogObj = {
+            quality: editedQuality,
+            description: editedDescription,
+            created: sameDate,
+            _id: sameID
+        }
+
+        // we are using the html method to SET the html contents of each element in the set of matched elements
+        const newInput = editedLogInput.html(generateSleepLog(newLogObj));
+        putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedQuality, editedDescription, getSleepLogs);
+        });   
     });
 }
 
@@ -71,17 +117,31 @@ function deleteSleepLog(path, callback) {
     });
 }
 
+function deleteEventListener() {
+    $('.sleep-logs-list').on('click', '.delete-log', function(event) {
+        // console.log('clicked');
+        const deleteLogInput = $(event.currentTarget).closest('.log-container');
+        const deleteLogText = deleteLogInput.val();
+
+        const logID = deleteLogInput.attr('logID');
+        deleteSleepLog(SLEEPLOG_ENDPOINT + '/' + logID, getSleepLogs);
+    });
+}
+
 function renderSleepLog(data) {
+    // allows us to turn data into an array if its not an array
+    // so that we can call map() regardless of whether we have a single item or an array
     const allLogs = [].concat(data || []);
+    // takes the data and is passing through the generateSleepLog function
     const sleepLogsHTML = allLogs.map(generateSleepLog).join('');
-    $('.sleep-logs-list').append(sleepLogsHTML);
+    // study difference between append and the html method !!
+    $('.sleep-logs-list').html(sleepLogsHTML);
 }
 
 function generateSleepLog(log) {
-    // console.log(log._id);
     return `
     <div class="log-container" logID="${log._id}">
-        <h3>${log.created.slice(0,10)}</h3>
+        <h3 class="date">${log.created.slice(0,10)}</h3>
         <p class="quality">${log.quality}</p>
         <p class="description">${log.description}</p>
         <button class="update-log" role="button">Update</button>
@@ -90,28 +150,14 @@ function generateSleepLog(log) {
     `;
 }
 
-function deleteEventListener() {
-    $('.sleep-logs-list').on('click', '.delete-log', function(event) {
-        console.log('clicked');
-        const deleteLogInput = $(event.currentTarget).closest('.log-container');
-        const deleteLogText = deleteLogInput.val();
-
-        const logID = deleteLogInput.attr('logID');
-        deleteSleepLog(SLEEPLOG_ENDPOINT + '/' + logID, function(response) {
-            window.location.href = '/';
-        });
-    });
-}
-
 function bindEventListeners() {
 $('form').on('submit', function(event) {
     event.preventDefault();
     const sleepQuality = $('input[name=sleepRating]:checked').val();
-    
-    const sleepLogInput = $(event.currentTarget).find('.js-sleep-log');
-    const sleepLogText = sleepLogInput.val();
-    
-    postSleepLog(SLEEPLOG_ENDPOINT, sleepQuality, sleepLogText, renderSleepLog);
+    const sleepLogDescription = $(event.currentTarget).find('.js-sleep-log');
+    const sleepLogText = sleepLogDescription.val();
+
+    postSleepLog(SLEEPLOG_ENDPOINT, sleepQuality, sleepLogText, getSleepLogs);
     sleepLogInput.val('');
 });
 }
