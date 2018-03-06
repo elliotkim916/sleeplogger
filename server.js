@@ -7,7 +7,7 @@ mongoose.Promise = global.Promise;
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
-
+const {router} = require('./users');
 // all the routing for the sleepLog API lives in this file
 const logsRouter = require('./routes/logs');
 
@@ -16,6 +16,9 @@ const {PORT, DATABASE_URL} = require('./config');
 app.use(express.static('public'));
 // We mount the logsRouter at `/api/logs`
 app.use('/api/logs', logsRouter);
+
+// able to create username, password, firstName, lastName
+app.use('/api/users', router);
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
