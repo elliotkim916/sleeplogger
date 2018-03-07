@@ -149,6 +149,31 @@ function generateSleepLog(log) {
     `;
 }
 
+function createAccount() {
+    $('.login').on('submit', function(event) {
+        event.preventDefault();
+        const login = $(event.currentTarget).find('#username');
+        const username = login.val();
+        const createPassword = $(event.currentTarget).find('#password');
+        const password = createPassword.val();
+        $.ajax({
+            type: 'POST',
+            url: '/api/users',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                username: username,
+                password: password
+            }),
+            dataType: 'json',
+            success: callback,
+            error: function(err) {
+                console.info('There is an error');
+                console.error(err);
+            }
+        }); 
+    });
+}
+
 function bindEventListeners() {
 $('form').on('submit', function(event) {
     event.preventDefault();
@@ -162,6 +187,7 @@ $('form').on('submit', function(event) {
 }
 
 $(function() {
+    createAccount();
     updateEventListener();
     deleteEventListener();
     bindEventListeners();
