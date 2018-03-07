@@ -1,25 +1,37 @@
 'use strict';
-
+require('dotenv').config();
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const bodyParser = require('body-parser');
-const jsonParser = bodyParser.json();
-const {router} = require('./users');
+const passport = require('passport');
+const {router: usersRouter} = require('./users');
 // all the routing for the sleepLog API lives in this file
 const logsRouter = require('./routes/logs');
 
+const {router: authRouter, localStrategy, jwtStrategy} = require('./auth');
 const {PORT, DATABASE_URL} = require('./config');
+const app = express();
 
 app.use(express.static('public'));
 // We mount the logsRouter at `/api/logs`
 app.use('/api/logs', logsRouter);
 
-// able to create username, password, firstName, lastName
-app.use('/api/users', router);
+passport.use(localStrategy);
+passport.use(jwtStrategy);
 
+// able to create username, password, firstName, lastName
+app.use('/api/users/', usersRouter);
+app.use('/api/auth/', authRouter);
+
+const jwtAuth = passport.authenticate('jwt', {session: false});
+
+app.get('/api/protected', jwtAuth, (req, res) => {
+    return res.json({
+      data: 'rosebud'
+    });
+  });
+  
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
