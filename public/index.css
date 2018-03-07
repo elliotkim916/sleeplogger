@@ -14,38 +14,60 @@ body {
     padding-left: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
+    padding-top: 10px;
     background-color: deepskyblue;
 }
 
-#describeSleep {
+/* size of inputs in new sleep entry and previous sleep entry */
+#describeSleep, .update-quality, .update-description {
     width: 400px;
     height: 35px;
     border-radius: 5px;
 }
 
+.quality, .description, .update-quality, .update-description {
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
 /* buttons */
-.submit-log, .update-log, .delete-log {
+.submit-log, .update-log, .delete-log, .save-log, .cancel-log {
     width: 75px;
     height: 35px;
     border-radius: 5px;
     font-size: 0.95em;
 }
 
+/* save button */
+.save-log {
+    margin-left: 10px;
+}
+
+/* delete button */
 .delete-log {
     margin-left: 10px;
 }
 
+/* fieldset in new sleep entry */
 fieldset {
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgb(212, 232, 233);
 }
 
+/* input in new sleep entry */
 .js-sleep-log {
     margin-top: 3px;
     margin-bottom: 10px;
+    font-size: 0.95em;
 }
 
+/* font size of current data after clicking on update */
+.update-quality, .update-description {
+    font-size: 0.95em;
+}
+
+/* radio buttons */
 #goodSleep, #badSleep {
     margin-bottom: 20px;
 }

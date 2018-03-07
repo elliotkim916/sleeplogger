@@ -45,7 +45,7 @@ function putSleepLog(path, newQuality, newDescription, callback) {
 function updateGenerateSleepLog(log) {
     return `
     <form class="updated-log-js" logID="${log._id}">
-        <h3 class="date update-date">${log.created}</h3>
+        <h3 class="update-date">${log.created}</h3>
         <label class="sleep-label">How was your sleep?</label><br>
         <input class="update-quality" value="${log.quality}"><br>
         <label class="sleep-label">Describe your sleep</label><br>
@@ -132,9 +132,8 @@ function renderSleepLog(data) {
     // allows us to turn data into an array if its not an array
     // so that we can call map() regardless of whether we have a single item or an array
     const allLogs = [].concat(data || []);
-    // takes the data and is passing through the generateSleepLog function
+    // takes the data and passes through the generateSleepLog function
     const sleepLogsHTML = allLogs.map(generateSleepLog).join('');
-    // study difference between append and the html method !!
     $('.sleep-logs-list').html(sleepLogsHTML);
 }
 
@@ -158,7 +157,7 @@ $('form').on('submit', function(event) {
     const sleepLogText = sleepLogDescription.val();
 
     postSleepLog(SLEEPLOG_ENDPOINT, sleepQuality, sleepLogText, getSleepLogs);
-    sleepLogInput.val('');
+    sleepLogDescription.val('');
 });
 }
 

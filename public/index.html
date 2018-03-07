@@ -12,26 +12,26 @@
     </header>
     
     <section>
-    <form>
-    <h3>New Sleep Entry</h3>
-    <fieldset>
-        <legend>How was your sleep?</legend>
+      <form>
+      <h2>New Sleep Entry</h2>
+      <fieldset>
+        <h3>How was your sleep?</h3>
         <label for="goodSleep">Good</label>
         <input type="radio" id="goodSleep" name="sleepRating" value="Good">
       
         <label for="badSleep">Bad</label>
         <input type="radio" id="badSleep" name="sleepRating" value="Bad"><br>
         
-        <label for="describeSleep">Describe your sleep</label><br>
-        <input type="text" id="describeSleep" class="js-sleep-log">
+        <label for="describeSleep" class="sleep-label">Describe your sleep</label><br>
+        <input type="text" id="describeSleep" class="js-sleep-log" placeholder="Very peaceful and pleasant..">
         <button type="submit" role="button" class="submit-log">Submit</button>
-    </fieldset>
-    </form>
+      </fieldset>
+      </form>
     </section>
       
     <section>
-      <h3>Previous Sleep Entries</h3>
-      <ul id="sleepLogs" class="sleep-logs-list"></ul>
+      <h2>Previous Sleep Entries</h2>
+      <div id="sleepLogs" class="sleep-logs-list"></div>
     </section>
     
     <script src="https://code.jquery.com/jquery.min.js"></script>
