@@ -149,8 +149,54 @@ function generateSleepLog(log) {
     `;
 }
 
+function bindEventListeners() {
+    $('form').on('submit', function(event) {
+        event.preventDefault();
+        const sleepQuality = $('input[name=sleepRating]:checked').val();
+        const sleepLogDescription = $(event.currentTarget).find('.js-sleep-log');
+        const sleepLogText = sleepLogDescription.val();
+
+        postSleepLog(SLEEPLOG_ENDPOINT, sleepQuality, sleepLogText, getSleepLogs);
+        sleepLogDescription.val('');
+    });
+}
+
+function requestJWT(username, password) {
+    $('.createAccount').on('submit', function(event) {
+        event.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'api/auth/login',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                username: username,
+                password: password
+            }),
+            dataType: 'json',
+            success: function(resultData) {
+                let token = resultData.authToken;
+                $.ajax({
+                    type: 'GET',
+                    url: 'api/protected',
+                    headers: {"Authorization": token},
+                    success: function(data) {
+                        $(location).attr('href', '/api/logs')
+                    }
+                })
+            },
+            error: function(err) {
+                console.info('Login failed!');
+                console.error(err);
+                }
+            });
+        });
+}
+
+// Store the token somewhere locally
+// authenticate using the token
+
 function createAccount() {
-    $('.login').on('submit', function(event) {
+    $('.createAccount').on('submit', function(event) {
         event.preventDefault();
         const login = $(event.currentTarget).find('#username');
         const username = login.val();
@@ -165,25 +211,13 @@ function createAccount() {
                 password: password
             }),
             dataType: 'json',
-            success: callback,
+            success: requestJWT(username, password),
             error: function(err) {
                 console.info('There is an error');
                 console.error(err);
             }
         }); 
     });
-}
-
-function bindEventListeners() {
-$('form').on('submit', function(event) {
-    event.preventDefault();
-    const sleepQuality = $('input[name=sleepRating]:checked').val();
-    const sleepLogDescription = $(event.currentTarget).find('.js-sleep-log');
-    const sleepLogText = sleepLogDescription.val();
-
-    postSleepLog(SLEEPLOG_ENDPOINT, sleepQuality, sleepLogText, getSleepLogs);
-    sleepLogDescription.val('');
-});
 }
 
 $(function() {
