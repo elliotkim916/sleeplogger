@@ -7,7 +7,7 @@ body {
     margin: 25px;
 }
 
-.log-container {
+.log-container, .new-log-entry {
     border: 1px solid black;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -20,7 +20,7 @@ body {
 
 /* size of inputs in new sleep entry and previous sleep entry */
 #describeSleep, .update-quality, .update-description {
-    width: 400px;
+    width: 300px;
     height: 35px;
     border-radius: 5px;
 }
