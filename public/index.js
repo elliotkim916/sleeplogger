@@ -160,6 +160,21 @@ function bindEventListeners() {
     });
 }
 
+function logIn() {
+    $('.logIn').on('submit', function(event) {
+        event.preventDefault(); 
+        const existingLogin = $(event.currentTarget).find('#existingUsername');
+        const existingUsername = existingLogin.val();
+        const yourPassword = $(event.currentTarget).find('#existingPassword');
+        const existingPassword = yourPassword.val();
+        console.log(existingUsername);
+        requestJWT(existingUsername, existingPassword);
+        // $('.log-in').hide();
+        // $('.new-sleep-entry').show();
+        // $('.all-sleep-entries').show();
+    });
+}
+
 function requestJWT(username, password) {
     $.ajax({
         type: 'POST',
@@ -171,8 +186,8 @@ function requestJWT(username, password) {
             password: password
         }),
         success: function(resultData) {
-            localStorage.setItem('token', resultData.authToken);
             alert(resultData.authToken);
+            localStorage.setItem('token', resultData.authToken);
             $.ajax({
                 type: 'GET',
                 url: 'api/protected',
@@ -189,12 +204,18 @@ function requestJWT(username, password) {
         error: function(err) {
             console.info('Login failed!');
             console.error(err);
-                }
-            });
         }
+    });
+}
 
 function createAccount() {
+    $('.new-sleep-entry').hide();
+    $('.all-sleep-entries').hide();
+    $('.log-in').hide();
     $('.createAccount').on('submit', function(event) {
+        // $('.create-account').hide();
+        // $('.new-sleep-entry').show();
+        // $('.all-sleep-entries').show();
         event.preventDefault();
         const login = $(event.currentTarget).find('#username');
         const username = login.val();
@@ -218,9 +239,14 @@ function createAccount() {
         login.val('');
         createPassword.val(''); 
     });
+    $('.createAccount').on('click', '.click-here', function(event) {
+        $('.create-account').hide();
+        $('.log-in').show();
+    });
 }
 
 $(function() {
+    logIn();
     createAccount();
     updateEventListener();
     deleteEventListener();
