@@ -31,7 +31,7 @@ body {
 }
 
 /* buttons */
-.submit-log, .update-log, .delete-log, .save-log, .cancel-log, .signup-button {
+.submit-log, .update-log, .delete-log, .save-log, .cancel-log, .signup-button, .login-button {
     width: 75px;
     height: 35px;
     border-radius: 5px;
@@ -48,6 +48,10 @@ body {
     margin-left: 10px;
 }
 
+/* used to move span tag further below */
+.signup-button {
+    margin-bottom: 10px;
+}
 /* fieldset in new sleep entry and create an account */
 fieldset {
     border: 1px solid black;
@@ -56,7 +60,7 @@ fieldset {
 }
 
 /* input in new sleep entry */
-.js-sleep-log, #username, #password {
+.js-sleep-log, #username, #password, #existingUsername, #existingPassword {
     margin-top: 3px;
     margin-bottom: 10px;
     font-size: 0.95em;
