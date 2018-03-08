@@ -162,38 +162,37 @@ function bindEventListeners() {
 }
 
 function requestJWT(username, password) {
-    $('.createAccount').on('submit', function(event) {
-        event.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: 'api/auth/login',
-            contentType: 'application/json',
-            data: JSON.stringify({
-                username: username,
-                password: password
-            }),
-            dataType: 'json',
-            success: function(resultData) {
-                let token = resultData.authToken;
-                $.ajax({
-                    type: 'GET',
-                    url: 'api/protected',
-                    headers: {"Authorization": token},
-                    success: function(data) {
-                        $(location).attr('href', '/api/logs')
+    $.ajax({
+        type: 'POST',
+        url: 'api/auth/login',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+            username: username,
+            password: password
+        }),
+        success: function(resultData) {
+            let token = resultData.authToken;
+            alert(resultData.authToken);
+            $.ajax({
+                type: 'GET',
+                url: 'api/protected',
+                contentType: 'application/json',
+                dataType: 'json',
+                headers: {
+                    'Authorization': "Bearer " + token
+                },
+                success: function(data) {
+                    alert(data.username + 'has gained access!');
                     }
                 })
             },
-            error: function(err) {
-                console.info('Login failed!');
-                console.error(err);
+        error: function(err) {
+            console.info('Login failed!');
+            console.error(err);
                 }
             });
-        });
-}
-
-// Store the token somewhere locally
-// authenticate using the token
+        }
 
 function createAccount() {
     $('.createAccount').on('submit', function(event) {
@@ -204,7 +203,7 @@ function createAccount() {
         const password = createPassword.val();
         $.ajax({
             type: 'POST',
-            url: '/api/users',
+            url: 'api/users',
             contentType: 'application/json',
             data: JSON.stringify({
                 username: username,
@@ -216,7 +215,9 @@ function createAccount() {
                 console.info('There is an error');
                 console.error(err);
             }
-        }); 
+        });
+        login.val('');
+        createPassword.val(''); 
     });
 }
 
