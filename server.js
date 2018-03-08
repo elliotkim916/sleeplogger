@@ -27,7 +27,7 @@ app.use(function (req, res, next) {
     }
     next();
   });
-  
+
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
@@ -37,12 +37,6 @@ app.use('/api/auth/', authRouter);
 
 const jwtAuth = passport.authenticate('jwt', {session: false});
 
-app.get('/api/protected', jwtAuth, (req, res) => {
-    return res.json({
-      data: 'rosebud'
-    });
-  });
-  
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
