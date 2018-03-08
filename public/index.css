@@ -75,3 +75,7 @@ fieldset {
 #goodSleep, #badSleep {
     margin-bottom: 20px;
 }
+
+.logout-button {
+    text-decoration: none;
+}
