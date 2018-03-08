@@ -176,6 +176,7 @@ function enterApp() {
         $('.create-account').hide();
         $('.new-sleep-entry').show();
         $('.all-sleep-entries').show();
+        $('.logout-button').show();
 }
 
 function requestJWT(username, password) {
@@ -206,12 +207,20 @@ function requestJWT(username, password) {
             console.error(err);
         }
     });
+    $('.logout-button').on('click', function(event) {
+        localStorage.clear();
+        $('.new-sleep-entry').hide();
+        $('.all-sleep-entries').hide();
+        $('.logout-button').hide();
+        $('.log-in').show();
+    });
 }
 
 function createAccount() {
     $('.new-sleep-entry').hide();
     $('.all-sleep-entries').hide();
     $('.log-in').hide();
+    $('.logout-button').hide();
     $('.createAccount').on('submit', function(event) {
         event.preventDefault();
         const login = $(event.currentTarget).find('#username');
@@ -243,6 +252,7 @@ function createAccount() {
 }
 
 $(function() {
+    // logOut();
     logIn();
     createAccount();
     updateEventListener();
