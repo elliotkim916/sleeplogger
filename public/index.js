@@ -171,7 +171,7 @@ function requestJWT(username, password) {
             password: password
         }),
         success: function(resultData) {
-            let token = resultData.authToken;
+            localStorage.setItem('token', resultData.authToken);
             alert(resultData.authToken);
             $.ajax({
                 type: 'GET',
@@ -179,7 +179,7 @@ function requestJWT(username, password) {
                 contentType: 'application/json',
                 dataType: 'json',
                 headers: {
-                    'Authorization': "Bearer " + token
+                    'Authorization': "Bearer " + localStorage.getItem('token')
                 },
                 success: function(data) {
                     alert(data.username + 'has gained access!');
