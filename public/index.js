@@ -119,7 +119,6 @@ function deleteSleepLog(path, callback) {
 
 function deleteEventListener() {
     $('.sleep-logs-list').on('click', '.delete-log', function(event) {
-        // console.log('clicked');
         const deleteLogInput = $(event.currentTarget).closest('.log-container');
         const deleteLogText = deleteLogInput.val();
 
