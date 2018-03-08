@@ -48,7 +48,7 @@ body {
     margin-left: 10px;
 }
 
-/* fieldset in new sleep entry */
+/* fieldset in new sleep entry and create an account */
 fieldset {
     border: 1px solid black;
     border-radius: 5px;
@@ -56,7 +56,7 @@ fieldset {
 }
 
 /* input in new sleep entry */
-.js-sleep-log {
+.js-sleep-log, #username, #password {
     margin-top: 3px;
     margin-bottom: 10px;
     font-size: 0.95em;
