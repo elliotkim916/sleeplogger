@@ -167,12 +167,15 @@ function logIn() {
         const existingUsername = existingLogin.val();
         const yourPassword = $(event.currentTarget).find('#existingPassword');
         const existingPassword = yourPassword.val();
-        console.log(existingUsername);
         requestJWT(existingUsername, existingPassword);
-        // $('.log-in').hide();
-        // $('.new-sleep-entry').show();
-        // $('.all-sleep-entries').show();
     });
+}
+
+function enterApp() {
+        $('.log-in').hide();
+        $('.create-account').hide();
+        $('.new-sleep-entry').show();
+        $('.all-sleep-entries').show();
 }
 
 function requestJWT(username, password) {
@@ -186,7 +189,6 @@ function requestJWT(username, password) {
             password: password
         }),
         success: function(resultData) {
-            alert(resultData.authToken);
             localStorage.setItem('token', resultData.authToken);
             $.ajax({
                 type: 'GET',
@@ -196,9 +198,7 @@ function requestJWT(username, password) {
                 headers: {
                     'Authorization': "Bearer " + localStorage.getItem('token')
                 },
-                success: function(data) {
-                    alert(data.username + 'has gained access!');
-                    }
+                success: enterApp()
                 })
             },
         error: function(err) {
@@ -213,9 +213,6 @@ function createAccount() {
     $('.all-sleep-entries').hide();
     $('.log-in').hide();
     $('.createAccount').on('submit', function(event) {
-        // $('.create-account').hide();
-        // $('.new-sleep-entry').show();
-        // $('.all-sleep-entries').show();
         event.preventDefault();
         const login = $(event.currentTarget).find('#username');
         const username = login.val();
