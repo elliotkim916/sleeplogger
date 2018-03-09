@@ -7,13 +7,13 @@ function getSleepLogs() {
     $.get(SLEEPLOG_ENDPOINT, renderSleepLog);
 }
 
-function postSleepLog(path, sleepQuality, sleepLogText, callback) {
+function postSleepLog(path, hoursSlept, sleepLogText, callback) {
     $.ajax({
         type: 'POST',
         url: path,
         contentType: 'application/json',
         data: JSON.stringify({
-            quality: sleepQuality,
+            hoursOfSleep: hoursSlept,
             description: sleepLogText
         }),
         dataType: 'json',
@@ -25,13 +25,13 @@ function postSleepLog(path, sleepQuality, sleepLogText, callback) {
     });
 }
 
-function putSleepLog(path, newQuality, newDescription, callback) {
+function putSleepLog(path, newHours, newDescription, callback) {
     $.ajax({
         type: 'PUT',
         url: path,
         contentType: 'application/json',
         data: JSON.stringify({
-            quality: newQuality,
+            hoursOfSleep: newHours,
             description: newDescription
         }),
         success: callback,
@@ -46,8 +46,8 @@ function updateGenerateSleepLog(log) {
     return `
     <form class="updated-log-js" logID="${log._id}">
         <h3 class="update-date">${log.created}</h3>
-        <label class="sleep-label">How was your sleep?</label><br>
-        <input class="update-quality" value="${log.quality}"><br>
+        <label class="sleep-label">Describe your sleep</label><br>
+        <input class="update-hours" value="${log.hoursOfSleep}"><br>
         <label class="sleep-label">Describe your sleep</label><br>
         <input class="update-description" value="${log.description}"><br>
         <button class="cancel-log" role="button">Cancel</button>
@@ -61,12 +61,12 @@ function updateEventListener() {
     $('.sleep-logs-list').on('click', '.update-log', function(event) {
         const toUpdateLogInput = $(event.currentTarget).closest('.log-container');
         const currentDate = toUpdateLogInput.find('.date').text();
-        const currentQuality = toUpdateLogInput.find('.quality').text();
+        const currentHours = toUpdateLogInput.find('.hours').text();
         const currentDescription = toUpdateLogInput.find('.description').text();
         const currentID = toUpdateLogInput.attr('logID');
 
         const currentLogObj = {
-            quality: currentQuality,
+            hoursOfSleep: currentHours,
             description: currentDescription,
             created: currentDate,
             _id: currentID
@@ -85,13 +85,13 @@ function updateEventListener() {
     $('.updated-log-js').on('click', '.save-log', function(event) {
         event.preventDefault();
         const editedLogInput = $(event.currentTarget).closest('.updated-log-js');
-        const editedQuality = editedLogInput.find('.update-quality').val();
+        const editedHours = editedLogInput.find('.update-hours').val();
         const editedDescription = editedLogInput.find('.update-description').val();
         const sameDate = editedLogInput.find('.update-date').text();
         const sameID = editedLogInput.attr('logID');
         
         const newLogObj = {
-            quality: editedQuality,
+            hoursOfSleep: editedHours,
             description: editedDescription,
             created: sameDate,
             _id: sameID
@@ -99,7 +99,7 @@ function updateEventListener() {
 
         // we are using the html method to SET the html contents of each element in the set of matched elements
         const newInput = editedLogInput.html(generateSleepLog(newLogObj));
-        putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedQuality, editedDescription, getSleepLogs);
+        putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedHours, editedDescription, getSleepLogs);
         });   
     });
 }
@@ -137,10 +137,11 @@ function renderSleepLog(data) {
 }
 
 function generateSleepLog(log) {
+    console.log(log);
     return `
     <div class="log-container" logID="${log._id}">
         <h3 class="date">${log.created.slice(0,10)}</h3>
-        <p class="quality">${log.quality}</p>
+        <p class="hours">${log.hoursOfSleep} Hours</p>
         <p class="description">${log.description}</p>
         <button class="update-log" role="button">Update</button>
         <button class="delete-log" type="submit" role="button">Delete</button>
@@ -151,11 +152,13 @@ function generateSleepLog(log) {
 function bindEventListeners() {
     $('form').on('submit', function(event) {
         event.preventDefault();
-        const sleepQuality = $('input[name=sleepRating]:checked').val();
+        const sleepHours = $(event.currentTarget).find('#hoursOfSleep');
+        const hoursOfSleep = sleepHours.val();
+        console.log(hoursOfSleep);
         const sleepLogDescription = $(event.currentTarget).find('.js-sleep-log');
         const sleepLogText = sleepLogDescription.val();
 
-        postSleepLog(SLEEPLOG_ENDPOINT, sleepQuality, sleepLogText, getSleepLogs);
+        postSleepLog(SLEEPLOG_ENDPOINT, hoursOfSleep, sleepLogText, getSleepLogs);
         sleepLogDescription.val('');
     });
 }
