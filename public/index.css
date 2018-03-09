@@ -19,13 +19,13 @@ body {
 }
 
 /* size of inputs in new sleep entry and previous sleep entry */
-#describeSleep, .update-quality, .update-description {
+#describeSleep, #hoursOfSleep, .update-hours, .update-description {
     width: 300px;
     height: 35px;
     border-radius: 5px;
 }
 
-.quality, .description, .update-quality, .update-description {
+.quality, .description, #hoursOfSleep, .update-description {
     margin-top: 8px;
     margin-bottom: 10px;
 }
@@ -67,7 +67,7 @@ fieldset {
 }
 
 /* font size of current data after clicking on update */
-.update-quality, .update-description {
+.update-hours, .update-description, #hoursOfSleep {
     font-size: 0.95em;
 }
 
