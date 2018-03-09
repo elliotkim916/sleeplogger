@@ -11,14 +11,24 @@ header {
     font-family: 'Poppins';
 }
 
+h1 {
+    display: inline;
+}
+
+.logger {
+    display: inline-block;
+    margin-left: 20px;
+}
+
 .sleep-info, .sign-up {
     font-family: 'Antic Slab';
+    font-size: 0.9em;
 }
 
 .log-container, .new-log-entry {
     border: 1px solid black;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 55px;
     padding-left: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
@@ -50,7 +60,7 @@ header {
     width: 130px;
     height: 40px;
     border-radius: 5px;
-    font-size: 0.95em;
+    font-size: 1em;
 }
 
 /* save button */
