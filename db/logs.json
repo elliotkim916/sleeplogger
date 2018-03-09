@@ -1,14 +1,17 @@
 [
     { 
         "hoursOfSleep": "8",
+        "feeling": "Refreshed & well-rested",
         "description": "Slept a full 8 hours with no interruptions!"
     },
     {   
         "hoursOfSleep": "5",
+        "feeling": "Still tired",
         "description": "Barely got any sleep, and it was hard to fall asleep because of noisy neighbors!"
     },
     { 
         "hoursOfSleep": "12",
+        "feeling": "Just average",
         "description": "Sleep was amazing! Felt so energized when I woke up."
     }
 ]
