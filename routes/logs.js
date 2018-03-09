@@ -27,7 +27,7 @@ router.get('/:id', function(req, res) {
 
 router.post('/', jsonParser, function(req, res) {
     // ensure quality and description are in the request body
-    const requiredFields = ['quality', 'description'];
+    const requiredFields = ['hoursOfSleep', 'description'];
     for (let i=0; i<requiredFields.length; i++) {
         const field = requiredFields[i];
         if (!(field in req.body)) {
@@ -39,7 +39,7 @@ router.post('/', jsonParser, function(req, res) {
     
     SleepLog
         .create({
-            quality: req.body.quality,
+            hoursOfSleep: req.body.hoursOfSleep,
             description: req.body.description,
         }).then(log => res.status(201).json(log))
         .catch(err => {
@@ -69,7 +69,7 @@ router.put('/:id', jsonParser, (req, res) => {
     }
 
     const updated = {};
-    const updatableFields = ['quality', 'description'];
+    const updatableFields = ['hoursOfSleep', 'description'];
     updatableFields.forEach(field => {
         if (field in req.body) {
             updated[field] = req.body[field];
