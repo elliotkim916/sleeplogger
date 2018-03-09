@@ -19,13 +19,13 @@ body {
 }
 
 /* size of inputs in new sleep entry and previous sleep entry */
-#describeSleep, #hoursOfSleep, .update-hours, .update-description {
+#describeSleep, #hoursOfSleep, .update-hours, .update-feeling, .update-description {
     width: 300px;
     height: 35px;
     border-radius: 5px;
 }
 
-.quality, .description, #hoursOfSleep, .update-description {
+.quality, .description, #hoursOfSleep {
     margin-top: 8px;
     margin-bottom: 10px;
 }
@@ -67,15 +67,19 @@ fieldset {
 }
 
 /* font size of current data after clicking on update */
-.update-hours, .update-description, #hoursOfSleep {
+.update-hours, .update-feeling, .update-description, #hoursOfSleep {
     font-size: 0.95em;
 }
 
-/* radio buttons */
-#goodSleep, #badSleep {
+/* distance beneath inputs */
+.update-hours, .update-feeling, .update-description, #hoursOfSleep, #describeSleep, #littleMore {
     margin-bottom: 20px;
 }
 
 .logout-button {
     text-decoration: none;
+}
+
+header, .sleep-info, .sign-up {
+    text-align: center;
 }
