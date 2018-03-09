@@ -145,7 +145,6 @@ function renderSleepLog(data) {
 }
 
 function generateSleepLog(log) {
-    console.log(log);
     return `
     <div class="log-container" logID="${log._id}">
         <h3 class="date">${moment(log.created).format('LLLL').slice(0, -7)}</h3>
@@ -185,6 +184,7 @@ function logIn() {
 
 function enterApp() {
         $('.log-in').hide();
+        $('.h3').hide();
         $('.create-account').hide();
         $('header').show();
         $('.new-sleep-entry').show();
