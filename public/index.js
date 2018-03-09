@@ -177,6 +177,7 @@ function logIn() {
 function enterApp() {
         $('.log-in').hide();
         $('.create-account').hide();
+        $('header').show();
         $('.new-sleep-entry').show();
         $('.all-sleep-entries').show();
         $('.logout-button').show();
@@ -254,8 +255,18 @@ function createAccount() {
     });
 }
 
+function signUp() {
+    $('.create-account').hide();
+    $('body').on('click', '.sign-up-here-button', function(event) {
+        $('header').hide();
+        $('.sleep-info').hide();
+        $('.sign-up').hide();
+        $('.create-account').show();
+    });
+}
+
 $(function() {
-    // logOut();
+    signUp();
     logIn();
     createAccount();
     updateEventListener();
