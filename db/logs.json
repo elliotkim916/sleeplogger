@@ -1,14 +1,14 @@
 [
     { 
-        "quality": "Good",
+        "hoursOfSleep": "8",
         "description": "Slept a full 8 hours with no interruptions!"
     },
     {   
-        "quality": "Bad",
+        "hoursOfSleep": "5",
         "description": "Barely got any sleep, and it was hard to fall asleep because of noisy neighbors!"
     },
     { 
-        "quality": "Good",
+        "hoursOfSleep": "12",
         "description": "Sleep was amazing! Felt so energized when I woke up."
     }
 ]
