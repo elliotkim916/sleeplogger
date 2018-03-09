@@ -38,6 +38,13 @@ body {
     font-size: 0.95em;
 }
 
+.sign-up-here-button {
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+
 /* save button */
 .save-log {
     margin-left: 10px;
