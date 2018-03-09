@@ -3,8 +3,16 @@
 }
 
 body {
-    font-family: Helvetica;
+    font-family: 'Poppins';
     margin: 25px;
+}
+
+header {
+    font-family: 'Poppins';
+}
+
+.sleep-info, .sign-up {
+    font-family: 'Antic Slab';
 }
 
 .log-container, .new-log-entry {
