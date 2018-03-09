@@ -9,9 +9,27 @@
   <body>
     <header>
       <h1>Sleep Logger</h1>
+      <h3 class="h3">Keep track of how much you sleep because your rest is vital</h3>
       <a href="#" class="logout-button">LOGOUT</a>
     </header>
     
+    <section class="sleep-info">
+      <p>Sleep is an important indicator of overall health and well-being.  We spend up to one-third
+         of our lives asleep, and the overall state of our "sleep-health" remains an essential question
+         throughout our lifespan.</p>
+      <p>Sleep needs are individual and change as you age.  Newborns need a total of 14 to 17 hours a day.  Infants
+        need a total of 12 to 15 hours a day, and school age children need 9 to 11 hours a day.  Teenagers need 
+        8 to 10 hours a day, and young adults and above need 7 to 9 hours per day.</p>
+    </section>
+
+    <section class="sign-up">
+      <button class="sign-up-here-button">Sign Up Here</button>
+      <p>Based on your age, are you getting enough sleep?  This app is a simple and effective tool for keeping
+        track of how many hours you slept, noting how you felt when you woke up, and saving any other details you'd 
+        like to add about your rest. 
+      </p>
+    </section>
+
     <section class="create-account">
       <fieldset>
       <h2>Create an account</h2>
@@ -47,8 +65,8 @@
         <label for="hoursOfSleep">How many hours of sleep did you get?</label>
         <input type="text" id="hoursOfSleep" name="hoursOfSleep" placeholder="12">
   
-        <label for="describeSleep" class="sleep-label">Describe your sleep</label><br>
-        <input type="text" id="describeSleep" class="js-sleep-log" placeholder="Very peaceful and pleasant..">
+        <label for="describeSleep" class="sleep-label">Details you'd like to remember</label><br>
+        <input type="text" id="describeSleep" class="js-sleep-log" placeholder="I fell asleep pretty quickly..">
         <button type="submit" role="button" class="submit-log">Submit</button>
       </div>
       </form>
