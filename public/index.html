@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Sleep Log</title>
+    <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Poppins" rel="stylesheet">
     <link href="index.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -35,9 +36,9 @@
       <h2>Create an account</h2>
       <form class="createAccount">
         <label for="username">Username </label>
-        <input type="text" id="username" name="username"><br>
+        <input type="text" id="username" name="username" required><br>
         <label for="password">Password </label>
-        <input type="password" id="password" name="password"><br>
+        <input type="password" id="password" name="password" required><br>
         <button type="submit" class="signup-button">Sign Up</button><br>
         <span class="login-now">Already have an account? <a href="#" class="click-here">Click Here</a></span>
       </form>
@@ -49,9 +50,9 @@
       <h2>Log in</h2>
       <form class="logIn">
           <label for="existingUsername">Username </label>
-          <input type="text" id="existingUsername" name="username"><br>
+          <input type="text" id="existingUsername" name="username" required><br>
           <label for="existingPassword">Password </label>
-          <input type="password" id="existingPassword" name="password"><br>
+          <input type="password" id="existingPassword" name="password" required><br>
           <button type="submit" class="login-button">Log In</button>
       </form>
       </fieldset>
