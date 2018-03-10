@@ -5,10 +5,31 @@
 body {
     font-family: 'Poppins';
     margin: 25px;
+    background-color: darkslateblue;
 }
 
 header {
     font-family: 'Poppins';
+    color: whitesmoke;
+}
+
+navigation {
+    display: inline-block;
+    width: 100%;
+    margin-left: 200px;
+    margin-bottom: 85px;
+}
+
+.nav-sign-up {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.nav-log-in {
+    text-decoration: none;
+    color: whitesmoke;
+    display: inline-block;
+    margin-left: 10px;
 }
 
 h1 {
@@ -22,45 +43,115 @@ h1 {
 
 .sleep-info, .sign-up {
     font-family: 'Antic Slab';
-    font-size: 0.9em;
+    font-size: 1em;
+    color: whitesmoke;
+    margin-top: 100px;
 }
 
-.log-container, .new-log-entry {
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-bottom: 55px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    background-color: deepskyblue;
+.sleep-info {
+    margin-bottom: 100px;
 }
 
+.health-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 22px;
+}
+
+.sign-up {
+    padding-bottom: 100px;
+}
+
+.new-entry {
+    background-color: darkslateblue;
+    margin: 0px auto;
+    padding: 30px;
+    color: whitesmoke;
+}
+
+#hoursOfSleep, #describeSleep {
+    display: block;
+    width: 100%;
+    margin-bottom: 35px;
+    padding-bottom: 3px;
+    border-style: none;  
+    background-color: darkslateblue;
+    border-bottom: 1px solid whitesmoke;
+    font-size: 17px;
+    color: whitesmoke;
+}
+
+.sleep-logs-list {
+    margin: 0px auto;
+    padding: 30px;
+    color: whitesmoke;
+}
+
+.previous-entries-header {
+    color: whitesmoke;
+    margin-left: 30px;
+    margin-top: 35px;
+}
+
+.log-container {
+    display: block;
+    width: 100%;
+    margin-bottom: 90px;
+    margin-top: -35px;
+    padding-bottom: 3px;
+    font-size: 17px;
+    color: whitesmoke;
+}
 /* size of inputs in new sleep entry and previous sleep entry */
-#describeSleep, #hoursOfSleep, .update-hours, .update-feeling, .update-description {
-    width: 300px;
-    height: 35px;
-    border-radius: 5px;
+.update-hours, .update-feeling, .update-description {
+    /* width: 300px;
+    height: 35px; */
+    display: block;
+    width: 100%;
+    padding-bottom: 3px;
+    border-style: none;
+    background-color: darkslateblue;
+    border-bottom: 1px solid whitesmoke;
+    color: whitesmoke;
+    
 }
 
-.quality, .description, #hoursOfSleep {
+.description, #hoursOfSleep {
     margin-top: 8px;
     margin-bottom: 10px;
 }
 
 /* buttons */
-.submit-log, .update-log, .delete-log, .save-log, .cancel-log, .signup-button, .login-button {
+.signup-button, .login-button {
     width: 75px;
     height: 35px;
     border-radius: 5px;
-    font-size: 0.95em;
+    font-size: 1em;
+}
+
+.update-log, .delete-log, .save-log, .cancel-log {
+    margin-top: 15px;
+    width: 47%;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: tan;
+    color: whitesmoke;
+    font-family: poppins;
 }
 
 .sign-up-here-button {
-    width: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 75px;
+    width: 165px;
     height: 40px;
     border-radius: 5px;
     font-size: 1em;
+    font-family: 'Poppins';
+    background-color: tan;
+    color: whitesmoke;
 }
 
 /* save button */
@@ -74,37 +165,109 @@ h1 {
 }
 
 /* used to move span tag further below */
-.signup-button {
+.signup-button, .login-button {
+    width: 100%;
     margin-bottom: 10px;
+    background-color: tan;
+    font-family: 'Poppins';
+    color: whitesmoke; 
 }
-/* fieldset in new sleep entry and create an account */
-fieldset {
-    border: 1px solid black;
+
+.submit-log {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: tan;
+    font-family: 'Poppins';
+    color: whitesmoke; 
+    height: 35px;
     border-radius: 5px;
-    background-color: rgb(212, 232, 233);
+    font-size: 1em;
+}
+
+.log-in, .createAccount {
+    background-color: darkslateblue;
+    margin: 0px;
+    padding: 50px;
+    color: whitesmoke;
+    margin-top: 100px;
 }
 
 /* input in new sleep entry */
-.js-sleep-log, #username, #password, #existingUsername, #existingPassword {
+.js-sleep-log,  {
     margin-top: 3px;
     margin-bottom: 10px;
     font-size: 0.95em;
 }
 
+.create-acct-header {
+    color: whitesmoke;
+}
+
+.click-here {
+    color: whitesmoke;
+}
+
+#username, #password, #existingUsername, #existingPassword {
+    display: block;
+    width: 100%;
+    border-style: none;
+    background-color: darkslateblue;
+    border-bottom: 1px solid whitesmoke;
+    color: whitesmoke;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+#username:focus, #password:focus, #existingUsername:focus, #existingPassword:focus, 
+#hoursOfSleep:focus, #describeSleep:focus, .update-hours:focus, .update-feeling:focus,
+.update-description:focus {
+    outline: none;
+}
+
+#username::placeholder, #password::placeholder, #existingUsername::placeholder, #existingPassword::placeholder, 
+#hoursOfSleep::placeholder, #describeSleep::placeholder, .update-hours::placeholder, .update-feeling::placeholder,
+.update-description::placeholder {
+    color: #eef;
+    font-style: italic;
+    font-weight: lighter;
+    font-family: 'Poppins';
+}
+
 /* font size of current data after clicking on update */
 .update-hours, .update-feeling, .update-description, #hoursOfSleep {
-    font-size: 0.95em;
+    font-size: .95em;
 }
 
 /* distance beneath inputs */
-.update-hours, .update-feeling, .update-description, #hoursOfSleep, #describeSleep, #littleMore {
-    margin-bottom: 20px;
+
+#hoursOfSleep {
+    margin-top: 35px;
+}
+
+#refreshed {
+    margin-top: 10px;
+}
+
+#littleMore {
+    margin-bottom: 30px;
+}
+
+/* update inputs */
+.update-hours, .update-feeling, .update-description {
+    margin-bottom: 8px;
 }
 
 .logout-button {
     text-decoration: none;
+    color: whitesmoke;
 }
 
 header, .sleep-info, .sign-up {
     text-align: center;
 }
+
+/* for later ..  */
+/* @media all and (min-width: 480px) {
+    input { width: 360px; margin-left: auto; margin-right: auto; }
+  } */
