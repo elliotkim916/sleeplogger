@@ -236,7 +236,7 @@ function requestJWT(username, password) {
             console.error(err);
         }
     });
-    $('.logout-button').on('click', function(event) {
+    $('.nav-logout').on('click', function(event) {
         localStorage.clear();
         $('.new-sleep-entry').hide();
         $('.all-sleep-entries').hide();
