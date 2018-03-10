@@ -167,7 +167,7 @@ h1 {
 /* used to move span tag further below */
 .signup-button, .login-button {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     background-color: tan;
     font-family: 'Poppins';
     color: whitesmoke; 
@@ -203,8 +203,12 @@ h1 {
     color: whitesmoke;
 }
 
-.click-here {
+.login-here, .signup-here {
     color: whitesmoke;
+}
+
+#username, #existingUsername {
+    margin-top: 25px;
 }
 
 #username, #password, #existingUsername, #existingPassword {
