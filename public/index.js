@@ -171,6 +171,7 @@ function bindEventListeners() {
 
         postSleepLog(SLEEPLOG_ENDPOINT, hoursOfSleep, sleepFeeling, sleepLogText, getSleepLogs);
         sleepLogDescription.val('');
+        sleepHours.val('');
     });
 }
 
