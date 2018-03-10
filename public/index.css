@@ -14,39 +14,43 @@ header {
 }
 
 navigation {
-    display: inline-block;
+    display: block;
+    position: relative;
     width: 100%;
-    margin-left: 200px;
+    float: right;
     margin-bottom: 85px;
 }
 
 .nav-sign-up {
     text-decoration: none;
     color: whitesmoke;
+    float: right;
 }
 
 .nav-log-in {
     text-decoration: none;
     color: whitesmoke;
-    display: inline-block;
-    margin-left: 10px;
+    float: right;
+    margin-right: 20px;
 }
 
 h1 {
     display: inline;
+}
+/* nav bar */
+.entry-nav {
+    color: whitesmoke;
+    margin-top: -20px;
+    position: relative;
 }
 
 .nav-logout {
     text-decoration: none;
     color: whitesmoke;
     margin-bottom: 10px;
-    display: inline-block;
     margin-left: 80px;
-}
-
-.entry-nav {
-    color: whitesmoke;
-    margin-top: -20px;
+    float: right;
+    margin-top: 21px;
 }
 
 .logger {
