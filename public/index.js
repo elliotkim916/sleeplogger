@@ -43,17 +43,20 @@ function putSleepLog(path, newHours, newFeeling, newDescription, callback) {
         }    
     });
 }
+// <label class="sleep-label">How many hours of sleep did you get?</label><br>
+// <label class="sleep-label">How do you feel after waking up?</label><br>
+// <label class="sleep-label">Details you'd like to remember</label><br>
 
 function updateGenerateSleepLog(log) {
     return `
     <form class="updated-log-js" logID="${log._id}">
         <h3 class="update-date">${log.created}</h3>
-        <label class="sleep-label">How many hours of sleep did you get?</label><br>
-        <input class="update-hours" value="${log.hoursOfSleep}"><br>
-        <label class="sleep-label">How do you feel after waking up?</label><br>
-        <input class="update-feeling" value="${log.feeling}"><br>
-        <label class="sleep-label">Details you'd like to remember</label><br>
-        <input class="update-description" value="${log.description}"><br>
+        
+        <input class="update-hours" placeholder="How many hours did you sleep?" value="${log.hoursOfSleep}"><br>
+        
+        <input class="update-feeling" placeholder="How did you feel after waking up?" value="${log.feeling}"><br>
+        
+        <input class="update-description" placeholder="Additional details?" value="${log.description}"><br>
         <button class="cancel-log" role="button">Cancel</button>
         <button class="save-log" type="submit" role="button">Save</button>
     </form>
@@ -171,6 +174,18 @@ function bindEventListeners() {
     });
 }
 
+function navLogIn() {
+    $('body').on('click', '.nav-log-in', function(event) {
+        $('.create-account').hide();
+        $('.h3').hide();
+        $('header').hide();
+        $('.sleep-info').hide();
+        $('.sign-up').hide();
+        $('.sign-up-here-button').hide();
+        $('.log-in').show();
+    });
+}
+
 function logIn() {
     $('.logIn').on('submit', function(event) {
         event.preventDefault(); 
@@ -183,6 +198,7 @@ function logIn() {
 }
 
 function enterApp() {
+        $('navigation').hide();
         $('.log-in').hide();
         $('.h3').hide();
         $('.create-account').hide();
@@ -271,10 +287,25 @@ function signUp() {
         $('.sleep-info').hide();
         $('.sign-up').hide();
         $('.create-account').show();
+        $('.sign-up-here-button').hide();
+    });
+}
+
+function navSignUp() {
+    $('.create-account').hide();
+    $('body').on('click', '.nav-sign-up', function(event) {
+        $('header').hide();
+        $('.sleep-info').hide();
+        $('.sign-up').hide();
+        $('.sign-up-here-button').hide();
+        $('.log-in').hide();
+        $('.create-account').show();
     });
 }
 
 $(function() {
+    navLogIn();
+    navSignUp();
     signUp();
     logIn();
     createAccount();
