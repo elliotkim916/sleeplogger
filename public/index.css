@@ -36,6 +36,19 @@ h1 {
     display: inline;
 }
 
+.nav-logout {
+    text-decoration: none;
+    color: whitesmoke;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-left: 80px;
+}
+
+.entry-nav {
+    color: whitesmoke;
+    margin-top: -20px;
+}
+
 .logger {
     display: inline-block;
     margin-left: 20px;
