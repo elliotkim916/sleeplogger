@@ -165,6 +165,9 @@ function bindEventListeners() {
         event.preventDefault();
         const sleepHours = $(event.currentTarget).find('#hoursOfSleep');
         const hoursOfSleep = sleepHours.val();
+        if (hoursOfSleep < 6) {
+            alert('bro you need more sleep..');
+        }
         const sleepFeeling = $('input[name=feeling]:checked').val();
         const sleepLogDescription = $(event.currentTarget).find('.js-sleep-log');
         const sleepLogText = sleepLogDescription.val();
@@ -176,10 +179,10 @@ function bindEventListeners() {
 }
 
 function navLogIn() {
+    $('.createAccount').hide();
     $('body').on('click', '.nav-log-in', function(event) {
         $('navigation').hide();
         $('.create-account').hide();
-        $('.h3').hide();
         $('header').hide();
         $('.sleep-info').hide();
         $('.sign-up').hide();
@@ -189,6 +192,7 @@ function navLogIn() {
 }
 
 function logIn() {
+    $('.createAccount').hide();
     $('.logIn').on('submit', function(event) {
         event.preventDefault(); 
         const existingLogin = $(event.currentTarget).find('#existingUsername');
@@ -200,13 +204,13 @@ function logIn() {
 }
 
 function enterApp() {
-        $('navigation').hide();
-        $('.log-in').hide();
-        $('header').hide();
-        $('.create-account').hide();
-        $('.new-sleep-entry').show();
-        $('.all-sleep-entries').show();
-        $('.logout-button').show();
+    $('navigation').hide();
+    $('.log-in').hide();
+    $('header').hide();
+    $('.create-account').hide();
+    $('.new-sleep-entry').show();
+    $('.all-sleep-entries').show();
+    $('.logout-button').show();
 }
 
 function requestJWT(username, password) {
@@ -235,6 +239,7 @@ function requestJWT(username, password) {
         error: function(err) {
             console.info('Login failed!');
             console.error(err);
+            alert('Login failed..');
         }
     });
     $('.nav-logout').on('click', function(event) {
@@ -270,6 +275,7 @@ function createAccount() {
             error: function(err) {
                 console.info('There is an error');
                 console.error(err);
+                alert('Password must be at least 8 characters long..');
             }
         });
         login.val('');
@@ -288,7 +294,6 @@ function createAccount() {
 }
 
 function signUp() {
-    $('.create-account').hide();
     $('body').on('click', '.sign-up-here-button', function(event) {
         $('navigation').hide();
         $('header').hide();
@@ -300,7 +305,6 @@ function signUp() {
 }
 
 function navSignUp() {
-    $('.create-account').hide();
     $('body').on('click', '.nav-sign-up', function(event) {
         $('navigation').hide();
         $('header').hide();
