@@ -9,23 +9,34 @@
   </head>
 
   <body>
+    <navigation>
+      <a href="#" class="nav-sign-up">SIGN UP</a>
+      <a href="#" class="nav-log-in">LOG IN</a>
+    </navigation>
+
     <header>
       <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
       <h3 class="h3">Keep track of how much you sleep because your rest is vital</h3>
       <a href="#" class="logout-button">LOGOUT</a>
     </header>
-    
+
+    <button class="sign-up-here-button">SIGN UP HERE</button>
     <section class="sleep-info">
+      <img src="img/pulse.png" alt="health logo" class="health-img"> 
       <p>Sleep is an important indicator of overall health and well-being.  We spend up to one-third
          of our lives asleep, and the overall state of our "sleep-health" remains an essential question
          throughout our lifespan.</p>
+    </section>
+
+    <section class="sleep-info">
+      <img src="img/alarm-clock.png" alt="alarm clock logo" class="health-img">
       <p>Sleep needs are individual and change as you age.  Newborns need a total of 14-17 hours a day.  Infants
         need a total of 12-15 hours a day, and school age children need 9-11 hours a day.  Teenagers need 
         8-10 hours a day, and young adults and above need 7-9 hours per day.</p>
     </section>
 
     <section class="sign-up">
-      <button class="sign-up-here-button">SIGN UP HERE</button>
+      <img src="img/diary.png" alt="diary logo" class="health-img">
       <p>Based on your age, are you getting enough sleep?  This app is a simple and effective tool for keeping
         track of how many hours you slept, noting how you felt when you woke up, and saving any other details you'd 
         like to add about your rest. 
@@ -33,39 +44,35 @@
     </section>
 
     <section class="create-account">
-      <fieldset>
-      <h2>Create an account</h2>
       <form class="createAccount">
-        <label for="username">Username </label>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Password </label>
-        <input type="password" id="password" name="password" required><br>
+        <h2 class="create-acct-header">Create an account</h2>
+        <!-- <label for="username">Username </label> -->
+        <input type="text" id="username" name="username" placeholder="Enter username" required><br>
+        <!-- <label for="password">Password </label> -->
+        <input type="password" id="password" name="password" placeholder="Enter password" required><br>
         <button type="submit" class="signup-button">Sign Up</button><br>
         <span class="login-now">Already have an account? <a href="#" class="click-here">Click Here</a></span>
       </form>
-      </fieldset>
     </section>
 
     <section class="log-in">
-      <fieldset>
       <h2>Log in</h2>
       <form class="logIn">
-          <label for="existingUsername">Username </label>
-          <input type="text" id="existingUsername" name="username" required><br>
-          <label for="existingPassword">Password </label>
-          <input type="password" id="existingPassword" name="password" required><br>
+          <!-- <label for="existingUsername">Username </label> -->
+          <input type="text" id="existingUsername" name="username" placeholder="Enter username" required><br>
+          <!-- <label for="existingPassword">Password </label> -->
+          <input type="password" id="existingPassword" name="password" placeholder="Enter password" required><br>
           <button type="submit" class="login-button">Log In</button>
       </form>
-      </fieldset>
     </section>
 
     <section class="new-sleep-entry">
-      <form>
+      <form class="new-entry">
       <h2>New Sleep Entry</h2>
       <div class="new-log-entry">
-        <h3>Describe your sleep</h3>
-        <label for="hoursOfSleep">How many hours of sleep did you get?</label>
-        <input type="text" id="hoursOfSleep" name="hoursOfSleep" placeholder="12"><br>
+        <!-- <h3>Describe your sleep</h3> -->
+        <!-- <label for="hoursOfSleep">How many hours of sleep did you get?</label> -->
+        <input type="text" id="hoursOfSleep" name="hoursOfSleep" placeholder="Enter # of hours slept"><br>
 
         <span>How do you feel after waking up?</span><br>
         <input type="radio" id="refreshed" name="feeling" value="Refreshed & well-rested">
@@ -77,16 +84,17 @@
         <input type="radio" id="littleMore" name="feeling" value="Could use a little more sleep">
         <label for="littleMore">Could use a little more sleep</label><br>
         
-        <label for="describeSleep" class="sleep-label">Details you'd like to remember</label><br>
-        <input type="text" id="describeSleep" class="js-sleep-log" placeholder="I fell asleep pretty quickly..">
+        <!-- <label for="describeSleep" class="sleep-label">Details you'd like to remember</label><br> -->
+        <input type="text" id="describeSleep" class="js-sleep-log" placeholder="Enter additional details">
         <button type="submit" role="button" class="submit-log">Submit</button>
       </div>
       </form>
     </section>
       
     <section class="all-sleep-entries">
-      <h2>Previous Sleep Entries</h2>
-      <div id="sleepLogs" class="sleep-logs-list"></div>
+      <h2 class="previous-entries-header">Previous Sleep Entries</h2>
+      <div id="sleepLogs" class="sleep-logs-list">
+      </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery.min.js"></script>
