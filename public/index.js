@@ -150,7 +150,7 @@ function renderSleepLog(data) {
 function generateSleepLog(log) {
     return `
     <div class="log-container" logID="${log._id}">
-        <h3 class="date">${moment(log.created).format('LLLL').slice(0, -7)}</h3>
+        <h3 class="date">${moment(log.created).format('LLLL').slice(0, -8)}</h3>
         <p class="hours">${log.hoursOfSleep} Hours</p>
         <p class="feeling">${log.feeling}</p>
         <p class="description">${log.description}</p>
