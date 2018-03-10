@@ -184,6 +184,11 @@ h1 {
     font-size: 1em;
 }
 
+.submit-log:hover, .update-log:hover, .delete-log:hover,
+.sign-up-here-button:hover, .signup-button:hover, .login-button:hover {
+    cursor: pointer;
+}
+
 .log-in, .createAccount {
     background-color: darkslateblue;
     margin: 0px;
@@ -229,18 +234,31 @@ h1 {
     outline: none;
 }
 
-#username::placeholder, #password::placeholder, #existingUsername::placeholder, #existingPassword::placeholder, 
-#hoursOfSleep::placeholder, #describeSleep::placeholder, .update-hours::placeholder, .update-feeling::placeholder,
-.update-description::placeholder {
+#username::placeholder, #password::placeholder, #existingUsername::placeholder, #existingPassword::placeholder {
     color: #eef;
     font-style: italic;
     font-weight: lighter;
     font-family: 'Poppins';
 }
 
+#hoursOfSleep::placeholder, #describeSleep::placeholder, .update-hours,
+.update-feeling, .update-description {
+    font-family: 'Antic slab';
+    font-style: italic;
+    font-size: 1.06em;
+    color: whitesmoke;
+}
+
+.update-hours::placeholder, .update-feeling::placeholder,
+.update-description::placeholder {
+    font-family: 'Poppins';
+    font-size: 1.06em;
+    color: whitesmoke;
+}
+
 /* font size of current data after clicking on update */
 .update-hours, .update-feeling, .update-description, #hoursOfSleep {
-    font-size: .95em;
+    font-size: 1.06em;
 }
 
 /* distance beneath inputs */
@@ -269,6 +287,11 @@ h1 {
 
 header, .sleep-info, .sign-up {
     text-align: center;
+}
+
+label, .hours, .feeling, .description {
+    font-family: 'Antic slab';
+    font-size: 1.06em;
 }
 
 /* for later ..  */
