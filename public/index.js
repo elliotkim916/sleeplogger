@@ -182,7 +182,7 @@ function navLogIn() {
     $('.createAccount').hide();
     $('body').on('click', '.nav-log-in', function(event) {
         $('navigation').hide();
-        $('.create-account').hide();
+        $('.createAccount').hide();
         $('header').hide();
         $('.sleep-info').hide();
         $('.sign-up').hide();
@@ -203,14 +203,22 @@ function logIn() {
     });
 }
 
+function logOut() {
+    $('.nav-logout').on('click', function(event) {
+        localStorage.clear();
+        $('.new-sleep-entry').hide();
+        $('.all-sleep-entries').hide();
+        $('.log-in').show();
+    });
+}
+
 function enterApp() {
     $('navigation').hide();
     $('.log-in').hide();
     $('header').hide();
-    $('.create-account').hide();
+    $('.createAccount').hide();
     $('.new-sleep-entry').show();
     $('.all-sleep-entries').show();
-    $('.logout-button').show();
 }
 
 function requestJWT(username, password) {
@@ -242,20 +250,12 @@ function requestJWT(username, password) {
             alert('Login failed..');
         }
     });
-    $('.nav-logout').on('click', function(event) {
-        localStorage.clear();
-        $('.new-sleep-entry').hide();
-        $('.all-sleep-entries').hide();
-        $('.logout-button').hide();
-        $('.log-in').show();
-    });
 }
 
 function createAccount() {
     $('.new-sleep-entry').hide();
     $('.all-sleep-entries').hide();
     $('.log-in').hide();
-    $('.logout-button').hide();
     $('.createAccount').on('submit', function(event) {
         event.preventDefault();
         const login = $(event.currentTarget).find('#username');
@@ -282,14 +282,15 @@ function createAccount() {
         createPassword.val(''); 
     });
     $('.createAccount').on('click', '.login-here', function(event) {
-        $('navigation').hide();
-        $('.create-account').hide();
+        // $('navigation').hide();
+        $('.createAccount').hide();
         $('.log-in').show();
     });
     $('.log-in').on('click', '.signup-here', function(event) {
-        $('.create-account').show();
-        $('navigation').hide();
+        // $('navigation').hide();
         $('.log-in').hide();
+        $('.createAccount').show();
+        console.log('clicked');
     })
 }
 
@@ -321,6 +322,7 @@ $(function() {
     navLogIn();
     navSignUp();
     signUp();
+    logOut();
     logIn();
     createAccount();
     updateEventListener();
