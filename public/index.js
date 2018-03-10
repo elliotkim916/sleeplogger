@@ -287,8 +287,8 @@ function createAccount() {
         $('.log-in').show();
     });
     $('.log-in').on('click', '.signup-here', function(event) {
-        $('navigation').hide();
         $('.create-account').show();
+        $('navigation').hide();
         $('.log-in').hide();
     })
 }
@@ -300,19 +300,20 @@ function signUp() {
         $('.sleep-info').hide();
         $('.sign-up').hide();
         $('.sign-up-here-button').hide();
-        $('.create-account').show();
+        $('.createAccount').show();
     });
 }
 
 function navSignUp() {
     $('body').on('click', '.nav-sign-up', function(event) {
+        console.log('clicked');
         $('navigation').hide();
         $('header').hide();
         $('.sleep-info').hide();
         $('.sign-up').hide();
         $('.sign-up-here-button').hide();
         $('.log-in').hide();
-        $('.create-account').show();
+        $('.createAccount').show();
     });
 }
 
