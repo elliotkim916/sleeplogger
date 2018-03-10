@@ -176,6 +176,7 @@ function bindEventListeners() {
 
 function navLogIn() {
     $('body').on('click', '.nav-log-in', function(event) {
+        $('navigation').hide();
         $('.create-account').hide();
         $('.h3').hide();
         $('header').hide();
@@ -200,9 +201,8 @@ function logIn() {
 function enterApp() {
         $('navigation').hide();
         $('.log-in').hide();
-        $('.h3').hide();
+        $('header').hide();
         $('.create-account').hide();
-        $('header').show();
         $('.new-sleep-entry').show();
         $('.all-sleep-entries').show();
         $('.logout-button').show();
@@ -274,26 +274,34 @@ function createAccount() {
         login.val('');
         createPassword.val(''); 
     });
-    $('.createAccount').on('click', '.click-here', function(event) {
+    $('.createAccount').on('click', '.login-here', function(event) {
+        $('navigation').hide();
         $('.create-account').hide();
         $('.log-in').show();
     });
+    $('.log-in').on('click', '.signup-here', function(event) {
+        $('navigation').hide();
+        $('.create-account').show();
+        $('.log-in').hide();
+    })
 }
 
 function signUp() {
     $('.create-account').hide();
     $('body').on('click', '.sign-up-here-button', function(event) {
+        $('navigation').hide();
         $('header').hide();
         $('.sleep-info').hide();
         $('.sign-up').hide();
-        $('.create-account').show();
         $('.sign-up-here-button').hide();
+        $('.create-account').show();
     });
 }
 
 function navSignUp() {
     $('.create-account').hide();
     $('body').on('click', '.nav-sign-up', function(event) {
+        $('navigation').hide();
         $('header').hide();
         $('.sleep-info').hide();
         $('.sign-up').hide();
