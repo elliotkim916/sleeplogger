@@ -3,7 +3,7 @@
 const SLEEPLOG_ENDPOINT = '/api/logs';
 
 const STORE = [];
-console.log(STORE);
+
 // gets current state of database & renders onto the DOM
 function getSleepLogs() {
     $.get(SLEEPLOG_ENDPOINT, renderSleepLog);
@@ -84,7 +84,7 @@ function updateEventListener() {
             _id: currentID
         }
         const currentInput = toUpdateLogInput.html(updateGenerateSleepLog(currentLogObj));
-        $('.log-container').append(currentInput);
+        // $('.log-container').append(currentInput);
 
         // push to my local STORE
         STORE.push(currentLogObj);
@@ -100,7 +100,6 @@ function updateEventListener() {
             }
         });
         const cancelledInput = cancelLog.html(generateSleepLog(targetObj));
-    //  getSleepLogs();
     });
     
     // clicking on the save button if updating 
@@ -121,18 +120,17 @@ function updateEventListener() {
             _id: sameID
         }
 
+        // push to my local STORE
         STORE.push(newLogObj);
-        console.log(STORE);
-        const thisID = editedLogInput.attr('logID');
-        const newObj = STORE.find(function(object) {
-            if (object._id === thisID) {
+        const updatedObj = STORE.find(function(object) {
+            if (object.hoursOfSleep === editedHours && object.feeling === editedFeeling && object.description === editedDescription) {
                 return object;
             }
         });
         
         // we are using the html method to SET the html contents of each element in the set of matched elements
-        const newInput = editedLogInput.html(generateSleepLog(newLogObj));
-        putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedHours, editedFeeling, editedDescription, getSleepLogs);
+        const newInput = editedLogInput.html(generateSleepLog(updatedObj));
+        putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedHours, editedFeeling, editedDescription, newInput);
         });   
     });
 }
@@ -196,6 +194,10 @@ function bindEventListeners() {
         postSleepLog(SLEEPLOG_ENDPOINT, hoursOfSleep, sleepFeeling, sleepLogText, getSleepLogs);
         sleepLogDescription.val('');
         sleepHours.val('');
+        $('#refreshed').prop('checked', false);
+        $('#tired').prop('checked', false);
+        $('#average').prop('checked', false);
+        $('#littleMore').prop('checked', false);
     });
 }
 
@@ -303,15 +305,12 @@ function createAccount() {
         createPassword.val(''); 
     });
     $('.createAccount').on('click', '.login-here', function(event) {
-        // $('navigation').hide();
         $('.createAccount').hide();
         $('.log-in').show();
     });
     $('.log-in').on('click', '.signup-here', function(event) {
-        // $('navigation').hide();
         $('.log-in').hide();
         $('.createAccount').show();
-        console.log('clicked');
     })
 }
 
@@ -328,7 +327,6 @@ function signUp() {
 
 function navSignUp() {
     $('body').on('click', '.nav-sign-up', function(event) {
-        console.log('clicked');
         $('navigation').hide();
         $('header').hide();
         $('.sleep-info').hide();
