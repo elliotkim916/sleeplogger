@@ -2,6 +2,8 @@
 
 const SLEEPLOG_ENDPOINT = '/api/logs';
 
+const STORE = [];
+console.log(STORE);
 // gets current state of database & renders onto the DOM
 function getSleepLogs() {
     $.get(SLEEPLOG_ENDPOINT, renderSleepLog);
@@ -63,6 +65,7 @@ function updateGenerateSleepLog(log) {
     `;
 }
 
+
 function updateEventListener() {
     // clicking on the update button
     $('.sleep-logs-list').on('click', '.update-log', function(event) {
@@ -80,14 +83,24 @@ function updateEventListener() {
             created: currentDate,
             _id: currentID
         }
-        
         const currentInput = toUpdateLogInput.html(updateGenerateSleepLog(currentLogObj));
         $('.log-container').append(currentInput);
-    
+
+        // push to my local STORE
+        STORE.push(currentLogObj);
+        
     // clicking on the cancel button if updating
     $('.sleep-logs-list').on('click', '.cancel-log', function(event) {
-       event.preventDefault();
-       getSleepLogs();
+        event.preventDefault();
+        const cancelLog = $(event.currentTarget).closest('.updated-log-js');
+        const containerID = cancelLog.attr('logID');
+        const targetObj = STORE.find(function(object) {
+            if (object._id === containerID) {
+                return object;
+            }
+        });
+        const cancelledInput = cancelLog.html(generateSleepLog(targetObj));
+    //  getSleepLogs();
     });
     
     // clicking on the save button if updating 
@@ -108,6 +121,15 @@ function updateEventListener() {
             _id: sameID
         }
 
+        // STORE.push(newLogObj);
+        // console.log(STORE);
+        // const thisID = editedLogInput.attr('logID');
+        // const newObj = STORE.find(function(object) {
+        //     if (object._id === thisID) {
+        //         return object;
+        //     }
+        // });
+        
         // we are using the html method to SET the html contents of each element in the set of matched elements
         const newInput = editedLogInput.html(generateSleepLog(newLogObj));
         putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedHours, editedFeeling, editedDescription, getSleepLogs);
@@ -132,7 +154,6 @@ function deleteEventListener() {
     $('.sleep-logs-list').on('click', '.delete-log', function(event) {
         const deleteLogInput = $(event.currentTarget).closest('.log-container');
         const deleteLogText = deleteLogInput.val();
-
         const logID = deleteLogInput.attr('logID');
         deleteSleepLog(SLEEPLOG_ENDPOINT + '/' + logID, getSleepLogs);
     });
