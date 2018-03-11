@@ -59,8 +59,8 @@ function updateGenerateSleepLog(log) {
         <input class="update-feeling" placeholder="How did you feel after waking up?" value="${log.feeling}"><br>
         
         <input class="update-description" placeholder="Additional details?" value="${log.description}"><br>
-        <button class="cancel-log" role="button">Cancel</button>
         <button class="save-log" type="submit" role="button">Save</button>
+        <button class="cancel-log" role="button">Cancel</button>
     </form>
     `;
 }
@@ -121,14 +121,14 @@ function updateEventListener() {
             _id: sameID
         }
 
-        // STORE.push(newLogObj);
-        // console.log(STORE);
-        // const thisID = editedLogInput.attr('logID');
-        // const newObj = STORE.find(function(object) {
-        //     if (object._id === thisID) {
-        //         return object;
-        //     }
-        // });
+        STORE.push(newLogObj);
+        console.log(STORE);
+        const thisID = editedLogInput.attr('logID');
+        const newObj = STORE.find(function(object) {
+            if (object._id === thisID) {
+                return object;
+            }
+        });
         
         // we are using the html method to SET the html contents of each element in the set of matched elements
         const newInput = editedLogInput.html(generateSleepLog(newLogObj));
