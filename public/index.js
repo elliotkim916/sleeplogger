@@ -71,7 +71,7 @@ function updateEventListener() {
     $('.sleep-logs-list').on('click', '.update-log', function(event) {
         const toUpdateLogInput = $(event.currentTarget).closest('.log-container');
         const currentDate = toUpdateLogInput.find('.date').text();
-        const currentHours = toUpdateLogInput.find('.hours').text();
+        const currentHours = toUpdateLogInput.find('.hours').text().replace(' Hours', '').replace(' hours', '');
         const currentFeeling = toUpdateLogInput.find('.feeling').text();
         const currentDescription = toUpdateLogInput.find('.description').text();
         const currentID = toUpdateLogInput.attr('logID');
@@ -106,7 +106,7 @@ function updateEventListener() {
     $('.updated-log-js').on('click', '.save-log', function(event) {
         event.preventDefault();
         const editedLogInput = $(event.currentTarget).closest('.updated-log-js');
-        const editedHours = editedLogInput.find('.update-hours').val();
+        const editedHours = editedLogInput.find('.update-hours').val().replace(' Hours', '').replace(' hours', '');
         const editedFeeling = editedLogInput.find('.update-feeling').val();
         const editedDescription = editedLogInput.find('.update-description').val();
         const sameDate = editedLogInput.find('.update-date').text();
