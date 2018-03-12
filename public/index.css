@@ -80,10 +80,16 @@ h1 {
 }
 
 .new-entry {
-    background-color: darkslateblue;
+    background-color: #226;
     margin: 0px auto;
-    padding: 30px;
     color: whitesmoke;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    margin-top: 40px;
 }
 
 #hoursOfSleep, #describeSleep {
@@ -92,7 +98,7 @@ h1 {
     margin-bottom: 35px;
     padding-bottom: 3px;
     border-style: none;  
-    background-color: darkslateblue;
+    background-color: #226;
     border-bottom: 1px solid whitesmoke;
     font-size: 17px;
     font-family: 'Poppins';
@@ -101,14 +107,13 @@ h1 {
 
 .sleep-logs-list {
     margin: 0px auto;
-    padding: 30px;
     color: whitesmoke;
 }
 
 .previous-entries-header {
     color: whitesmoke;
-    margin-left: 30px;
     margin-top: 35px;
+    margin-bottom: 70px;
 }
 
 .log-container {
@@ -183,7 +188,7 @@ h1 {
 
 /* delete button */
 .delete-log {
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 /* used to move span tag further below */
@@ -320,6 +325,10 @@ label, .hours, .feeling, .description {
 
 label {
     margin-left: 15px;
+}
+
+.all-sleep-entries {
+    margin-top: 550px;
 }
 /* for later ..  */
 /* @media all and (min-width: 480px) {
