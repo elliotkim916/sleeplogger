@@ -3,7 +3,7 @@
 const SLEEPLOG_ENDPOINT = '/api/logs';
 
 const STORE = [];
-
+console.log(STORE);
 // gets current state of database & renders onto the DOM
 function getSleepLogs() {
     $.get(SLEEPLOG_ENDPOINT, renderSleepLog);
@@ -85,9 +85,10 @@ function updateEventListener() {
         }
         const currentInput = toUpdateLogInput.html(updateGenerateSleepLog(currentLogObj));
         // $('.log-container').append(currentInput);
-
+        STORE.isEditing === 'true';
+        console.log(STORE);
         // push to my local STORE
-        STORE.push(currentLogObj);
+        // STORE.push(currentLogObj);
         
     // clicking on the cancel button if updating
     $('.sleep-logs-list').on('click', '.cancel-log', function(event) {
@@ -106,7 +107,7 @@ function updateEventListener() {
     $('.updated-log-js').on('click', '.save-log', function(event) {
         event.preventDefault();
         const editedLogInput = $(event.currentTarget).closest('.updated-log-js');
-        const editedHours = editedLogInput.find('.update-hours').val().replace(' Hours', '').replace(' hours', '');
+        const editedHours = editedLogInput.find('.update-hours').val();
         const editedFeeling = editedLogInput.find('.update-feeling').val();
         const editedDescription = editedLogInput.find('.update-description').val();
         const sameDate = editedLogInput.find('.update-date').text();
@@ -121,7 +122,7 @@ function updateEventListener() {
         }
 
         // push to my local STORE
-        STORE.push(newLogObj);
+        // STORE.push(newLogObj);
         const updatedObj = STORE.find(function(object) {
             if (object.hoursOfSleep === editedHours && object.feeling === editedFeeling && object.description === editedDescription) {
                 return object;
@@ -179,19 +180,27 @@ function generateSleepLog(log) {
     `;
 }
 
-function bindEventListeners() {
-    $('form').on('submit', function(event) {
+function submitSleepLog() {
+    $('.new-entry').on('submit', function(event) {
         event.preventDefault();
         const sleepHours = $(event.currentTarget).find('#hoursOfSleep');
-        const hoursOfSleep = sleepHours.val();
-        if (hoursOfSleep < 6) {
-            alert('bro you need more sleep..');
-        }
+        const totalHoursSlept = sleepHours.val();
         const sleepFeeling = $('input[name=feeling]:checked').val();
         const sleepLogDescription = $(event.currentTarget).find('.js-sleep-log');
         const sleepLogText = sleepLogDescription.val();
 
-        postSleepLog(SLEEPLOG_ENDPOINT, hoursOfSleep, sleepFeeling, sleepLogText, getSleepLogs);
+        const submitLog = {
+            hoursOfSleep: totalHoursSlept,
+            feeling: sleepFeeling,
+            description: sleepLogText,
+            isEditing: false
+        }
+
+        // push submitLog object into my local STORE 
+        STORE.push(submitLog);
+        
+        const renderSTORE = renderSleepLog(STORE);
+        postSleepLog(SLEEPLOG_ENDPOINT, totalHoursSlept, sleepFeeling, sleepLogText, renderSTORE);
         sleepLogDescription.val('');
         sleepHours.val('');
         $('#refreshed').prop('checked', false);
@@ -346,6 +355,6 @@ $(function() {
     createAccount();
     updateEventListener();
     deleteEventListener();
-    bindEventListeners();
+    submitSleepLog();
     getSleepLogs();
 });
