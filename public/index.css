@@ -95,7 +95,7 @@ h1 {
     background-color: darkslateblue;
     border-bottom: 1px solid whitesmoke;
     font-size: 17px;
-    font-family: 'Antic slab';
+    font-family: 'Poppins';
     color: whitesmoke;
 }
 
@@ -152,9 +152,14 @@ h1 {
     height: 35px;
     border-radius: 5px;
     font-size: 1em;
-    background-color: tan;
+    background-color: #9BDE82;
     color: whitesmoke;
     font-family: poppins;
+}
+
+.delete-log, .cancel-log {
+    background-color: lightslategray;
+    border-color: lightslategray;
 }
 
 .sign-up-here-button {
@@ -167,7 +172,7 @@ h1 {
     border-radius: 5px;
     font-size: 1em;
     font-family: 'Poppins';
-    background-color: tan;
+    background-color: #9BDE82;
     color: whitesmoke;
 }
 
@@ -185,7 +190,7 @@ h1 {
 .signup-button, .login-button {
     width: 100%;
     margin-bottom: 25px;
-    background-color: tan;
+    background-color: #9BDE82;
     font-family: 'Poppins';
     color: whitesmoke; 
 }
@@ -193,7 +198,7 @@ h1 {
 .submit-log {
     width: 100%;
     margin-bottom: 10px;
-    background-color: tan;
+    background-color: #9BDE82;
     font-family: 'Poppins';
     color: whitesmoke; 
     height: 35px;
@@ -259,7 +264,7 @@ h1 {
 }
 
 #hoursOfSleep::placeholder, #describeSleep::placeholder {
-    font-family: 'Antic slab';
+    font-family: 'Poppins';
     font-style: italic;
     font-size: 1.06em;
     color: whitesmoke;
@@ -309,10 +314,13 @@ header, .sleep-info, .sign-up {
 }
 
 label, .hours, .feeling, .description {
-    font-family: 'Antic slab';
+    font-family: 'Poppins';
     font-size: 1.06em;
 }
 
+label {
+    margin-left: 15px;
+}
 /* for later ..  */
 /* @media all and (min-width: 480px) {
     input { width: 360px; margin-left: auto; margin-right: auto; }
