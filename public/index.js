@@ -5,8 +5,23 @@ const SLEEPLOG_ENDPOINT = '/api/logs';
 const STORE = [];
 console.log(STORE);
 // gets current state of database & renders onto the DOM
+
+// when make get request, put that data in the STORE as well
+// in callback, add those elements in my STORE
 function getSleepLogs() {
-    $.get(SLEEPLOG_ENDPOINT, renderSleepLog);
+    $.get(SLEEPLOG_ENDPOINT, function(data) {
+        for (let i=0; i<=data.length; i++) {
+        const getData = {
+            hoursOfSleep: data[i].hoursOfSleep,
+            feeling: data[i].feeling,
+            description: data[i].description,
+            isEditing: false
+            }  
+           STORE.push(getData);
+           renderSleepLog(STORE);
+        }
+      
+    });
 }
 
 function postSleepLog(path, hoursSlept, sleepFeel, sleepLogText, callback) {
@@ -85,16 +100,15 @@ function updateEventListener() {
         }
         const currentInput = toUpdateLogInput.html(updateGenerateSleepLog(currentLogObj));
         // $('.log-container').append(currentInput);
-        STORE.isEditing === 'true';
+        
+        STORE.isEditing = !STORE.isEditing;
         console.log(STORE);
-        // push to my local STORE
-        // STORE.push(currentLogObj);
         
     // clicking on the cancel button if updating
     $('.sleep-logs-list').on('click', '.cancel-log', function(event) {
         event.preventDefault();
         const cancelLog = $(event.currentTarget).closest('.updated-log-js');
-        const containerID = cancelLog.attr('logID');
+        // const containerID = cancelLog.attr('logID');
         const targetObj = STORE.find(function(object) {
             if (object._id === containerID) {
                 return object;
@@ -201,6 +215,7 @@ function submitSleepLog() {
         
         const renderSTORE = renderSleepLog(STORE);
         postSleepLog(SLEEPLOG_ENDPOINT, totalHoursSlept, sleepFeeling, sleepLogText, renderSTORE);
+        
         sleepLogDescription.val('');
         sleepHours.val('');
         $('#refreshed').prop('checked', false);
