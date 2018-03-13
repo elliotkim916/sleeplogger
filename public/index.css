@@ -165,6 +165,10 @@ span {
     font-style: normal;
 }
 
+.update-hours {
+    margin-top: 20px;
+}
+
 .description, #hoursOfSleep {
     margin-top: 8px;
     margin-bottom: 10px;
@@ -211,7 +215,7 @@ span {
 
 /* cancel button */
 .cancel-log {
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 /* delete button */
