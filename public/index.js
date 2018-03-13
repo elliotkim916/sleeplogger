@@ -15,12 +15,12 @@ function getSleepLogs() {
             hoursOfSleep: data[i].hoursOfSleep,
             feeling: data[i].feeling,
             description: data[i].description,
+            _id: data[i]._id,
             isEditing: false
             }  
            STORE.push(getData);
            renderSleepLog(STORE);
         }
-      
     });
 }
 
@@ -90,7 +90,7 @@ function updateEventListener() {
         const currentFeeling = toUpdateLogInput.find('.feeling').text();
         const currentDescription = toUpdateLogInput.find('.description').text();
         const currentID = toUpdateLogInput.attr('logID');
-
+        
         const currentLogObj = {
             hoursOfSleep: currentHours,
             feeling: currentFeeling,
@@ -101,14 +101,14 @@ function updateEventListener() {
         const currentInput = toUpdateLogInput.html(updateGenerateSleepLog(currentLogObj));
         // $('.log-container').append(currentInput);
         
-        STORE.isEditing = !STORE.isEditing;
-        console.log(STORE);
+        // STORE.isEditing = !STORE.isEditing;
+        // console.log(STORE);
         
     // clicking on the cancel button if updating
     $('.sleep-logs-list').on('click', '.cancel-log', function(event) {
         event.preventDefault();
         const cancelLog = $(event.currentTarget).closest('.updated-log-js');
-        // const containerID = cancelLog.attr('logID');
+        const containerID = cancelLog.attr('logID');
         const targetObj = STORE.find(function(object) {
             if (object._id === containerID) {
                 return object;
@@ -126,7 +126,7 @@ function updateEventListener() {
         const editedDescription = editedLogInput.find('.update-description').val();
         const sameDate = editedLogInput.find('.update-date').text();
         const sameID = editedLogInput.attr('logID');
-        
+       
         const newLogObj = {
             hoursOfSleep: editedHours,
             feeling: editedFeeling,
@@ -135,17 +135,15 @@ function updateEventListener() {
             _id: sameID
         }
 
-        // push to my local STORE
-        // STORE.push(newLogObj);
         const updatedObj = STORE.find(function(object) {
-            if (object.hoursOfSleep === editedHours && object.feeling === editedFeeling && object.description === editedDescription) {
-                return object;
+            if (object._id === newLogObj._id && object.hoursOfSleep !== editedHours || object.feeling !== editedFeeling || object.description !== editedDescription) {
+                renderSleepLog(newLogObj);
             }
         });
         
         // we are using the html method to SET the html contents of each element in the set of matched elements
-        const newInput = editedLogInput.html(generateSleepLog(updatedObj));
-        putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedHours, editedFeeling, editedDescription, newInput);
+        // const newInput = editedLogInput.html(editedLog);
+        putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedHours, editedFeeling, editedDescription, updatedObj);
         });   
     });
 }
@@ -168,7 +166,16 @@ function deleteEventListener() {
         const deleteLogInput = $(event.currentTarget).closest('.log-container');
         const deleteLogText = deleteLogInput.val();
         const logID = deleteLogInput.attr('logID');
-        deleteSleepLog(SLEEPLOG_ENDPOINT + '/' + logID, getSleepLogs);
+        console.log(logID);
+        const targetObj = STORE.find(function(object) {
+            console.log(object._id);
+            if (object._id === logID) {
+                return object;
+            }
+        });
+        const indexOfTargetObj = STORE.indexOf(targetObj);
+        const newSTORE = STORE.splice(indexOfTargetObj, 1);
+        deleteSleepLog(SLEEPLOG_ENDPOINT + '/' + logID, renderSleepLog(STORE));
     });
 }
 
