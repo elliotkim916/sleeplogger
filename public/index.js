@@ -217,11 +217,10 @@ function submitSleepLog() {
             isEditing: false
         }
 
-        // push submitLog object into my local STORE 
-        STORE.push(submitLog);
-        
-        const renderSTORE = renderSleepLog(STORE);
-        postSleepLog(SLEEPLOG_ENDPOINT, totalHoursSlept, sleepFeeling, sleepLogText, renderSTORE);
+        postSleepLog(SLEEPLOG_ENDPOINT, totalHoursSlept, sleepFeeling, sleepLogText, function(data) {
+            STORE.push(data);
+            renderSleepLog(STORE);
+        });
         
         sleepLogDescription.val('');
         sleepHours.val('');
