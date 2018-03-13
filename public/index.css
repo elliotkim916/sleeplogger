@@ -1,5 +1,8 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
 }
 
 body {
@@ -25,6 +28,7 @@ navigation {
     text-decoration: none;
     color: whitesmoke;
     float: right;
+    font-weight: bold;
 }
 
 .nav-log-in {
@@ -32,25 +36,40 @@ navigation {
     color: whitesmoke;
     float: right;
     margin-right: 20px;
+    font-weight: bold;
 }
 
 h1 {
     display: inline;
+    font-size: 35px;
 }
+
+.h3 {
+    margin-top: 35px;
+}
+
+.homepage-sleep-info {
+    background-color: #226;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 /* nav bar */
 .entry-nav {
     color: whitesmoke;
-    margin-top: -20px;
+    margin-top: 0px;
     position: relative;
 }
 
 .nav-logout {
     text-decoration: none;
     color: whitesmoke;
-    margin-bottom: 10px;
-    margin-left: 80px;
+    /* margin-bottom: 10px; */
+    /* margin-left: 80px; */
     float: right;
-    margin-top: 21px;
+    /* margin-top: 21px; */
 }
 
 .logger {
@@ -58,14 +77,11 @@ h1 {
     margin-left: 20px;
 }
 
-.sleep-info, .sign-up {
+.sleep-info {
     font-family: 'Antic Slab';
     font-size: 1em;
     color: whitesmoke;
     margin-top: 100px;
-}
-
-.sleep-info {
     margin-bottom: 100px;
 }
 
@@ -175,7 +191,8 @@ h1 {
     width: 165px;
     height: 40px;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1.1em;
+    font-weight: bold;
     font-family: 'Poppins';
     background-color: #9BDE82;
     color: whitesmoke;
@@ -219,7 +236,6 @@ h1 {
 .log-in, .createAccount {
     background-color: darkslateblue;
     margin: 0px;
-    padding: 50px;
     color: whitesmoke;
     margin-top: 100px;
 }
@@ -233,6 +249,11 @@ h1 {
 
 .create-acct-header {
     color: whitesmoke;
+}
+
+.create-account {
+    margin: 0px auto;
+
 }
 
 .login-here, .signup-here {
@@ -330,7 +351,113 @@ label {
 .all-sleep-entries {
     margin-top: 550px;
 }
-/* for later ..  */
-/* @media all and (min-width: 480px) {
-    input { width: 360px; margin-left: auto; margin-right: auto; }
-  } */
+
+.logIn {
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 13px;
+}
+
+.log-in-header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.createAccount {
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 13px;
+}
+
+.create-acct-header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* media queries */
+@media all and (min-width: 400px) {
+    .logIn {
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    .createAccount {
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+   .sleep-info {
+       font-size: 1.1em;
+       padding-left: 40px;
+       padding-right: 40px;
+   }
+}
+
+  @media all and (min-width: 1080px) {
+      .sleep-info {
+          display: inline-block;
+          width: 256px;
+          margin-left: 40px;
+          margin-right: 40px;
+          font-size: 1.1em;
+          padding-left: 0px;
+          padding-right: 0px;
+      }
+
+      .homepage-sleep-info {
+          text-align: center;
+          margin-top: 80px;
+      }
+
+      .heart {
+        position: relative;
+        bottom: 32px;
+      }
+
+      .heart-text {
+          position: relative;
+          bottom: 25px;
+      }
+
+      .clock {
+          position: relative;
+      }
+
+      .clock-text {
+          position: relative;
+          top: 17px;
+      }
+
+      .journal {
+          position: relative;
+          bottom: 13px;
+      }
+
+      .journal-text {
+          position: relative;
+          bottom: 5px;
+      }
+  }
+
+  @media all and (min-width: 1500px) {
+      .sleep-info {
+        width: 400px;
+      }
+
+      .heart {
+        position: relative;
+        bottom: 15px;
+      }
+
+      .heart-text {
+        position: relative;
+        top: -5px;
+      }
+  }
