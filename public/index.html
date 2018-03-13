@@ -20,29 +20,32 @@
     </header>
 
     <button class="sign-up-here-button">SIGN UP HERE</button>
-    <section class="sleep-info">
-      <img src="img/pulse.png" alt="health logo" class="health-img"> 
-      <p>Sleep is an important indicator of overall health and well-being.  We spend up to one-third
-         of our lives asleep, and the overall state of our "sleep-health" remains an essential question
-         throughout our lifespan.</p>
-    </section>
 
-    <section class="sleep-info">
-      <img src="img/alarm-clock.png" alt="alarm clock logo" class="health-img">
-      <p>Sleep needs are individual and change as you age.  Newborns need a total of 14-17 hours a day.  Infants
-        need a total of 12-15 hours a day, and school age children need 9-11 hours a day.  Teenagers need 
-        8-10 hours a day, and young adults and above need 7-9 hours per day.</p>
-    </section>
+    <div class="homepage-sleep-info">
+      <div class="sleep-info">
+        <img src="img/pulse.png" alt="health logo" class="health-img heart"> 
+        <p class="heart-text">Sleep is an important indicator of overall health and well-being.  We spend up to one-third
+          of our lives asleep, and the overall state of our "sleep-health" remains an essential question
+          throughout our lifespan.</p>
+        </div>
 
-    <section class="sign-up">
-      <img src="img/diary.png" alt="diary logo" class="health-img">
-      <p>Based on your age, are you getting enough sleep?  This app is a simple and effective tool for keeping
-        track of how many hours you slept, noting how you felt when you woke up, and saving any other details you'd 
-        like to add about your rest. 
-      </p>
-    </section>
+      <div class="sleep-info">
+        <img src="img/alarm-clock.png" alt="alarm clock logo" class="health-img clock">
+        <p class="clock-text">Sleep needs are individual and change as you age.  Newborns need a total of 14-17 hours a day.  Infants
+          need a total of 12-15 hours a day, and school age children need 9-11 hours a day.  Teenagers need 
+          8-10 hours a day, and young adults and above need 7-9 hours per day.</p>
+        </div>
 
-    <section class="create-account">
+      <div class="sleep-info">
+        <img src="img/diary.png" alt="diary logo" class="health-img journal">
+        <p class="journal-text">Based on your age, are you getting enough sleep?  This app is a simple and effective tool for keeping
+          track of how many hours you slept, noting how you felt when you woke up, and saving any other details you'd 
+          like to add about your rest. 
+        </p>
+      </div>
+    </div>
+
+    <div class="create-account">
       <form class="createAccount">
         <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
         <h2 class="create-acct-header">Create an account</h2>
@@ -53,12 +56,12 @@
         <button type="submit" class="signup-button">Sign Up</button><br>
         <span class="login-now">Already have an account? <br><a href="#" class="login-here">Log in here</a></span>
       </form>
-    </section>
+    </div>
 
-    <section class="log-in">
-      <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
-      <h2>Log in</h2>
+    <div class="log-in">
       <form class="logIn">
+          <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
+          <h2 class="log-in-header">Log in</h2>
           <!-- <label for="existingUsername">Username </label> -->
           <input type="text" id="existingUsername" name="username" placeholder="Enter username" required><br>
           <!-- <label for="existingPassword">Password </label> -->
@@ -66,11 +69,11 @@
           <button type="submit" class="login-button">Log In</button>
           <span class="login-now">Don't have an account?<br><a href="#" class="signup-here">Sign up here</a></span>
       </form>
-    </section>
+    </div>
 
     <section class="new-sleep-entry">
     <nav class="entry-nav">
-      <h1>S L E E P</h1><h1 class="logger">L O G G E R</h1>
+      <span>S L E E P</span><span class="nav-logger">L O G G E R</span>
       <a href="#" class="nav-logout">LOG OUT</a>
     </nav>
       <form class="new-entry">
