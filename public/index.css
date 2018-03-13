@@ -66,10 +66,16 @@ h1 {
 .nav-logout {
     text-decoration: none;
     color: whitesmoke;
-    /* margin-bottom: 10px; */
-    /* margin-left: 80px; */
+    font-weight: bold;
     float: right;
-    /* margin-top: 21px; */
+}
+
+.nav-logger {
+    margin-left: 15px;
+}
+
+span {
+    font-weight: bold;
 }
 
 .logger {
@@ -95,6 +101,10 @@ h1 {
     padding-bottom: 100px;
 }
 
+.new-sleep-entry {
+    margin: 0 auto;
+}
+
 .new-entry {
     background-color: #226;
     margin: 0px auto;
@@ -102,9 +112,10 @@ h1 {
     position: absolute;
     width: 100%;
     left: 0;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 45px;
+    padding-right: 45px;
     padding-bottom: 25px;
+    padding-top: 25px;
     margin-top: 40px;
 }
 
@@ -129,7 +140,7 @@ h1 {
 .previous-entries-header {
     color: whitesmoke;
     margin-top: 35px;
-    margin-bottom: 70px;
+    margin-bottom: 85px;
 }
 
 .log-container {
@@ -169,7 +180,7 @@ h1 {
 
 .update-log, .delete-log, .save-log, .cancel-log {
     margin-top: 15px;
-    width: 47%;
+    width: 45%;
     height: 35px;
     border-radius: 5px;
     font-size: 1em;
@@ -205,7 +216,7 @@ h1 {
 
 /* delete button */
 .delete-log {
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 /* used to move span tag further below */
@@ -218,7 +229,7 @@ h1 {
 }
 
 .submit-log {
-    width: 100%;
+    width: 45%;
     margin-bottom: 10px;
     background-color: #9BDE82;
     font-family: 'Poppins';
@@ -342,6 +353,7 @@ header, .sleep-info, .sign-up {
 label, .hours, .feeling, .description {
     font-family: 'Poppins';
     font-size: 1.06em;
+    margin-top: 25px;
 }
 
 label {
@@ -350,12 +362,15 @@ label {
 
 .all-sleep-entries {
     margin-top: 550px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .logIn {
     width: 93%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 200px;
     padding-left: 12px;
     padding-right: 13px;
 }
@@ -369,6 +384,7 @@ label {
     width: 93%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 200px;
     padding-left: 12px;
     padding-right: 13px;
 }
@@ -376,6 +392,10 @@ label {
 .create-acct-header {
     margin-top: 30px;
     margin-bottom: 20px;
+}
+
+.date {
+    margin-bottom: 25px;
 }
 
 /* media queries */
@@ -398,6 +418,32 @@ label {
        padding-left: 40px;
        padding-right: 40px;
    }
+}
+
+@media all and (min-width: 640px) {
+    .log-container {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .previous-entries-header {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .new-log-entry {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .describeSleepHeader {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
   @media all and (min-width: 1080px) {
