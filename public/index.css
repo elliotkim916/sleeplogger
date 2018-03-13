@@ -269,6 +269,7 @@ span {
 
 .login-here, .signup-here {
     color: whitesmoke;
+    margin-left: 5px;
 }
 
 #username, #existingUsername {
