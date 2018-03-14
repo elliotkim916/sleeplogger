@@ -285,6 +285,21 @@ function backToLogIn() {
     });
 }
 
+function generatePasswordTooShort() {
+    return `
+    <div class="password-short">
+        <h3>Password must be at least 8 characters long.</h3>
+        <button class="back-to-create-btn" type="submit" role="button">Okay</button>
+    </div>`
+}
+
+function backToCreateAcct() {
+    $('html').on('click', '.back-to-create-btn', function(event) {
+       $('.password-short').hide();
+       $('.createAccount').show();
+    });
+}
+
 function requestJWT(username, password) {
     $.ajax({
         type: 'POST',
@@ -340,7 +355,8 @@ function createAccount() {
             error: function(err) {
                 console.info('There is an error');
                 console.error(err);
-                // alert('Password must be at least 8 characters long..');
+                $('.tooShort').html(generatePasswordTooShort);
+                $('.createAccount').hide();
             }
         });
         login.val('');
@@ -382,6 +398,7 @@ function navSignUp() {
 }
 
 $(function() {
+    backToCreateAcct(); 
     backToLogIn();
     navLogIn();
     navSignUp();
