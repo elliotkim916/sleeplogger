@@ -60,35 +60,31 @@ function putSleepLog(path, newHours, newFeeling, newDescription, callback) {
         }    
     });
 }
-// <label class="sleep-label">How many hours of sleep did you get?</label><br>
-// <label class="sleep-label">How do you feel after waking up?</label><br>
-// <label class="sleep-label">Details you'd like to remember</label><br>
 
 function updateGenerateSleepLog(log) {
     return `
     <form class="updated-log-js" logID="${log._id}">
         <h3 class="update-date">${log.created}</h3>
-        
         <input class="update-hours" placeholder="How many hours did you sleep?" value="${log.hoursOfSleep}"><br>
-        
         <input class="update-feeling" placeholder="How did you feel after waking up?" value="${log.feeling}"><br>
-        
-        <input class="update-description" placeholder="Additional details?" value="${log.description}"><br>
+        <textarea class="update-description" placeholder="Additional details?" value="${log.description}"></textarea><br>
         <button class="save-log" type="submit" role="button">Save</button>
         <button class="cancel-log" role="button">Cancel</button>
     </form>
     `;
 }
 
-
 function updateEventListener() {
     // clicking on the update button
+  
     $('.sleep-logs-list').on('click', '.update-log', function(event) {
+       
         const toUpdateLogInput = $(event.currentTarget).closest('.log-container');
         const currentDate = toUpdateLogInput.find('.date').text();
         const currentHours = toUpdateLogInput.find('.hours').text().replace(' Hours', '').replace(' hours', '');
         const currentFeeling = toUpdateLogInput.find('.feeling').text();
         const currentDescription = toUpdateLogInput.find('.description').text();
+        console.log(currentDescription);
         const currentID = toUpdateLogInput.attr('logID');
         
         const currentLogObj = {
@@ -99,10 +95,6 @@ function updateEventListener() {
             _id: currentID
         }
         const currentInput = toUpdateLogInput.html(updateGenerateSleepLog(currentLogObj));
-        // $('.log-container').append(currentInput);
-        
-        // STORE.isEditing = !STORE.isEditing;
-        // console.log(STORE);
         
     // clicking on the cancel button if updating
     $('.sleep-logs-list').on('click', '.cancel-log', function(event) {
@@ -134,17 +126,21 @@ function updateEventListener() {
             created: sameDate,
             _id: sameID
         }
-
+        
         const updatedObj = STORE.find(function(object) {
-            if (object._id === newLogObj._id && object.hoursOfSleep !== editedHours || object.feeling !== editedFeeling || object.description !== editedDescription) {
-                renderSleepLog(newLogObj);
+            if (object._id === newLogObj._id) {
+                return object;
             }
         });
+
+        const indexOfUpdatedObj = STORE.indexOf(updatedObj);
+        STORE.splice(indexOfUpdatedObj, 1);
+        STORE.splice(indexOfUpdatedObj, 0, newLogObj);
         
         // we are using the html method to SET the html contents of each element in the set of matched elements
         // const newInput = editedLogInput.html(editedLog);
-        putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedHours, editedFeeling, editedDescription, updatedObj);
-        });   
+        putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedHours, editedFeeling, editedDescription, renderSleepLog(STORE));
+          });   
     });
 }
 
@@ -274,6 +270,21 @@ function enterApp() {
     $('.all-sleep-entries').show();
 }
 
+function generateIncorrectPasswordMessage() {
+    return `
+    <div class="password-wrong">
+        <h3>Sorry, username & / or password is incorrect.</h3>
+        <button class="back-to-login-btn" type="submit" role="button">Okay</button>
+    </div>`
+}
+
+function backToLogIn() {
+    $('html').on('click', '.back-to-login-btn', function(event) {
+        $('.password-wrong').hide();
+        $('.log-in').show();
+    });
+}
+
 function requestJWT(username, password) {
     $.ajax({
         type: 'POST',
@@ -300,7 +311,8 @@ function requestJWT(username, password) {
         error: function(err) {
             console.info('Login failed!');
             console.error(err);
-            alert('Login failed..');
+            $('.incorrect').html(generateIncorrectPasswordMessage);
+            $('.log-in').hide();
         }
     });
 }
@@ -328,16 +340,18 @@ function createAccount() {
             error: function(err) {
                 console.info('There is an error');
                 console.error(err);
-                alert('Password must be at least 8 characters long..');
+                // alert('Password must be at least 8 characters long..');
             }
         });
         login.val('');
         createPassword.val(''); 
     });
+
     $('.createAccount').on('click', '.login-here', function(event) {
         $('.createAccount').hide();
         $('.log-in').show();
     });
+
     $('.log-in').on('click', '.signup-here', function(event) {
         $('.log-in').hide();
         $('.createAccount').show();
@@ -368,6 +382,7 @@ function navSignUp() {
 }
 
 $(function() {
+    backToLogIn();
     navLogIn();
     navSignUp();
     signUp();
