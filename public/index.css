@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Poppins';
-    margin: 25px;
     background-color: darkslateblue;
+    margin: -5px;
 }
 
 header {
@@ -22,6 +22,8 @@ navigation {
     width: 100%;
     float: right;
     margin-bottom: 85px;
+    margin-top: 25px;
+    margin-right: 25px;
 }
 
 .nav-sign-up {
@@ -46,21 +48,26 @@ h1 {
 
 .h3 {
     margin-top: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
 .homepage-sleep-info {
     background-color: #226;
-    position: absolute;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 100%;
 }
 
 /* nav bar */
 .entry-nav {
     color: whitesmoke;
-    margin-top: 0px;
     position: relative;
+    margin-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .nav-logout {
@@ -112,8 +119,8 @@ span {
     position: absolute;
     width: 100%;
     left: 0;
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 35px;
+    padding-right: 35px;
     padding-bottom: 25px;
     padding-top: 25px;
     margin-top: 40px;
@@ -153,8 +160,6 @@ span {
 }
 /* size of inputs in new sleep entry and previous sleep entry */
 .update-hours, .update-feeling, .update-description {
-    /* width: 300px;
-    height: 35px; */
     display: block;
     width: 100%;
     padding-bottom: 3px;
@@ -367,8 +372,8 @@ label {
 
 .all-sleep-entries {
     margin-top: 550px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
 }
 
 .logIn {
@@ -405,6 +410,10 @@ label {
 
 /* media queries */
 @media all and (min-width: 400px) {
+    /* .all-sleep-entries {
+        padding-left: 0px;
+    } */
+
     .logIn {
         width: 350px;
         margin-left: auto;
@@ -420,6 +429,7 @@ label {
     
    .sleep-info {
        font-size: 1.1em;
+       padding-top: 35px;
        padding-left: 40px;
        padding-right: 40px;
    }
@@ -452,6 +462,10 @@ label {
 }
 
   @media all and (min-width: 1080px) {
+    body {
+        margin: 0px;
+    }
+
       .sleep-info {
           display: inline-block;
           width: 256px;
@@ -462,9 +476,17 @@ label {
           padding-right: 0px;
       }
 
+      .entry-nav {
+          margin-top: -63px;
+          margin-left: 15px;
+          margin-right: 15px;
+      }
+
       .homepage-sleep-info {
           text-align: center;
           margin-top: 80px;
+          position: relative;
+          bottom: -94px;
       }
 
       .heart {
@@ -510,5 +532,10 @@ label {
       .heart-text {
         position: relative;
         top: -5px;
+      }
+
+      .entry-nav {
+          padding-left: 10px;
+          padding-right: 10px;
       }
   }
