@@ -16,6 +16,10 @@ header {
     color: whitesmoke;
 }
 
+textarea .update-description::placeholder {
+    font-style: italic;
+}
+
 navigation {
     display: block;
     position: relative;
@@ -198,6 +202,32 @@ span {
     font-family: poppins;
 }
 
+.password-wrong {
+   text-align: center;
+   color: whitesmoke;
+   position: relative;
+   margin-top: 400px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.incorrect {
+    position: relative;
+    margin: 0px auto;
+}
+
+.back-to-login-btn {
+    margin-top: 15px;
+    width: 20%;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #9BDE82;
+    color: whitesmoke;
+    font-family: poppins;
+    font-weight: bold;
+}
+
 .delete-log, .cancel-log {
     background-color: lightslategray;
     border-color: lightslategray;
@@ -234,6 +264,7 @@ span {
     margin-bottom: 25px;
     background-color: #9BDE82;
     font-family: 'Poppins';
+    font-weight: bold;
     color: whitesmoke; 
 }
 
@@ -249,7 +280,8 @@ span {
 }
 
 .submit-log:hover, .update-log:hover, .delete-log:hover,
-.sign-up-here-button:hover, .signup-button:hover, .login-button:hover {
+.sign-up-here-button:hover, .signup-button:hover, .login-button:hover,
+.back-to-login-btn:hover {
     cursor: pointer;
 }
 
@@ -310,6 +342,8 @@ span {
     font-family: 'Poppins';
 }
 
+
+
 #hoursOfSleep::placeholder, #describeSleep::placeholder {
     font-family: 'Poppins';
     font-style: italic;
@@ -319,7 +353,7 @@ span {
 
 .update-hours, .update-feeling, .update-description {
     font-family: 'Poppins';
-    font-style: normal;
+    font-style: italic;
     font-size: 1.06em;
     color: whitesmoke;
 }
@@ -501,6 +535,7 @@ label {
 
       .clock {
           position: relative;
+          top: 5px;
       }
 
       .clock-text {
