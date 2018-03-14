@@ -202,7 +202,7 @@ function generateSleepLog(log) {
             <h3 class="update-date">${log.created}</h3>
             <input class="update-hours" placeholder="How many hours did you sleep?" value="${log.hoursOfSleep}"><br>
             <input class="update-feeling" placeholder="How did you feel after waking up?" value="${log.feeling}"><br>
-            <textarea class="update-description" placeholder="Additional details?" value="${log.description}"></textarea><br>
+            <textarea class="update-description" placeholder="Additional details?">${log.description}</textarea><br>
             <button class="save-log" type="submit" role="button">Save</button>
             <button class="cancel-log" role="button">Cancel</button>
         </form>
