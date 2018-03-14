@@ -58,6 +58,8 @@
       </form>
     </div>
 
+    <div class="incorrect"></div>
+    
     <div class="log-in">
       <form class="logIn">
           <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
@@ -79,9 +81,7 @@
       <form class="new-entry">
       <h2 class="describeSleepHeader">Describe your sleep</h2>
       <div class="new-log-entry">
-        <!-- <h3>Describe your sleep</h3> -->
-        <!-- <label for="hoursOfSleep">How many hours of sleep did you get?</label> -->
-        <input type="text" id="hoursOfSleep" name="hoursOfSleep" placeholder="Enter # of hours slept" required><br>
+          <input type="text" id="hoursOfSleep" name="hoursOfSleep" placeholder="Enter # of hours slept" required><br>
 
           <span>How do you feel after waking up?</span><br>
           <input type="radio" id="refreshed" name="feeling" value="Refreshed & well-rested" required>
@@ -93,9 +93,8 @@
           <input type="radio" id="littleMore" name="feeling" value="Could use a little more sleep">
           <label for="littleMore">Could use a little more sleep</label><br>
         
-        <!-- <label for="describeSleep" class="sleep-label">Details you'd like to remember</label><br> -->
-        <input type="text" id="describeSleep" class="js-sleep-log" placeholder="Enter additional details">
-        <button type="submit" role="button" class="submit-log">Submit</button>
+          <textarea type="text" id="describeSleep" class="js-sleep-log" placeholder="Enter additional details"></textarea>
+          <button type="submit" role="button" class="submit-log">Submit</button>
       </div>
       </form>
     </div>
