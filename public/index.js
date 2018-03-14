@@ -61,6 +61,12 @@ function putSleepLog(path, newHours, newFeeling, newDescription, callback) {
     });
 }
 
+function toggleLogEditing(index) {
+    STORE.map((log, idx) => {
+        log.isEditing = (idx === index ? !log.isEditing : false);
+    });
+}
+
 function updateEventListener() {
     // clicking on the update button
     $('.sleep-logs-list').on('click', '.update-log', function(event) {
@@ -86,13 +92,16 @@ function updateEventListener() {
         });
 
        const currentIndex = STORE.indexOf(currentObject);
-       const obj = Object.assign(currentLogObj, {isEditing:true});
-       const currentInput = toUpdateLogInput.html(generateSleepLog(obj));
-
+        //    const obj = Object.assign(currentLogObj, {isEditing:true});
+        //    const currentInput = toUpdateLogInput.html(generateSleepLog(obj));
+        STORE.splice(currentIndex, 1);
+        STORE.splice(currentIndex, 0, currentLogObj);   
+        toggleLogEditing(currentIndex);
+        renderSleepLog(STORE);
+            
     // clicking on the cancel button if updating
     $('.sleep-logs-list').on('click', '.cancel-log', function(event) {
         event.preventDefault();
-        event.stopPropagation();
         const cancelLog = $(event.currentTarget).closest('.updated-log-js');
         const containerID = cancelLog.attr('logID');
         const targetObj = STORE.find(function(object) {
@@ -109,7 +118,6 @@ function updateEventListener() {
     // clicking on the save button if updating 
     $('.updated-log-js').on('click', '.save-log', function(event) {
         event.preventDefault();
-        event.stopPropagation();
         const editedLogInput = $(event.currentTarget).closest('.updated-log-js');
         const editedHours = editedLogInput.find('.update-hours').val();
         const editedFeeling = editedLogInput.find('.update-feeling').val();
