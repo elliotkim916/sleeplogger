@@ -100,6 +100,7 @@ span {
     color: whitesmoke;
     margin-top: 100px;
     margin-bottom: 100px;
+    line-height: 1.4;
 }
 
 .health-img {
@@ -256,7 +257,6 @@ span {
     height: 40px;
     border-radius: 5px;
     font-size: 1.1em;
-    font-weight: bold;
     font-family: 'Poppins';
     background-color: #9BDE82;
     color: whitesmoke;
@@ -278,7 +278,6 @@ span {
     margin-bottom: 25px;
     background-color: #9BDE82;
     font-family: 'Poppins';
-    font-weight: bold;
     color: whitesmoke; 
 }
 
@@ -295,7 +294,7 @@ span {
 
 .submit-log:hover, .update-log:hover, .delete-log:hover,
 .sign-up-here-button:hover, .signup-button:hover, .login-button:hover,
-.back-to-login-btn:hover, .back-to-create-btn:hover {
+.back-to-login-btn:hover, .back-to-create-btn:hover, .save-log:hover, .cancel-log:hover {
     cursor: pointer;
 }
 
