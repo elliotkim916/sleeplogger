@@ -216,7 +216,21 @@ span {
     margin: 0px auto;
 }
 
-.back-to-login-btn {
+.tooShort {
+    position: relative;
+    margin: 0px auto;
+}
+
+.password-short {
+    text-align: center;
+    color: whitesmoke;
+    position: relative;
+    margin-top: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back-to-login-btn, .back-to-create-btn {
     margin-top: 15px;
     width: 20%;
     height: 35px;
@@ -281,7 +295,7 @@ span {
 
 .submit-log:hover, .update-log:hover, .delete-log:hover,
 .sign-up-here-button:hover, .signup-button:hover, .login-button:hover,
-.back-to-login-btn:hover {
+.back-to-login-btn:hover, .back-to-create-btn:hover {
     cursor: pointer;
 }
 
