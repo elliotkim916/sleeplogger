@@ -264,6 +264,7 @@ function navLogIn() {
 
 function logIn() {
     $('.createAccount').hide();
+    $('.demo-account').hide();
     $('.logIn').on('submit', function(event) {
         event.preventDefault(); 
         const existingLogin = $(event.currentTarget).find('#existingUsername');
@@ -379,6 +380,7 @@ function createAccount() {
                 console.error(err);
                 $('.tooShort').html(generatePasswordTooShort);
                 $('.createAccount').hide();
+                $('.password-wrong').hide();
             }
         });
         login.val('');
@@ -419,7 +421,21 @@ function navSignUp() {
     });
 }
 
+function demo() {
+    $('body').on('click', '.nav-demo', function(event) {
+        $('navigation').hide();
+        $('header').hide();
+        $('.sleep-info').hide();
+        $('.sign-up-here-button').hide();
+        // createAccount();
+        // requestJWT(demouser, demopassword);
+        $('.log-in').show();
+        $('.demo-account').show();
+    });
+}
+
 $(function() {
+    demo();
     backToCreateAcct(); 
     backToLogIn();
     navLogIn();
