@@ -34,6 +34,7 @@ navigation {
     text-decoration: none;
     color: whitesmoke;
     float: right;
+    margin-right: 15px;
     font-weight: bold;
 }
 
@@ -41,8 +42,29 @@ navigation {
     text-decoration: none;
     color: whitesmoke;
     float: right;
-    margin-right: 20px;
+    margin-right: 40px;
     font-weight: bold;
+}
+
+.nav-demo {
+    text-decoration: none;
+    color: whitesmoke;
+    float: right;
+    margin-right: 40px;
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.4;
+}
+
+.demo-account {
+    display: block;
+    margin-top: 30px;
+}
+
+.demo-account-header {
+    margin-bottom: 7px;
 }
 
 h1 {
