@@ -170,7 +170,6 @@ function deleteEventListener() {
         const deleteLogInput = $(event.currentTarget).closest('.log-container');
         const deleteLogText = deleteLogInput.val();
         const logID = deleteLogInput.attr('logID');
-        console.log(logID);
         const targetObj = STORE.find(function(object) {
             console.log(object._id);
             if (object._id === logID) {
@@ -201,6 +200,7 @@ function generateSleepLog(log) {
         <p class="description">${log.description}</p>
         <button class="update-log" role="button">Update</button>
         <button class="delete-log" type="submit" role="button">Delete</button>
+        <div class="line"></div>
     </div>
     `);
 
@@ -213,6 +213,7 @@ function generateSleepLog(log) {
             <textarea class="update-description" placeholder="Additional details?" aria-label="extra-details-about-sleep">${log.description}</textarea><br>
             <button class="save-log" type="submit" role="button">Save</button>
             <button class="cancel-log" role="button">Cancel</button>
+            <div class="line"></div>
         </form>
         `);
     }
@@ -327,6 +328,8 @@ function backToCreateAcct() {
 }
 
 function requestJWT(username, password) {
+    console.log(username);
+    console.log(password);
     $.ajax({
         type: 'POST',
         url: 'api/auth/login',
@@ -338,6 +341,7 @@ function requestJWT(username, password) {
         }),
         success: function(resultData) {
             localStorage.setItem('token', resultData.authToken);
+            console.log(resultData);
             $.ajax({
                 type: 'GET',
                 url: 'api/protected',
@@ -350,7 +354,7 @@ function requestJWT(username, password) {
                 })
             },
         error: function(err) {
-            console.info('Login failed!');
+            console.info('Password is incorrect!');
             console.error(err);
             $('.incorrect').html(generateIncorrectPasswordMessage);
             $('.log-in').hide();
@@ -377,7 +381,9 @@ function createAccount() {
                 password: password
             }),
             dataType: 'json',
-            success: requestJWT(username, password),
+            success: function() {
+                requestJWT(username, password)
+            },
             error: function(err) {
                 console.info('There is an error');
                 console.error(err);
