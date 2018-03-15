@@ -153,6 +153,10 @@ span {
     margin-top: 40px;
 }
 
+fieldset {
+    border: 0 none;
+}
+
 #hoursOfSleep, #describeSleep {
     display: block;
     width: 100%;

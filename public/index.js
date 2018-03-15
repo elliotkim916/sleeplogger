@@ -208,9 +208,9 @@ function generateSleepLog(log) {
         postHTML = (`
         <form class="updated-log-js" logID="${log._id}">
             <h3 class="update-date">${log.created}</h3>
-            <input class="update-hours" placeholder="How many hours did you sleep?" value="${log.hoursOfSleep}"><br>
-            <input class="update-feeling" placeholder="How did you feel after waking up?" value="${log.feeling}"><br>
-            <textarea class="update-description" placeholder="Additional details?">${log.description}</textarea><br>
+            <input class="update-hours" placeholder="How many hours did you sleep?" value="${log.hoursOfSleep}" aria-label="hours-slept"><br>
+            <input class="update-feeling" placeholder="How did you feel after waking up?" value="${log.feeling}" aria-label="feeling-once-awake"><br>
+            <textarea class="update-description" placeholder="Additional details?" aria-label="extra-details-about-sleep">${log.description}</textarea><br>
             <button class="save-log" type="submit" role="button">Save</button>
             <button class="cancel-log" role="button">Cancel</button>
         </form>
@@ -254,7 +254,7 @@ function navLogIn() {
     $('body').on('click', '.nav-log-in', function(event) {
         $('navigation').hide();
         $('.createAccount').hide();
-        $('header').hide();
+        $('main').hide();
         $('.sleep-info').hide();
         $('.sign-up').hide();
         $('.sign-up-here-button').hide();
@@ -272,6 +272,8 @@ function logIn() {
         const yourPassword = $(event.currentTarget).find('#existingPassword');
         const existingPassword = yourPassword.val();
         requestJWT(existingUsername, existingPassword);
+        existingLogin.val('');
+        yourPassword.val('');
     });
 }
 
@@ -281,13 +283,14 @@ function logOut() {
         $('.new-sleep-entry').hide();
         $('.all-sleep-entries').hide();
         $('.log-in').show();
+        $('.demo-account').hide();
     });
 }
 
 function enterApp() {
     $('navigation').hide();
     $('.log-in').hide();
-    $('header').hide();
+    $('main').hide();
     $('.createAccount').hide();
     $('.new-sleep-entry').show();
     $('.all-sleep-entries').show();
@@ -401,7 +404,7 @@ function createAccount() {
 function signUp() {
     $('body').on('click', '.sign-up-here-button', function(event) {
         $('navigation').hide();
-        $('header').hide();
+        $('main').hide();
         $('.sleep-info').hide();
         $('.sign-up').hide();
         $('.sign-up-here-button').hide();
@@ -412,7 +415,7 @@ function signUp() {
 function navSignUp() {
     $('body').on('click', '.nav-sign-up', function(event) {
         $('navigation').hide();
-        $('header').hide();
+        $('main').hide();
         $('.sleep-info').hide();
         $('.sign-up').hide();
         $('.sign-up-here-button').hide();
@@ -424,11 +427,9 @@ function navSignUp() {
 function demo() {
     $('body').on('click', '.nav-demo', function(event) {
         $('navigation').hide();
-        $('header').hide();
+        $('main').hide();
         $('.sleep-info').hide();
         $('.sign-up-here-button').hide();
-        // createAccount();
-        // requestJWT(demouser, demopassword);
         $('.log-in').show();
         $('.demo-account').show();
     });

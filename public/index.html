@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -9,19 +9,20 @@
   </head>
 
   <body>
-    <navigation>
-      <a href="#" class="nav-sign-up">SIGN UP</a>
-      <a href="#" class="nav-log-in">LOG IN</a>
-      <a href="#" class="nav-demo">DEMO</a>
-    </navigation>
+    <main>
+      <navigation>
+        <a href="#" class="nav-sign-up">SIGN UP</a>
+        <a href="#" class="nav-log-in">LOG IN</a>
+        <a href="#" class="nav-demo">DEMO</a>
+      </navigation>
 
-    <header>
-      <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
-      <h3 class="h3">Keep track of how much you sleep because your rest is vital</h3>
-    </header>
-
-    <button class="sign-up-here-button">SIGN UP HERE</button>
-
+      <header>
+        <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
+        <h3 class="h3">Keep track of how much you sleep because your rest is vital</h3>
+        <button class="sign-up-here-button">SIGN UP HERE</button>
+      </header>
+    </main>
+    
     <div class="homepage-sleep-info">
       <div class="sleep-info">
         <img src="img/pulse.png" alt="health logo" class="health-img heart"> 
@@ -52,8 +53,8 @@
       <form class="createAccount">
         <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
         <h2 class="create-acct-header">Create an account</h2>
-          <input type="text" id="username" name="username" placeholder="Enter username" required><br>
-          <input type="password" id="password" name="password" placeholder="Enter password" required><br>
+          <input type="text" id="username" name="username" placeholder="Enter username" aria-label="create-username" required><br>
+          <input type="password" id="password" name="password" placeholder="Enter password" aria-label="create-password" required><br>
           <button type="submit" class="signup-button">Sign Up</button><br>
           <span class="login-now">Already have an account? <a href="#" class="login-here">Log in here</a></span>
       </form>
@@ -66,8 +67,8 @@
       <form class="logIn">
           <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
           <h2 class="log-in-header">Log in</h2>
-            <input type="text" id="existingUsername" name="username" placeholder="Enter username" required><br>
-            <input type="password" id="existingPassword" name="password" placeholder="Enter password" required><br>
+            <input type="text" id="existingUsername" name="username" placeholder="Enter username" aria-label="username" required><br>
+            <input type="password" id="existingPassword" name="password" placeholder="Enter password" aria-label="password" required><br>
             <button type="submit" class="login-button">Log In</button>
             <span class="login-now">Don't have an account? <a href="#" class="signup-here">Sign up here</a></span>
             <div class="demo-account">
@@ -87,20 +88,22 @@
       <form class="new-entry">
         <h2 class="describeSleepHeader">Describe your sleep</h2>
         <div class="new-log-entry">
-            <input type="text" id="hoursOfSleep" name="hoursOfSleep" placeholder="Enter # of hours slept" required><br>
-
-            <span>How do you feel after waking up?</span><br>
-            <input type="radio" id="refreshed" name="feeling" value="Refreshed & well-rested" required>
+          <fieldset class="feel">
+            <input type="text" id="hoursOfSleep" name="hoursOfSleep" placeholder="Enter # of hours slept" aria-label="hours-slept" required><br>
+            
+            <span id="sleep-feeling">How do you feel after waking up?</span><br>
+            <input type="radio" id="refreshed" name="feeling" value="Refreshed & well-rested" aria-labelledby="sleep-feeling" required>
             <label for="refreshed">Refreshed & well-rested</label><br>
-            <input type="radio" id="tired" name="feeling" value="Still tired">
+            <input type="radio" id="tired" name="feeling" value="Still tired" aria-labelledby="sleep-feeling">
             <label for="tired">Still tired</label><br>
-            <input type="radio" id="average" name="feeling" value="Just average">
+            <input type="radio" id="average" name="feeling" value="Just average" aria-labelledby="sleep-feeling">
             <label for="average">Just average</label><br>
-            <input type="radio" id="littleMore" name="feeling" value="Could use a little more sleep">
+            <input type="radio" id="littleMore" name="feeling" value="Could use a little more sleep" aria-labelledby="sleep-feeling">
             <label for="littleMore">Could use a little more sleep</label><br>
-  
-            <textarea type="text" id="describeSleep" class="js-sleep-log" placeholder="Enter additional details"></textarea>
+            
+            <textarea type="text" id="describeSleep" class="js-sleep-log" placeholder="Enter additional details" aria-label="additional-details-about-sleep"></textarea>
             <button type="submit" role="button" class="submit-log">Submit</button>
+          </fieldset>
         </div>
       </form>
     </div>
