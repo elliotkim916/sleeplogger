@@ -12,6 +12,7 @@
     <navigation>
       <a href="#" class="nav-sign-up">SIGN UP</a>
       <a href="#" class="nav-log-in">LOG IN</a>
+      <a href="#" class="nav-demo">DEMO</a>
     </navigation>
 
     <header>
@@ -26,15 +27,17 @@
         <img src="img/pulse.png" alt="health logo" class="health-img heart"> 
         <p class="heart-text">Sleep is an important indicator of overall health and well-being.  We spend up to one-third
           of our lives asleep, and the overall state of our "sleep-health" remains an essential question
-          throughout our lifespan.</p>
-        </div>
+          throughout our lifespan.
+        </p>
+      </div>
 
       <div class="sleep-info">
         <img src="img/alarm-clock.png" alt="alarm clock logo" class="health-img clock">
         <p class="clock-text">Sleep needs are individual and change as you age.  Newborns need a total of 14-17 hours a day.  Infants
           need a total of 12-15 hours a day, and school age children need 9-11 hours a day.  Teenagers need 
-          8-10 hours a day, and young adults and above need 7-9 hours per day.</p>
-        </div>
+          8-10 hours a day, and young adults and above need 7-9 hours per day.
+        </p>
+      </div>
 
       <div class="sleep-info">
         <img src="img/diary.png" alt="diary logo" class="health-img journal">
@@ -49,54 +52,56 @@
       <form class="createAccount">
         <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
         <h2 class="create-acct-header">Create an account</h2>
-        <!-- <label for="username">Username </label> -->
-        <input type="text" id="username" name="username" placeholder="Enter username" required><br>
-        <!-- <label for="password">Password </label> -->
-        <input type="password" id="password" name="password" placeholder="Enter password" required><br>
-        <button type="submit" class="signup-button">Sign Up</button><br>
-        <span class="login-now">Already have an account? <a href="#" class="login-here">Log in here</a></span>
+          <input type="text" id="username" name="username" placeholder="Enter username" required><br>
+          <input type="password" id="password" name="password" placeholder="Enter password" required><br>
+          <button type="submit" class="signup-button">Sign Up</button><br>
+          <span class="login-now">Already have an account? <a href="#" class="login-here">Log in here</a></span>
       </form>
     </div>
 
     <div class="incorrect"></div>
     <div class="tooShort"></div>
-    
+
     <div class="log-in">
       <form class="logIn">
           <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
           <h2 class="log-in-header">Log in</h2>
-          <!-- <label for="existingUsername">Username </label> -->
-          <input type="text" id="existingUsername" name="username" placeholder="Enter username" required><br>
-          <!-- <label for="existingPassword">Password </label> -->
-          <input type="password" id="existingPassword" name="password" placeholder="Enter password" required><br>
-          <button type="submit" class="login-button">Log In</button>
-          <span class="login-now">Don't have an account? <a href="#" class="signup-here">Sign up here</a></span>
+            <input type="text" id="existingUsername" name="username" placeholder="Enter username" required><br>
+            <input type="password" id="existingPassword" name="password" placeholder="Enter password" required><br>
+            <button type="submit" class="login-button">Log In</button>
+            <span class="login-now">Don't have an account? <a href="#" class="signup-here">Sign up here</a></span>
+            <div class="demo-account">
+              <h3 class="demo-account-header">Demo Account</h3>
+              <p>Username : demouser</p>
+              <p>Password : demopassword</p>
+            </div>
       </form>
     </div>
 
     <div class="new-sleep-entry">
-    <nav class="entry-nav">
-      <span>S L E E P</span><span class="nav-logger">L O G G E R</span>
-      <a href="#" class="nav-logout">LOG OUT</a>
-    </nav>
-      <form class="new-entry">
-      <h2 class="describeSleepHeader">Describe your sleep</h2>
-      <div class="new-log-entry">
-          <input type="text" id="hoursOfSleep" name="hoursOfSleep" placeholder="Enter # of hours slept" required><br>
+      <nav class="entry-nav">
+        <span>S L E E P</span><span class="nav-logger">L O G G E R</span>
+        <a href="#" class="nav-logout">LOG OUT</a>
+      </nav>
 
-          <span>How do you feel after waking up?</span><br>
-          <input type="radio" id="refreshed" name="feeling" value="Refreshed & well-rested" required>
-          <label for="refreshed">Refreshed & well-rested</label><br>
-          <input type="radio" id="tired" name="feeling" value="Still tired">
-          <label for="tired">Still tired</label><br>
-          <input type="radio" id="average" name="feeling" value="Just average">
-          <label for="average">Just average</label><br>
-          <input type="radio" id="littleMore" name="feeling" value="Could use a little more sleep">
-          <label for="littleMore">Could use a little more sleep</label><br>
-        
-          <textarea type="text" id="describeSleep" class="js-sleep-log" placeholder="Enter additional details"></textarea>
-          <button type="submit" role="button" class="submit-log">Submit</button>
-      </div>
+      <form class="new-entry">
+        <h2 class="describeSleepHeader">Describe your sleep</h2>
+        <div class="new-log-entry">
+            <input type="text" id="hoursOfSleep" name="hoursOfSleep" placeholder="Enter # of hours slept" required><br>
+
+            <span>How do you feel after waking up?</span><br>
+            <input type="radio" id="refreshed" name="feeling" value="Refreshed & well-rested" required>
+            <label for="refreshed">Refreshed & well-rested</label><br>
+            <input type="radio" id="tired" name="feeling" value="Still tired">
+            <label for="tired">Still tired</label><br>
+            <input type="radio" id="average" name="feeling" value="Just average">
+            <label for="average">Just average</label><br>
+            <input type="radio" id="littleMore" name="feeling" value="Could use a little more sleep">
+            <label for="littleMore">Could use a little more sleep</label><br>
+  
+            <textarea type="text" id="describeSleep" class="js-sleep-log" placeholder="Enter additional details"></textarea>
+            <button type="submit" role="button" class="submit-log">Submit</button>
+        </div>
       </form>
     </div>
       
@@ -104,6 +109,7 @@
       <h2 class="previous-entries-header">Previous Sleep Entries</h2>
       <div id="sleepLogs" class="sleep-logs-list"></div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
