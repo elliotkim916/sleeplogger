@@ -159,7 +159,7 @@ fieldset {
 
 #hoursOfSleep, #describeSleep {
     display: block;
-    width: 100%;
+    width: 95%;
     margin-bottom: 35px;
     padding-bottom: 3px;
     border-style: none;  
@@ -178,13 +178,13 @@ fieldset {
 .previous-entries-header {
     color: whitesmoke;
     margin-top: 35px;
-    margin-bottom: 85px;
+    margin-bottom: 75px;
 }
 
 .log-container, .updated-log-js {
     display: block;
     width: 100%;
-    margin-top: -35px;
+    margin-top: -15px;
     margin-bottom: 90px;
     font-size: 17px;
     color: whitesmoke;
@@ -192,7 +192,7 @@ fieldset {
 /* size of inputs in new sleep entry and previous sleep entry */
 .update-hours, .update-feeling, .update-description {
     display: block;
-    width: 100%;
+    width: 95%;
     padding-bottom: 3px;
     border-style: none;
     background-color: darkslateblue;
@@ -305,6 +305,12 @@ fieldset {
     background-color: #9BDE82;
     font-family: 'Poppins';
     color: whitesmoke; 
+}
+
+.line {
+    border-bottom: 2px solid #226;
+    margin-top: 82px;
+    width: 95%;
 }
 
 .submit-log {
@@ -446,7 +452,7 @@ label {
 }
 
 .all-sleep-entries {
-    margin-top: 550px;
+    margin-top: 570px;
     padding-left: 35px;
     padding-right: 35px;
 }
@@ -483,12 +489,11 @@ label {
     margin-bottom: 25px;
 }
 
+.describeSleepHeader {
+    margin-bottom: 25px;
+}
 /* media queries */
 @media all and (min-width: 400px) {
-    /* .all-sleep-entries {
-        padding-left: 0px;
-    } */
-
     .logIn {
         width: 350px;
         margin-left: auto;
