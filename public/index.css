@@ -370,7 +370,9 @@ fieldset {
 
 #username:focus, #password:focus, #existingUsername:focus, #existingPassword:focus, 
 #hoursOfSleep:focus, #describeSleep:focus, .update-hours:focus, .update-feeling:focus,
-.update-description:focus {
+.update-description:focus, .submit-log:focus, .update-log:focus, .delete-log:focus,
+.save-log:focus, .cancel-log:focus, .login-button:focus, .sign-up-here-button:focus,
+.signup-button:focus, .back-to-login-btn:focus, .back-to-create-btn:focus {
     outline: none;
 }
 
