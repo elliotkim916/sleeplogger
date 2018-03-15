@@ -150,7 +150,7 @@ span {
     padding-right: 35px;
     padding-bottom: 25px;
     padding-top: 25px;
-    margin-top: 40px;
+    margin-top: 65px;
 }
 
 fieldset {
@@ -248,13 +248,18 @@ fieldset {
     margin: 0px auto;
 }
 
-.password-short {
+.create-account-error {
     text-align: center;
     color: whitesmoke;
     position: relative;
     margin-top: 400px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.account-error-heading {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .back-to-login-btn, .back-to-create-btn {
@@ -266,7 +271,7 @@ fieldset {
     background-color: #9BDE82;
     color: whitesmoke;
     font-family: poppins;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .delete-log, .cancel-log {
@@ -452,7 +457,7 @@ label {
 }
 
 .all-sleep-entries {
-    margin-top: 570px;
+    margin-top: 595px;
     padding-left: 35px;
     padding-right: 35px;
 }
