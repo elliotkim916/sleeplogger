@@ -462,6 +462,11 @@ label, .hours, .feeling, .description {
     margin-top: 25px;
 }
 
+.hours, .feeling, .description, .update-hours, .update-feeling, .update-description,
+#hoursOfSleep, #describeSleep {
+    letter-spacing: 0.65px;
+}
+
 label {
     margin-left: 15px;
 }
@@ -484,6 +489,7 @@ label {
 .log-in-header {
     margin-top: 30px;
     margin-bottom: 20px;
+    letter-spacing: 1.2px;
 }
 
 .createAccount {
@@ -498,6 +504,7 @@ label {
 .create-acct-header {
     margin-top: 30px;
     margin-bottom: 20px;
+    letter-spacing: 1.2px;
 }
 
 .date {
@@ -521,6 +528,14 @@ label {
 .svg-inline--fa {
     height: 0.92em;
 }
+
+.radio-label, #sleep-feeling {
+    letter-spacing: 1px;
+}
+
+/* p {
+    letter-spacing: 1px;
+} */
 /* media queries */
 @media all and (min-width: 400px) {
     .health-img {
