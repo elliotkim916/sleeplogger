@@ -290,7 +290,7 @@ function generateIncorrectPasswordMessage() {
     return `
     <div class="password-wrong">
         <h3>Sorry, username & / or password is incorrect.</h3>
-        <button class="back-to-login-btn" type="submit" role="button">Okay</button>
+        <button class="back-to-login-btn" type="submit" role="button">OKAY</button>
     </div>`
 }
 
@@ -305,7 +305,7 @@ function generatePasswordTooShort() {
     return `
     <div class="create-account-error">
         <h3 class="account-error-heading">Password must be at least 8 characters long.</h3>
-        <button class="back-to-create-btn" type="submit" role="button">Okay</button>
+        <button class="back-to-create-btn" type="submit" role="button">OKAY</button>
     </div>`
 }
 
@@ -313,7 +313,7 @@ function generateUsernameTaken() {
     return `
     <div class="create-account-error">
         <h3 class="account-error-heading">Username is taken, please try another.</h3>
-        <button class="back-to-create-btn" type="submit" role="button">Okay</button>
+        <button class="back-to-create-btn" type="submit" role="button">OKAY</button>
     </div>`
 }
 
@@ -321,7 +321,7 @@ function generateNoWhitespace() {
     return `
     <div class="create-account-error">
         <h3 class="account-error-heading">Cannot start or end username & / or password with whitespace.</h3>
-        <button class="back-to-create-btn" type="submit" role="button">Okay</button>
+        <button class="back-to-create-btn" type="submit" role="button">OKAY</button>
     </div>`
 }
 
