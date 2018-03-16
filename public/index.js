@@ -187,8 +187,8 @@ function generateSleepLog(log) {
         <p class="hours">${log.hoursOfSleep} Hours</p>
         <p class="feeling">${log.feeling}</p>
         <p class="description">${log.description}</p>
-        <button class="update-log" role="button">Update</button>
-        <button class="delete-log" type="submit" role="button">Delete</button>
+        <button class="update-log" role="button"><i class="fas fa-plus"></i> EDIT</button>
+        <button class="delete-log" type="submit" role="button"><i class="fas fa-trash"></i> DELETE</button>
         <div class="line"></div>
     </div>
     `);
@@ -197,11 +197,11 @@ function generateSleepLog(log) {
         postHTML = (`
         <form class="updated-log-js" logID="${log._id}">
             <h3 class="update-date">${log.created}</h3>
-            <input class="update-hours" placeholder="How many hours did you sleep?" value="${log.hoursOfSleep}" aria-label="hours-slept"><br>
+            <input class="update-hours" placeholder="How many hours did you sleep?" value="${log.hoursOfSleep} Hours" aria-label="hours-slept"><br>
             <input class="update-feeling" placeholder="How did you feel after waking up?" value="${log.feeling}" aria-label="feeling-once-awake"><br>
             <textarea class="update-description" placeholder="Additional details?" aria-label="extra-details-about-sleep">${log.description}</textarea><br>
-            <button class="save-log" type="submit" role="button">Save</button>
-            <button class="cancel-log" role="button">Cancel</button>
+            <button class="save-log" type="submit" role="button"><i class="fas fa-check"></i> SAVE</button>
+            <button class="cancel-log" role="button"><i class="fas fa-ban"></i> CANCEL</button>
             <div class="line"></div>
         </form>
         `);
@@ -269,7 +269,7 @@ function logIn() {
 
 function logOut() {
     $('.nav-logout').on('click', function(event) {
-        localStorage.clear();
+        delete localStorage.token;
         $('.new-sleep-entry').hide();
         $('.all-sleep-entries').hide();
         $('.log-in').show();

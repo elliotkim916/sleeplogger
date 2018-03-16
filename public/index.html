@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Sleep Log</title>
+    
     <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Poppins:400,600" rel="stylesheet">
     <link href="index.css" rel="stylesheet" type="text/css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   </head>
 
   <body>
@@ -24,7 +26,7 @@
     </main>
     
     <div class="homepage-sleep-info">
-      <div class="sleep-info">
+      <div class="sleep-info heart">
         <img src="img/pulse.png" alt="health logo" class="health-img heart"> 
         <p class="heart-text">Sleep is an important indicator of overall health and well-being.  We spend up to one-third
           of our lives asleep, and the overall state of our "sleep-health" remains an essential question
@@ -55,7 +57,7 @@
         <h2 class="create-acct-header">Create an account</h2>
           <input type="text" id="username" name="username" placeholder="Enter username" aria-label="create-username" required><br>
           <input type="password" id="password" name="password" placeholder="Enter password" aria-label="create-password" required><br>
-          <button type="submit" class="signup-button">Sign Up</button><br>
+          <button type="submit" class="signup-button">SIGN UP</button><br>
           <span class="login-now">Already have an account? <a href="#" class="login-here">Log in here</a></span>
       </form>
     </div>
@@ -69,7 +71,7 @@
           <h2 class="log-in-header">Log in</h2>
             <input type="text" id="existingUsername" name="username" placeholder="Enter username" aria-label="username" required><br>
             <input type="password" id="existingPassword" name="password" placeholder="Enter password" aria-label="password" required><br>
-            <button type="submit" class="login-button">Log In</button>
+            <button type="submit" class="login-button">LOG IN</button>
             <span class="login-now">Don't have an account? <a href="#" class="signup-here">Sign up here</a></span>
             <div class="demo-account">
               <h3 class="demo-account-header">Demo Account</h3>
@@ -102,7 +104,7 @@
             <label for="littleMore">Could use a little more sleep</label><br>
             
             <textarea type="text" id="describeSleep" class="js-sleep-log" placeholder="Enter additional details" aria-label="additional-details-about-sleep"></textarea>
-            <button type="submit" role="button" class="submit-log">Submit</button>
+            <button type="submit" role="button" class="submit-log"><i class="fas fa-check"></i> SAVE</button>
           </fieldset>
         </div>
       </form>

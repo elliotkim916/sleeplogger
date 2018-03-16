@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    margin: 0;
+    /* margin: 0; */
     padding: 0;
 
 }
@@ -28,6 +28,7 @@ navigation {
     margin-bottom: 85px;
     margin-top: 25px;
     margin-right: 25px;
+    letter-spacing: 1.2px;
 }
 
 .nav-sign-up {
@@ -76,6 +77,7 @@ h1 {
     margin-top: 35px;
     margin-left: 35px;
     margin-right: 35px;
+    letter-spacing: 1px;
 }
 
 .homepage-sleep-info {
@@ -85,6 +87,7 @@ h1 {
     bottom: 0;
     width: 100%;
     height: 100%;
+    letter-spacing: 0.75px;
 }
 
 /* nav bar */
@@ -101,6 +104,7 @@ h1 {
     color: whitesmoke;
     font-weight: bold;
     float: right;
+    letter-spacing: 1.2px;
 }
 
 .nav-logger {
@@ -109,6 +113,7 @@ h1 {
 
 span {
     font-weight: bold;
+    letter-spacing: 0.44px;
 }
 
 .logger {
@@ -128,7 +133,7 @@ span {
 .health-img {
     width: 50px;
     height: 50px;
-    margin-bottom: 22px;
+    margin-bottom: 15px;
 }
 
 .sign-up {
@@ -149,7 +154,7 @@ span {
     padding-left: 35px;
     padding-right: 35px;
     padding-bottom: 25px;
-    padding-top: 25px;
+    padding-top: 5px;
     margin-top: 65px;
 }
 
@@ -179,6 +184,7 @@ fieldset {
     color: whitesmoke;
     margin-top: 35px;
     margin-bottom: 75px;
+    letter-spacing: 1.2px;
 }
 
 .log-container, .updated-log-js {
@@ -227,6 +233,7 @@ fieldset {
     background-color: #9BDE82;
     color: whitesmoke;
     font-family: poppins;
+    letter-spacing: 1.2px;
 }
 
 .password-wrong {
@@ -291,6 +298,7 @@ fieldset {
     font-family: 'Poppins';
     background-color: #9BDE82;
     color: whitesmoke;
+    letter-spacing: 1.2px;
 }
 
 /* cancel button */
@@ -310,6 +318,7 @@ fieldset {
     background-color: #9BDE82;
     font-family: 'Poppins';
     color: whitesmoke; 
+    letter-spacing: 1.2px;
 }
 
 .line {
@@ -327,6 +336,7 @@ fieldset {
     height: 35px;
     border-radius: 5px;
     font-size: 1em;
+    letter-spacing: 1.2px;
 }
 
 .submit-log:hover, .update-log:hover, .delete-log:hover,
@@ -492,13 +502,31 @@ label {
 
 .date {
     margin-bottom: 25px;
+    letter-spacing: 1.2px;
+}
+
+.update-date {
+    letter-spacing: 1.2px;
 }
 
 .describeSleepHeader {
     margin-bottom: 25px;
+    letter-spacing: 1.2px;
+}
+
+.svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14 {
+    width: 2em;
+}
+
+.svg-inline--fa {
+    height: 0.92em;
 }
 /* media queries */
 @media all and (min-width: 400px) {
+    .health-img {
+        margin-top: 25px;
+    }
+
     .logIn {
         width: 350px;
         margin-left: auto;
@@ -517,6 +545,7 @@ label {
        padding-top: 35px;
        padding-left: 40px;
        padding-right: 40px;
+       /* padding-top: 75px; */
    }
 }
 
@@ -571,37 +600,37 @@ label {
           text-align: center;
           margin-top: 80px;
           position: relative;
-          bottom: -94px;
+          /* bottom: -94px; */
       }
 
       .heart {
         position: relative;
-        bottom: 32px;
+        bottom: 60px;
       }
 
       .heart-text {
           position: relative;
-          bottom: 25px;
+          bottom: 56px;
       }
 
       .clock {
           position: relative;
-          top: 5px;
+          top: -77px;
       }
 
       .clock-text {
           position: relative;
-          top: 17px;
+          top: -67px;
       }
 
       .journal {
           position: relative;
-          bottom: 13px;
+          bottom: 102px;
       }
 
       .journal-text {
           position: relative;
-          bottom: 5px;
+          bottom: 92px;
       }
   }
 
@@ -612,12 +641,12 @@ label {
 
       .heart {
         position: relative;
-        bottom: 15px;
+        bottom: 60px;
       }
 
       .heart-text {
         position: relative;
-        top: -5px;
+        top: -55px;
       }
 
       .entry-nav {
