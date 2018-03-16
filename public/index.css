@@ -277,11 +277,11 @@ fieldset {
     height: 35px;
     border-radius: 5px;
     font-size: 1em;
-    background-color: #B4DB63;
+    background-color: #84A644;
+    border-color: #84A644;
     color: #D9FAFF;
     font-family: poppins;
     letter-spacing: 1.2px;
-    /* font-weight: bold; */
 }
 
 .delete-log, .cancel-log {
