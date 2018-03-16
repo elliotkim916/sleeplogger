@@ -1,19 +1,17 @@
 * {
     box-sizing: border-box;
-    /* margin: 0; */
     padding: 0;
-
 }
 
 body {
     font-family: 'Poppins';
-    background-color: darkslateblue;
+    background-color: #11224C;
     margin: -5px;
 }
 
 header {
     font-family: 'Poppins';
-    color: whitesmoke;
+    color: #D9FAFF;
 }
 
 textarea .update-description::placeholder {
@@ -33,7 +31,7 @@ navigation {
 
 .nav-sign-up {
     text-decoration: none;
-    color: whitesmoke;
+    color: #D9FAFF;
     float: right;
     margin-right: 15px;
     font-weight: bold;
@@ -41,7 +39,7 @@ navigation {
 
 .nav-log-in {
     text-decoration: none;
-    color: whitesmoke;
+    color: #D9FAFF;
     float: right;
     margin-right: 40px;
     font-weight: bold;
@@ -49,7 +47,7 @@ navigation {
 
 .nav-demo {
     text-decoration: none;
-    color: whitesmoke;
+    color: #D9FAFF;
     float: right;
     margin-right: 40px;
     font-weight: bold;
@@ -62,6 +60,7 @@ p {
 .demo-account {
     display: block;
     margin-top: 30px;
+    letter-spacing: 0.75px;
 }
 
 .demo-account-header {
@@ -81,7 +80,7 @@ h1 {
 }
 
 .homepage-sleep-info {
-    background-color: #226;
+    background-color: #1A0033;
     position: relative;
     left: 0;
     bottom: 0;
@@ -92,7 +91,7 @@ h1 {
 
 /* nav bar */
 .entry-nav {
-    color: whitesmoke;
+    color: #D9FAFF;
     position: relative;
     margin-top: 20px;
     padding-left: 25px;
@@ -101,7 +100,7 @@ h1 {
 
 .nav-logout {
     text-decoration: none;
-    color: whitesmoke;
+    color: #D9FAFF;
     font-weight: bold;
     float: right;
     letter-spacing: 1.2px;
@@ -124,7 +123,7 @@ span {
 .sleep-info {
     font-family: 'Antic Slab';
     font-size: 1em;
-    color: whitesmoke;
+    color: #D9FAFF;
     margin-top: 100px;
     margin-bottom: 100px;
     line-height: 1.4;
@@ -145,9 +144,9 @@ span {
 }
 
 .new-entry {
-    background-color: #226;
+    background-color: #1A0033;
     margin: 0px auto;
-    color: whitesmoke;
+    color: #D9FAFF;
     position: absolute;
     width: 100%;
     left: 0;
@@ -168,20 +167,20 @@ fieldset {
     margin-bottom: 35px;
     padding-bottom: 3px;
     border-style: none;  
-    background-color: #226;
-    border-bottom: 1px solid whitesmoke;
+    background-color: #1A0033;
+    border-bottom: 1px solid #D9FAFF;
     font-size: 17px;
     font-family: 'Poppins';
-    color: whitesmoke;
+    color: #D9FAFF;
 }
 
 .sleep-logs-list {
     margin: 0px auto;
-    color: whitesmoke;
+    color: #D9FAFF;
 }
 
 .previous-entries-header {
-    color: whitesmoke;
+    color: #D9FAFF;
     margin-top: 35px;
     margin-bottom: 75px;
     letter-spacing: 1.2px;
@@ -193,7 +192,7 @@ fieldset {
     margin-top: -15px;
     margin-bottom: 90px;
     font-size: 17px;
-    color: whitesmoke;
+    color: #D9FAFF;
 }
 /* size of inputs in new sleep entry and previous sleep entry */
 .update-hours, .update-feeling, .update-description {
@@ -201,9 +200,9 @@ fieldset {
     width: 95%;
     padding-bottom: 3px;
     border-style: none;
-    background-color: darkslateblue;
-    border-bottom: 1px solid whitesmoke;
-    color: whitesmoke;
+    background-color: #11224C;
+    border-bottom: 1px solid #D9FAFF;
+    color: #D9FAFF;
     font-style: normal;
 }
 
@@ -230,15 +229,16 @@ fieldset {
     height: 35px;
     border-radius: 5px;
     font-size: 1em;
-    background-color: #9BDE82;
-    color: whitesmoke;
+    background-color: #84A644;
+    border-color: #84A644;
+    color: #D9FAFF;
     font-family: poppins;
     letter-spacing: 1.2px;
 }
 
 .password-wrong {
    text-align: center;
-   color: whitesmoke;
+   color: #D9FAFF;
    position: relative;
    margin-top: 400px;
    margin-left: auto;
@@ -258,7 +258,7 @@ fieldset {
 
 .create-account-error {
     text-align: center;
-    color: whitesmoke;
+    color: #D9FAFF;
     position: relative;
     margin-top: 400px;
     margin-left: auto;
@@ -277,16 +277,16 @@ fieldset {
     height: 35px;
     border-radius: 5px;
     font-size: 1em;
-    background-color: #9BDE82;
-    color: whitesmoke;
+    background-color: #B4DB63;
+    color: #D9FAFF;
     font-family: poppins;
     letter-spacing: 1.2px;
     /* font-weight: bold; */
 }
 
 .delete-log, .cancel-log {
-    background-color: lightslategray;
-    border-color: lightslategray;
+    background-color: #125367;
+    border-color: #125367;
 }
 
 .sign-up-here-button {
@@ -299,8 +299,9 @@ fieldset {
     border-radius: 5px;
     font-size: 1.1em;
     font-family: 'Poppins';
-    background-color: #9BDE82;
-    color: whitesmoke;
+    background-color: #84A644;
+    border-color: #84A644;
+    color: #D9FAFF;
     letter-spacing: 1.2px;
 }
 
@@ -318,14 +319,15 @@ fieldset {
 .signup-button, .login-button {
     width: 100%;
     margin-bottom: 25px;
-    background-color: #9BDE82;
+    background-color: #84A644;
+    border-color: #84A644;
     font-family: 'Poppins';
-    color: whitesmoke; 
+    color: #D9FAFF;
     letter-spacing: 1.2px;
 }
 
 .line {
-    border-bottom: 2px solid #226;
+    border-bottom: 2px solid #1A0033;
     margin-top: 82px;
     width: 95%;
 }
@@ -333,9 +335,10 @@ fieldset {
 .submit-log {
     width: 45%;
     margin-bottom: 10px;
-    background-color: #9BDE82;
+    background-color: #84A644;
+    border-color: #84A644;
     font-family: 'Poppins';
-    color: whitesmoke; 
+    color: #D9FAFF; 
     height: 35px;
     border-radius: 5px;
     font-size: 1em;
@@ -349,9 +352,9 @@ fieldset {
 }
 
 .log-in, .createAccount {
-    background-color: darkslateblue;
+    /* background-color: darkslateblue; */
     margin: 0px;
-    color: whitesmoke;
+    color: #D9FAFF;
     margin-top: 100px;
 }
 
@@ -363,7 +366,7 @@ fieldset {
 }
 
 .create-acct-header {
-    color: whitesmoke;
+    color: #D9FAFF;
 }
 
 .create-account {
@@ -372,7 +375,7 @@ fieldset {
 }
 
 .login-here, .signup-here {
-    color: whitesmoke;
+    color: #D9FAFF;
     margin-left: 5px;
 }
 
@@ -384,9 +387,9 @@ fieldset {
     display: block;
     width: 100%;
     border-style: none;
-    background-color: darkslateblue;
-    border-bottom: 1px solid whitesmoke;
-    color: whitesmoke;
+    background-color: #11224C;
+    border-bottom: 1px solid #D9FAFF;
+    color: #D9FAFF;
     margin-top: 5px;
     margin-bottom: 10px;
     font-size: 1em;
@@ -401,7 +404,7 @@ fieldset {
 }
 
 #username::placeholder, #password::placeholder, #existingUsername::placeholder, #existingPassword::placeholder {
-    color: #eef;
+    color: #D9FAFF;
     font-style: italic;
     font-weight: lighter;
     font-family: 'Poppins';
@@ -413,14 +416,14 @@ fieldset {
     font-family: 'Poppins';
     font-style: italic;
     font-size: 1.06em;
-    color: whitesmoke;
+    color: #D9FAFF;
 }
 
 .update-hours, .update-feeling, .update-description {
     font-family: 'Poppins';
     font-style: italic;
     font-size: 1.06em;
-    color: whitesmoke;
+    color: #D9FAFF;
 }
 
 .update-hours::placeholder, .update-feeling::placeholder,
@@ -428,7 +431,7 @@ fieldset {
     font-family: 'Poppins';
     font-style: normal;
     font-size: 0.92em;
-    color: whitesmoke;
+    color: #D9FAFF;
 }
 
 /* distance beneath inputs */
@@ -452,7 +455,7 @@ fieldset {
 
 .logout-button {
     text-decoration: none;
-    color: whitesmoke;
+    color: #D9FAFF;
 }
 
 header, .sleep-info, .sign-up {
@@ -462,7 +465,7 @@ header, .sleep-info, .sign-up {
 label, .hours, .feeling, .description {
     font-family: 'Poppins';
     font-size: 1.06em;
-    margin-top: 25px;
+    margin-top: -3px;
 }
 
 .hours, .feeling, .description, .update-hours, .update-feeling, .update-description,
@@ -476,7 +479,7 @@ label {
 
 .all-sleep-entries {
     margin-top: 595px;
-    padding-left: 35px;
+    padding-left: 40px;
     padding-right: 35px;
 }
 
@@ -524,8 +527,9 @@ label {
     letter-spacing: 1.2px;
 }
 
+/* button icons */
 .svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14 {
-    width: 2em;
+    width: 1.5em;
 }
 
 .svg-inline--fa {
@@ -536,9 +540,13 @@ label {
     letter-spacing: 1px;
 }
 
-/* p {
+.filler {
+    font-weight: normal;
+    color: #84A644;
+    margin-right: 15px;
     letter-spacing: 1px;
-} */
+}
+
 /* media queries */
 @media all and (min-width: 400px) {
     .health-img {
@@ -633,12 +641,12 @@ label {
 
       .clock {
           position: relative;
-          top: -77px;
+          top: -101px;
       }
 
       .clock-text {
           position: relative;
-          top: -67px;
+          top: -92px;
       }
 
       .journal {
