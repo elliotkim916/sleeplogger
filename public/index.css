@@ -547,6 +547,10 @@ label {
     letter-spacing: 1px;
 }
 
+.demo {
+    line-height: 9px;
+}
+
 /* media queries */
 @media all and (min-width: 400px) {
     .health-img {
