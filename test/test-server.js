@@ -100,7 +100,7 @@ describe('GET endpoint', function() {
             .then(function(post) {
                 expect(resSleepLogPost.feeling).to.equal(post.feeling);
                 expect(resSleepLogPost.description).to.equal(post.description);
-                // expect(resSleepLogPost.created).to.equal(post.created);
+                expect(resSleepLogPost.creator).to.equal(post.creator);
             });
     });
 
@@ -115,10 +115,11 @@ describe('GET endpoint', function() {
                 expect(res).to.be.status(201);
                 expect(res).to.be.json;
                 expect(res.body).to.be.a('object');
-                expect(res.body).to.include.keys('feeling', 'description', 'created', 'hoursOfSleep');
+                expect(res.body).to.include.keys('feeling', 'description', 'created', 'hoursOfSleep', 'creator');
                 expect(res.body.feeling).to.equal(newPost.feeling);
                 expect(res.body.description).to.equal(newPost.description);
                 expect(res.body.hoursOfSleep).to.equal(newPost.hoursOfSleep);
+                expect(res.body.creator).to.equal(newPost.creator);
                 return SleepLog.findById(res.body._id);
             })
     // we retrieve new post from the db and compare its data to the data we sent over
@@ -126,6 +127,7 @@ describe('GET endpoint', function() {
             expect(post.feeling).to.equal(newPost.feeling);
             expect(post.description).to.equal(newPost.description);
             expect(post.hoursOfSleep).to.equal(newPost.hoursOfSleep);
+            expect(post.creator).to.equal(newPost.creator);
             });
         });
     });
