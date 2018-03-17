@@ -69,10 +69,8 @@ describe('GET endpoint', function() {
                 res = _res;
                 expect(res).to.be.status(200);
                 expect(res.body).to.have.lengthOf.at.least(1);
-
                 return SleepLog.count();
             })
-
             .then(function(count) {
                 expect(res.body).to.have.lengthOf(count);
             });
@@ -100,6 +98,8 @@ describe('GET endpoint', function() {
             .then(function(post) {
                 expect(resSleepLogPost.feeling).to.equal(post.feeling);
                 expect(resSleepLogPost.description).to.equal(post.description);
+                expect(resSleepLogPost.hoursOfSleep).to.equal(post.hoursOfSleep);
+                expect(resSleepLogPost.creator).to.equal(post.creator);
             });
     });
 
