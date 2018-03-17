@@ -21,14 +21,14 @@ router.use(bodyParser.json());
 
 router.post('/login', localAuth, (req, res) => {
     const authToken = createAuthToken(req.user.serialize());
-    res.json({authToken});
+    res.json({authToken, userID: req.user._id});
 });
 
 const jwtAuth = passport.authenticate('jwt', {session: false});
 
 router.post('/refresh', jwtAuth, (req, res) => {
     const authToken = createAuthToken(req.user);
-    res.json({authToken});
+    res.json({authToken, userID: req.user._id});
 });
 
 module.exports = {router};
