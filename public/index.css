@@ -393,6 +393,7 @@ fieldset {
     margin-top: 5px;
     margin-bottom: 10px;
     font-size: 1em;
+    letter-spacing: 1px;
 }
 
 #username:focus, #password:focus, #existingUsername:focus, #existingPassword:focus, 
