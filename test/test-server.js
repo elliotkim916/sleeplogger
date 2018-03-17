@@ -119,7 +119,7 @@ describe('GET endpoint', function() {
                 expect(res.body.feeling).to.equal(newPost.feeling);
                 expect(res.body.description).to.equal(newPost.description);
                 expect(res.body.hoursOfSleep).to.equal(newPost.hoursOfSleep);
-                return SleepLog.findById(res.body.creator);
+                return SleepLog.findById(res.body.id);
             })
     // we retrieve new post from the db and compare its data to the data we sent over
         .then(function(post) {
