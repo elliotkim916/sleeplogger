@@ -1,6 +1,8 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const id = require('mongoose').Types.ObjectId();
+
 const faker = require('faker');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
@@ -33,9 +35,11 @@ function seedSleepLogData() {
 // generates fake log data
 function generateTestSleepLogData() {
     return {
-        quality: faker.lorem.words(),
+        hoursOfSleep: faker.lorem.words(),
+        feeling: faker.lorem.words(),
         description: faker.lorem.paragraph(),
-        created: faker.date.past()
+        created: faker.date.past(),
+        creator: id
     }
 }
 
@@ -86,7 +90,7 @@ describe('GET endpoint', function() {
 
                 res.body.forEach(function(post) {
                     expect(post).to.be.a('object');
-                    expect(post).to.include.keys('quality', 'description', 'created');
+                    expect(post).to.include.keys('feeling', 'description', 'created', 'hoursOfSleep', 'creator');
                 });
 
                 resSleepLogPost = res.body[0];
@@ -94,7 +98,7 @@ describe('GET endpoint', function() {
             })
 // checking the values in my sleep log post correspond with those in the db
             .then(function(post) {
-                expect(resSleepLogPost.quality).to.equal(post.quality);
+                expect(resSleepLogPost.feeling).to.equal(post.feeling);
                 expect(resSleepLogPost.description).to.equal(post.description);
                 // expect(resSleepLogPost.created).to.equal(post.created);
             });
@@ -111,15 +115,17 @@ describe('GET endpoint', function() {
                 expect(res).to.be.status(201);
                 expect(res).to.be.json;
                 expect(res.body).to.be.a('object');
-                expect(res.body).to.include.keys('quality', 'description', 'created');
-                expect(res.body.quality).to.equal(newPost.quality);
+                expect(res.body).to.include.keys('feeling', 'description', 'created', 'hoursOfSleep');
+                expect(res.body.feeling).to.equal(newPost.feeling);
                 expect(res.body.description).to.equal(newPost.description);
+                expect(res.body.hoursOfSleep).to.equal(newPost.hoursOfSleep);
                 return SleepLog.findById(res.body._id);
             })
     // we retrieve new post from the db and compare its data to the data we sent over
         .then(function(post) {
-            expect(post.quality).to.equal(newPost.quality);
+            expect(post.feeling).to.equal(newPost.feeling);
             expect(post.description).to.equal(newPost.description);
+            expect(post.hoursOfSleep).to.equal(newPost.hoursOfSleep);
             });
         });
     });
@@ -127,7 +133,7 @@ describe('GET endpoint', function() {
     describe('PUT endpoint', function() {
         it('should update the fields you send over', function() {
             const toUpdate = {
-                quality: 'Moderate I suppose',
+                feeling: 'Moderate I suppose',
                 description: 'Neighbors were pretty loud so I had a hard time falling asleep'
             }
 
@@ -146,7 +152,7 @@ describe('GET endpoint', function() {
         }) 
     // we retrieve the update post from db and prove the post in db is equal to the updated values we sent over   
         .then(post => {
-            expect(toUpdate.quality).to.equal(post.quality);
+            expect(toUpdate.feeling).to.equal(post.feeling);
             expect(toUpdate.description).to.equal(post.description);
         });
         });
