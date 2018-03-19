@@ -191,7 +191,6 @@ describe('GET endpoint', function() {
                 .then(function(_log) {
                     expect(_log).to.be.null;
 
-                    // done();
                 });
         });
     });
