@@ -2,16 +2,19 @@
     { 
         "hoursOfSleep": "8",
         "feeling": "Refreshed & well-rested",
-        "description": "Slept a full 8 hours with no interruptions!"
+        "description": "Slept a full 8 hours with no interruptions!",
+        "creator": "333333333333333333333300"
     },
     {   
         "hoursOfSleep": "5",
         "feeling": "Still tired",
-        "description": "Barely got any sleep, and it was hard to fall asleep because of noisy neighbors!"
+        "description": "Barely got any sleep, and it was hard to fall asleep because of noisy neighbors!",
+        "creator": "222222222222222222222200"
     },
     { 
         "hoursOfSleep": "12",
         "feeling": "Just average",
-        "description": "Sleep was amazing! Felt so energized when I woke up."
+        "description": "Sleep was amazing! Felt so energized when I woke up.",
+        "creator": "111111111111111111111100"
     }
 ]
