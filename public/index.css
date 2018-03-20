@@ -521,6 +521,10 @@ label {
         right: 2px;
         padding-bottom: 7px;
     }
+
+    .logIn, .createAccount {
+        margin-top: 145px;
+    }
 } 
 @media all and (min-width: 400px) {
     .h3 {
