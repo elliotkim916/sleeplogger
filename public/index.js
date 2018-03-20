@@ -269,6 +269,7 @@ function navLogIn() {
         $('main').hide();
         $('.homepage-sleep-info').hide();
         $('.sign-up').hide();
+        $('.demo-account').hide();
         $('.sign-up-here-button').hide();
         $('.log-in').show();
     });
