@@ -2,12 +2,16 @@
 
 const router = require('express').Router();
 const jsonParser = require('body-parser').json();
+const mongoose = require('mongoose');
 
 const {SleepLog} = require('../models/logs');
+const passport = require('passport');
+
+router.use(passport.authenticate('jwt', {session: false}));
 
 router.get('/', function(req, res) {
     SleepLog
-        .find()
+        .find({creator: req.user.id})
         .then(logs => {
             res.json(logs);
         });
@@ -15,7 +19,8 @@ router.get('/', function(req, res) {
 
 router.get('/:id', function(req, res) {
     SleepLog
-        .findById(req.params.id)
+        .find({creator: req.params.id})
+        .exec()
         .then(logs => {
             res.json(logs)
         })
@@ -42,6 +47,7 @@ router.post('/', jsonParser, function(req, res) {
             hoursOfSleep: req.body.hoursOfSleep,
             feeling: req.body.feeling,
             description: req.body.description,
+            creator: req.body.creator
         }).then(log => res.status(201).json(log))
         .catch(err => {
             console.error(err);
@@ -50,7 +56,6 @@ router.post('/', jsonParser, function(req, res) {
 });
 
 router.delete('/:id', (req, res) => {
-    console.log(req.params.id);
     SleepLog
         .findByIdAndRemove(req.params.id)
         .then(() => {
