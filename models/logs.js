@@ -15,7 +15,8 @@ sleepLogSchema.methods.serialize = function() {
         hoursOfSleep: this.hoursOfSleep,
         feeling: this.feeling,
         description: this.description,
-        created: this.created
+        created: this.created,
+        creator: this.created
     };
 };
 
