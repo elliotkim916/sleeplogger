@@ -1,4 +1,5 @@
 'use strict';
+
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
@@ -82,14 +83,6 @@ function closeServer() {
 
 if (require.main === module) {
     runServer(DATABASE_URL).catch(err => console.error(err));
-    // app.listen(process.env.PORT || 8080, function () {
-    //     mongoose.connect(DATABASE_URL).then(function() {
-    //         console.log('Connected!');
-    //     }).catch(err => {
-    //         console.error(err.message);
-    //     });
-    //     console.info(`App is listening on ${this.address().port}`);
-    // });
 }
 
 module.exports = {app, runServer, closeServer};
