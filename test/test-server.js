@@ -192,6 +192,5 @@ describe('GET endpoint', function() {
 
                 });
         });
-    });
-  
+    }); 
 }); 
