@@ -47,7 +47,8 @@ router.post('/', jsonParser, function(req, res) {
             hoursOfSleep: req.body.hoursOfSleep,
             feeling: req.body.feeling,
             description: req.body.description,
-            creator: req.body.creator
+            creator: req.body.creator,
+            created: Date.now()
         }).then(log => res.status(201).json(log))
         .catch(err => {
             console.error(err);
