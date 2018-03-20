@@ -2,22 +2,31 @@
 
 const SLEEPLOG_ENDPOINT = '/api/logs';
 
-const STORE = [];
-console.log(STORE);
-// gets current state of database & renders onto the DOM
+let STORE = [];
 
 function getSleepLogs() {
-    $.get(SLEEPLOG_ENDPOINT, function(data) {
-        for (let i=0; i<=data.length; i++) {
-        const getData = {
-            hoursOfSleep: data[i].hoursOfSleep,
-            feeling: data[i].feeling,
-            description: data[i].description,
-            _id: data[i]._id,
-            isEditing: false
-            }  
-           STORE.push(getData);
-           renderSleepLog(STORE);
+    $.ajax({
+        type: 'GET',
+        url: SLEEPLOG_ENDPOINT + '/' + localStorage.getItem('id'),
+        contentType: 'application/json',
+        dataType: 'json',
+        headers: {
+            'Authorization': "Bearer " + localStorage.getItem('token')
+        },
+        success: function(data) {
+            STORE = [];
+            for (let i=0; i<data.length; i++) {
+                const getData = {
+                    hoursOfSleep: data[i].hoursOfSleep,
+                    feeling: data[i].feeling,
+                    description: data[i].description,
+                    _id: data[i]._id,
+                    isEditing: false
+                    } 
+                   STORE.push(getData);
+                }
+                renderSleepLog(STORE);
+                enterApp();
         }
     });
 }
@@ -27,12 +36,16 @@ function postSleepLog(path, hoursSlept, sleepFeel, sleepLogText, callback) {
         type: 'POST',
         url: path,
         contentType: 'application/json',
+        dataType: 'json',
         data: JSON.stringify({
             hoursOfSleep: hoursSlept,
             feeling: sleepFeel,
-            description: sleepLogText
+            description: sleepLogText,
+            creator: localStorage.getItem('id')
         }),
-        dataType: 'json',
+        headers: {
+            'Authorization': "Bearer " + localStorage.getItem('token')
+        },
         success: callback,
         error: function(err) {
             console.info('There is an error!');
@@ -51,6 +64,9 @@ function putSleepLog(path, newHours, newFeeling, newDescription, callback) {
             feeling: newFeeling,
             description: newDescription
         }),
+        headers: {
+            'Authorization': "Bearer " + localStorage.getItem('token')
+        },
         success: callback,
         error: function(err) {
             console.info('There is an error!');
@@ -68,11 +84,12 @@ function toggleLogEditing(index) {
 function updateEventListener() {
     // clicking on the update button
     $('.sleep-logs-list').on('click', '.update-log', function(event) {
+        event.preventDefault();
         const toUpdateLogInput = $(event.currentTarget).closest('.log-container');
         const currentDate = toUpdateLogInput.find('.date').text();
-        const currentHours = toUpdateLogInput.find('.hours').text().replace(' Hours', '').replace(' hours', '');
-        const currentFeeling = toUpdateLogInput.find('.feeling').text();
-        const currentDescription = toUpdateLogInput.find('.description').text();
+        const currentHours = toUpdateLogInput.find('.hours').text().replace(' Hours', '').replace(' hours', '').replace('hours', '').replace('Hours', '').replace('HOURS', '').replace('Slept : ', '');
+        const currentFeeling = toUpdateLogInput.find('.feeling').text().replace('Felt : ', '');
+        const currentDescription = toUpdateLogInput.find('.description').text().replace('Comments : ', '');
         const currentID = toUpdateLogInput.attr('logID');
         
         const currentLogObj = {
@@ -88,10 +105,11 @@ function updateEventListener() {
                 return object;
             }
         });
-
+        
        const currentIndex = STORE.indexOf(currentObject);
         STORE.splice(currentIndex, 1);
-        STORE.splice(currentIndex, 0, currentLogObj);   
+        STORE.splice(currentIndex, 0, currentLogObj);
+         
         toggleLogEditing(currentIndex);
         renderSleepLog(STORE);
             
@@ -114,9 +132,9 @@ function updateEventListener() {
     $('.updated-log-js').on('click', '.save-log', function(event) {
         event.preventDefault();
         const editedLogInput = $(event.currentTarget).closest('.updated-log-js');
-        const editedHours = editedLogInput.find('.update-hours').val();
-        const editedFeeling = editedLogInput.find('.update-feeling').val();
-        const editedDescription = editedLogInput.find('.update-description').val();
+        const editedHours = editedLogInput.find('.update-hours').val().replace(' Hours', '').replace(' hours', '').replace('hours', '').replace('Hours', '').replace('HOURS', '').replace('Slept : ', '').replace('Slept ', '');
+        const editedFeeling = editedLogInput.find('.update-feeling').val().replace('Felt : ', '').replace('Felt', '');
+        const editedDescription = editedLogInput.find('.update-description').val().replace('Comments : ', '').replace('Comments', '');
         const sameDate = editedLogInput.find('.update-date').text();
         const sameID = editedLogInput.attr('logID');
        
@@ -137,7 +155,6 @@ function updateEventListener() {
         const indexOfUpdatedObj = STORE.indexOf(updatedObj);
         STORE.splice(indexOfUpdatedObj, 1);
         STORE.splice(indexOfUpdatedObj, 0, newLogObj);
-        // const editedObject = Object.assign(newLogObj, {isEditing:false});
         const editedInput = editedLogInput.html(generateSleepLog(newLogObj));
         putSleepLog(SLEEPLOG_ENDPOINT + '/' + sameID, editedHours, editedFeeling, editedDescription, editedInput);
           });   
@@ -149,6 +166,9 @@ function deleteSleepLog(path, callback) {
         type: 'DELETE',
         url: path,
         contentType: 'application/json',
+        headers: {
+            'Authorization': "Bearer " + localStorage.getItem('token')
+        },
         success: callback,
         error: function(err) {
             console.info('There is an error');
@@ -163,7 +183,6 @@ function deleteEventListener() {
         const deleteLogText = deleteLogInput.val();
         const logID = deleteLogInput.attr('logID');
         const targetObj = STORE.find(function(object) {
-            console.log(object._id);
             if (object._id === logID) {
                 return object;
             }
@@ -175,7 +194,8 @@ function deleteEventListener() {
 }
 
 function renderSleepLog(data) {
-    const allLogs = [].concat(data || []);
+    let allLogs = [];
+    allLogs = [].concat(data || []);
     const sleepLogsHTML = allLogs.map(generateSleepLog).join('');
     $('.sleep-logs-list').html(sleepLogsHTML);
 }
@@ -184,9 +204,9 @@ function generateSleepLog(log) {
     let postHTML = (`
     <div class="log-container" logID="${log._id}">
         <h3 class="date">${moment(log.created).format('LLLL').slice(0, -8)}</h3>
-        <p class="hours">${log.hoursOfSleep} Hours</p>
-        <p class="feeling">${log.feeling}</p>
-        <p class="description">${log.description}</p>
+        <p class="hours"><span class="filler">Slept : </span>${log.hoursOfSleep} Hours</p>
+        <p class="feeling"><span class="filler">Felt : </span>${log.feeling}</p>
+        <p class="description"><span class="filler">Comments : </span>${log.description}</p>
         <button class="update-log" role="button"><i class="fas fa-plus"></i> EDIT</button>
         <button class="delete-log" type="submit" role="button"><i class="fas fa-trash"></i> DELETE</button>
         <div class="line"></div>
@@ -242,6 +262,8 @@ function submitSleepLog() {
 function navLogIn() {
     $('.createAccount').hide();
     $('body').on('click', '.nav-log-in', function(event) {
+        delete localStorage.id;
+        delete localStorage.token;
         $('navigation').hide();
         $('.createAccount').hide();
         $('main').hide();
@@ -270,6 +292,7 @@ function logIn() {
 function logOut() {
     $('.nav-logout').on('click', function(event) {
         delete localStorage.token;
+        delete localStorage.id;
         $('.new-sleep-entry').hide();
         $('.all-sleep-entries').hide();
         $('.log-in').show();
@@ -292,13 +315,6 @@ function generateIncorrectPasswordMessage() {
         <h3>Sorry, username & / or password is incorrect.</h3>
         <button class="back-to-login-btn" type="submit" role="button">OKAY</button>
     </div>`
-}
-
-function backToLogIn() {
-    $('html').on('click', '.back-to-login-btn', function(event) {
-        $('.password-wrong').hide();
-        $('.log-in').show();
-    });
 }
 
 function generatePasswordTooShort() {
@@ -325,6 +341,13 @@ function generateNoWhitespace() {
     </div>`
 }
 
+function backToLogIn() {
+    $('html').on('click', '.back-to-login-btn', function(event) {
+        $('.password-wrong').hide();
+        $('.log-in').show();
+    });
+}
+
 function backToCreateAcct() {
     $('html').on('click', '.back-to-create-btn', function(event) {
        $('.create-account-error').hide();
@@ -344,6 +367,7 @@ function requestJWT(username, password) {
         }),
         success: function(resultData) {
             localStorage.setItem('token', resultData.authToken);
+            localStorage.setItem('id', resultData.userID);
             console.log(resultData);
             $.ajax({
                 type: 'GET',
@@ -353,7 +377,7 @@ function requestJWT(username, password) {
                 headers: {
                     'Authorization': "Bearer " + localStorage.getItem('token')
                 },
-                success: enterApp()
+                success: getSleepLogs()
                 })
             },
         error: function(err) {
@@ -463,5 +487,4 @@ $(function() {
     updateEventListener();
     deleteEventListener();
     submitSleepLog();
-    getSleepLogs();
 });
