@@ -509,6 +509,19 @@ label {
 }
 
 /* media queries */
+/* for mobile devices */
+@media all and (min-width: 375px) {
+    .entry-nav {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .new-entry {
+        left: 2px;
+        right: 2px;
+        padding-bottom: 7px;
+    }
+} 
 @media all and (min-width: 400px) {
     .h3 {
         line-height: 1.6;
