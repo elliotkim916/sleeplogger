@@ -347,7 +347,8 @@ fieldset {
 
 .submit-log:hover, .update-log:hover, .delete-log:hover,
 .sign-up-here-button:hover, .signup-button:hover, .login-button:hover,
-.back-to-login-btn:hover, .back-to-create-btn:hover, .save-log:hover, .cancel-log:hover {
+.back-to-login-btn:hover, .back-to-create-btn:hover, .save-log:hover, .cancel-log:hover,
+.home-btn:hover {
     cursor: pointer;
 }
 
