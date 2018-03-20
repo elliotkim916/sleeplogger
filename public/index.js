@@ -267,7 +267,7 @@ function navLogIn() {
         $('navigation').hide();
         $('.createAccount').hide();
         $('main').hide();
-        $('.sleep-info').hide();
+        $('.homepage-sleep-info').hide();
         $('.sign-up').hide();
         $('.sign-up-here-button').hide();
         $('.log-in').show();
@@ -345,7 +345,7 @@ function backToHomepage() {
     $('.account').on('click', 'h1', function(event) {
         $('navigation').show();
         $('main').show();
-        $('.sleep-info').show();
+        $('.homepage-sleep-info').show();
         $('.sign-up-here-button').show();
         $('.log-in').hide();
         $('.createAccount').hide();
@@ -455,7 +455,7 @@ function signUp() {
     $('body').on('click', '.sign-up-here-button', function(event) {
         $('navigation').hide();
         $('main').hide();
-        $('.sleep-info').hide();
+        $('.homepage-sleep-info').hide();
         $('.sign-up').hide();
         $('.sign-up-here-button').hide();
         $('.createAccount').show();
@@ -466,7 +466,7 @@ function navSignUp() {
     $('body').on('click', '.nav-sign-up', function(event) {
         $('navigation').hide();
         $('main').hide();
-        $('.sleep-info').hide();
+        $('.homepage-sleep-info').hide();
         $('.sign-up').hide();
         $('.sign-up-here-button').hide();
         $('.log-in').hide();
@@ -478,7 +478,7 @@ function demo() {
     $('body').on('click', '.nav-demo', function(event) {
         $('navigation').hide();
         $('main').hide();
-        $('.sleep-info').hide();
+        $('.homepage-sleep-info').hide();
         $('.sign-up-here-button').hide();
         $('.log-in').show();
         $('.demo-account').show();
