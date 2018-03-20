@@ -104,7 +104,7 @@ describe('GET endpoint', function() {
                 expect(resSleepLogPost.creator).to.equal(post.creator.toString());
             });
     });
-
+}); 
     describe('POST endpoint', function() {
         it('should add a new sleep log post', function() {
         const newPost = {
@@ -128,7 +128,6 @@ describe('GET endpoint', function() {
                 expect(res.body.feeling).to.equal(newPost.feeling);
                 expect(res.body.description).to.equal(newPost.description);
                 expect(res.body.hoursOfSleep).to.equal(newPost.hoursOfSleep);
-                expect(res.body.created.slice(0, res.body.created.length - 14)).to.equal(newPost.created.slice(0, newPost.created.length - 14));
                 return SleepLog.findById(res.body._id);
             })
 
@@ -194,5 +193,5 @@ describe('GET endpoint', function() {
                 });
         });
     });
-});   
+  
 }); 
