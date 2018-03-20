@@ -341,6 +341,17 @@ function generateNoWhitespace() {
     </div>`
 }
 
+function backToHomepage() {
+    $('.account').on('click', 'h1', function(event) {
+        $('navigation').show();
+        $('main').show();
+        $('.sleep-info').show();
+        $('.sign-up-here-button').show();
+        $('.log-in').hide();
+        $('.createAccount').hide();
+    });
+}
+
 function backToLogIn() {
     $('html').on('click', '.back-to-login-btn', function(event) {
         $('.password-wrong').hide();
@@ -475,6 +486,7 @@ function demo() {
 }
 
 $(function() {
+    backToHomepage();
     demo();
     backToCreateAcct(); 
     backToLogIn();
