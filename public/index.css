@@ -37,15 +37,7 @@ navigation {
     font-weight: bold;
 }
 
-.nav-log-in {
-    text-decoration: none;
-    color: #D9FAFF;
-    float: right;
-    margin-right: 40px;
-    font-weight: bold;
-}
-
-.nav-demo {
+.nav-log-in, .nav-demo {
     text-decoration: none;
     color: #D9FAFF;
     float: right;
@@ -94,8 +86,6 @@ h1 {
     color: #D9FAFF;
     position: relative;
     margin-top: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
 }
 
 .nav-logout {
@@ -159,6 +149,10 @@ span {
 
 fieldset {
     border: 0 none;
+}
+
+.feel, .incorrect-password, .account-error {
+    line-height: 1.4;
 }
 
 #hoursOfSleep, #describeSleep {
@@ -246,12 +240,7 @@ fieldset {
    letter-spacing: 1.2px;
 }
 
-.incorrect {
-    position: relative;
-    margin: 0px auto;
-}
-
-.tooShort {
+.incorrect, .tooShort {
     position: relative;
     margin: 0px auto;
 }
@@ -273,7 +262,7 @@ fieldset {
 
 .back-to-login-btn, .back-to-create-btn {
     margin-top: -5px;
-    width: 20%;
+    width: 90px;
     height: 35px;
     border-radius: 5px;
     font-size: 1em;
@@ -305,13 +294,8 @@ fieldset {
     letter-spacing: 1.2px;
 }
 
-/* cancel button */
-.cancel-log {
-    margin-left: 20px;
-}
-
-/* delete button */
-.delete-log {
+/* cancel & delete button */
+.cancel-log, .delete-log {
     margin-left: 20px;
 }
 
@@ -353,7 +337,6 @@ fieldset {
 }
 
 .log-in, .createAccount {
-    /* background-color: darkslateblue; */
     margin: 0px;
     color: #D9FAFF;
     margin-top: 100px;
@@ -372,7 +355,6 @@ fieldset {
 
 .create-account {
     margin: 0px auto;
-
 }
 
 .login-here, .signup-here {
@@ -412,16 +394,7 @@ fieldset {
     font-family: 'Poppins';
 }
 
-
-
-#hoursOfSleep::placeholder, #describeSleep::placeholder {
-    font-family: 'Poppins';
-    font-style: italic;
-    font-size: 1.06em;
-    color: #D9FAFF;
-}
-
-.update-hours, .update-feeling, .update-description {
+#hoursOfSleep::placeholder, #describeSleep::placeholder, .update-hours, .update-feeling, .update-description {
     font-family: 'Poppins';
     font-style: italic;
     font-size: 1.06em;
@@ -437,7 +410,6 @@ fieldset {
 }
 
 /* distance beneath inputs */
-
 #hoursOfSleep {
     margin-top: 35px;
 }
@@ -494,7 +466,7 @@ label {
     padding-right: 13px;
 }
 
-.log-in-header {
+.log-in-header, .create-acct-header {
     margin-top: 30px;
     margin-bottom: 20px;
     letter-spacing: 1.2px;
@@ -509,23 +481,12 @@ label {
     padding-right: 13px;
 }
 
-.create-acct-header {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    letter-spacing: 1.2px;
-}
-
-.date {
+.date, .describeSleepHeader {
     margin-bottom: 25px;
     letter-spacing: 1.2px;
 }
 
 .update-date {
-    letter-spacing: 1.2px;
-}
-
-.describeSleepHeader {
-    margin-bottom: 25px;
     letter-spacing: 1.2px;
 }
 
@@ -539,7 +500,7 @@ label {
 }
 
 .radio-label, #sleep-feeling {
-    letter-spacing: 1px;
+    letter-spacing: 0.535px;
 }
 
 .filler {
@@ -555,52 +516,36 @@ label {
 
 /* media queries */
 @media all and (min-width: 400px) {
+    .h3 {
+        line-height: 1.6;
+    }
+
+    .entry-nav {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .health-img {
         margin-top: 25px;
     }
 
-    .logIn {
+    .logIn, .createAccount {
         width: 350px;
         margin-left: auto;
         margin-right: auto;
         
     }
-
-    .createAccount {
-        width: 350px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
+ 
    .sleep-info {
        font-size: 1.1em;
        padding-top: 35px;
        padding-left: 40px;
        padding-right: 40px;
-       /* padding-top: 75px; */
    }
 }
 
 @media all and (min-width: 640px) {
-    .log-container, .updated-log-js {
-        width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .previous-entries-header {
-        width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .new-log-entry {
-        width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .describeSleepHeader {
+    .log-container, .updated-log-js, .previous-entries-header, .new-log-entry, .describeSleepHeader {
         width: 600px;
         margin-left: auto;
         margin-right: auto;
@@ -623,16 +568,13 @@ label {
       }
 
       .entry-nav {
-          margin-top: -63px;
-          margin-left: 15px;
-          margin-right: 15px;
+          margin-top: 15px;
       }
 
       .homepage-sleep-info {
           text-align: center;
           margin-top: 80px;
           position: relative;
-          /* bottom: -94px; */
       }
 
       .heart {
@@ -679,10 +621,5 @@ label {
       .heart-text {
         position: relative;
         top: -55px;
-      }
-
-      .entry-nav {
-          padding-left: 10px;
-          padding-right: 10px;
       }
   }
