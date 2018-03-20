@@ -6,6 +6,7 @@
     <title>Sleep Log</title>
     
     <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Poppins:400,600" rel="stylesheet">
+    <link href="normalize.css" rel="stylesheet" type="text/css" />
     <link href="index.css" rel="stylesheet" type="text/css" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   </head>
@@ -26,9 +27,9 @@
     </main>
     
     <div class="homepage-sleep-info">
-      <div class="sleep-info heart">
+      <div class="sleep-info">
         <img src="img/pulse.png" alt="health logo" class="health-img heart"> 
-        <p class="heart-text">Sleep is an important indicator of overall health and well-being.  We spend up to one-third
+        <p class="heart-text text">Sleep is an important indicator of overall health and well-being.  We spend up to one-third
           of our lives asleep, and the overall state of our "sleep-health" remains an essential question
           throughout our lifespan.
         </p>
@@ -36,14 +37,14 @@
 
       <div class="sleep-info">
         <img src="img/alarm-clock.png" alt="alarm clock logo" class="health-img clock">
-        <p class="clock-text">Sleep needs are individual and change as you age.  Within a day, newborns need a total of 14-17 hours, infants
+        <p class="clock-text text">Sleep needs are individual and change as you age.  Within a day, newborns need a total of 14-17 hours, infants
           need a total of 12-15 hours, and school age children need 9-11 hours.  Teenagers need 8-10 hours, and young adults and above need 7-9 hours.
         </p>
       </div>
 
       <div class="sleep-info">
         <img src="img/diary.png" alt="diary logo" class="health-img journal">
-        <p class="journal-text">Based on your age, are you getting enough sleep?  This app is a simple and effective tool for keeping
+        <p class="journal-text text">Based on your age, are you getting enough sleep?  This app is a simple and effective tool for keeping
           track of how many hours you slept, noting how you felt when you woke up, and saving any other details you'd 
           like to add about your rest. 
         </p>
@@ -51,8 +52,8 @@
     </div>
 
     <div class="create-account">
-      <form class="createAccount">
-        <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
+      <form class="createAccount account">
+        <h1 class="home-btn">S L E E P</h1> <h1 class="logger home-btn">L O G G E R</h1>
         <h2 class="create-acct-header">Create an account</h2>
           <input type="text" id="username" name="username" placeholder="Enter username" aria-label="create-username" required><br>
           <input type="password" id="password" name="password" placeholder="Enter password" aria-label="create-password" required><br>
@@ -65,8 +66,8 @@
     <div class="account-error"></div>
 
     <div class="log-in">
-      <form class="logIn">
-          <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
+      <form class="logIn account">
+          <h1 class="home-btn">S L E E P</h1> <h1 class="logger home-btn">L O G G E R</h1>
           <h2 class="log-in-header">Log in</h2>
             <input type="text" id="existingUsername" name="username" placeholder="Enter username" aria-label="username" required><br>
             <input type="password" id="existingPassword" name="password" placeholder="Enter password" aria-label="password" required><br>

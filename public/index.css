@@ -12,6 +12,7 @@ body {
 header {
     font-family: 'Poppins';
     color: #D9FAFF;
+    margin-bottom: 100px;
 }
 
 textarea .update-description::placeholder {
@@ -37,15 +38,7 @@ navigation {
     font-weight: bold;
 }
 
-.nav-log-in {
-    text-decoration: none;
-    color: #D9FAFF;
-    float: right;
-    margin-right: 40px;
-    font-weight: bold;
-}
-
-.nav-demo {
+.nav-log-in, .nav-demo {
     text-decoration: none;
     color: #D9FAFF;
     float: right;
@@ -79,23 +72,12 @@ h1 {
     letter-spacing: 1px;
 }
 
-.homepage-sleep-info {
-    background-color: #1A0033;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    letter-spacing: 0.75px;
-}
 
 /* nav bar */
 .entry-nav {
     color: #D9FAFF;
     position: relative;
     margin-top: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
 }
 
 .nav-logout {
@@ -120,19 +102,26 @@ span {
     margin-left: 20px;
 }
 
+.homepage-sleep-info {
+    background-color: #1A0033; 
+    padding: 80px 25px 50px 25px;
+}
+
 .sleep-info {
     font-family: 'Antic Slab';
-    font-size: 1em;
+    font-size: 1.1em;
     color: #D9FAFF;
-    margin-top: 100px;
-    margin-bottom: 100px;
     line-height: 1.4;
+    text-align: center;
+}
+
+.text {
+    margin-bottom: 85px;
 }
 
 .health-img {
     width: 50px;
     height: 50px;
-    margin-bottom: 15px;
 }
 
 .sign-up {
@@ -159,6 +148,10 @@ span {
 
 fieldset {
     border: 0 none;
+}
+
+.feel, .incorrect-password, .account-error {
+    line-height: 1.4;
 }
 
 #hoursOfSleep, #describeSleep {
@@ -194,6 +187,7 @@ fieldset {
     font-size: 17px;
     color: #D9FAFF;
 }
+
 /* size of inputs in new sleep entry and previous sleep entry */
 .update-hours, .update-feeling, .update-description {
     display: block;
@@ -246,12 +240,7 @@ fieldset {
    letter-spacing: 1.2px;
 }
 
-.incorrect {
-    position: relative;
-    margin: 0px auto;
-}
-
-.tooShort {
+.incorrect, .tooShort {
     position: relative;
     margin: 0px auto;
 }
@@ -273,7 +262,7 @@ fieldset {
 
 .back-to-login-btn, .back-to-create-btn {
     margin-top: -5px;
-    width: 20%;
+    width: 90px;
     height: 35px;
     border-radius: 5px;
     font-size: 1em;
@@ -305,13 +294,8 @@ fieldset {
     letter-spacing: 1.2px;
 }
 
-/* cancel button */
-.cancel-log {
-    margin-left: 20px;
-}
-
-/* delete button */
-.delete-log {
+/* cancel & delete button */
+.cancel-log, .delete-log {
     margin-left: 20px;
 }
 
@@ -347,12 +331,12 @@ fieldset {
 
 .submit-log:hover, .update-log:hover, .delete-log:hover,
 .sign-up-here-button:hover, .signup-button:hover, .login-button:hover,
-.back-to-login-btn:hover, .back-to-create-btn:hover, .save-log:hover, .cancel-log:hover {
+.back-to-login-btn:hover, .back-to-create-btn:hover, .save-log:hover, .cancel-log:hover,
+.home-btn:hover {
     cursor: pointer;
 }
 
 .log-in, .createAccount {
-    /* background-color: darkslateblue; */
     margin: 0px;
     color: #D9FAFF;
     margin-top: 100px;
@@ -371,7 +355,6 @@ fieldset {
 
 .create-account {
     margin: 0px auto;
-
 }
 
 .login-here, .signup-here {
@@ -404,27 +387,12 @@ fieldset {
     outline: none;
 }
 
-#username::placeholder, #password::placeholder, #existingUsername::placeholder, #existingPassword::placeholder {
+#username::placeholder, #password::placeholder, #existingUsername::placeholder, #existingPassword::placeholder, 
+#hoursOfSleep::placeholder, #describeSleep::placeholder, .update-hours, .update-feeling, .update-description {
     color: #D9FAFF;
     font-style: italic;
-    font-weight: lighter;
     font-family: 'Poppins';
-}
-
-
-
-#hoursOfSleep::placeholder, #describeSleep::placeholder {
-    font-family: 'Poppins';
-    font-style: italic;
     font-size: 1.06em;
-    color: #D9FAFF;
-}
-
-.update-hours, .update-feeling, .update-description {
-    font-family: 'Poppins';
-    font-style: italic;
-    font-size: 1.06em;
-    color: #D9FAFF;
 }
 
 .update-hours::placeholder, .update-feeling::placeholder,
@@ -436,7 +404,6 @@ fieldset {
 }
 
 /* distance beneath inputs */
-
 #hoursOfSleep {
     margin-top: 35px;
 }
@@ -459,7 +426,7 @@ fieldset {
     color: #D9FAFF;
 }
 
-header, .sleep-info, .sign-up {
+header, .sign-up {
     text-align: center;
 }
 
@@ -493,7 +460,7 @@ label {
     padding-right: 13px;
 }
 
-.log-in-header {
+.log-in-header, .create-acct-header {
     margin-top: 30px;
     margin-bottom: 20px;
     letter-spacing: 1.2px;
@@ -508,23 +475,12 @@ label {
     padding-right: 13px;
 }
 
-.create-acct-header {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    letter-spacing: 1.2px;
-}
-
-.date {
+.date, .describeSleepHeader {
     margin-bottom: 25px;
     letter-spacing: 1.2px;
 }
 
 .update-date {
-    letter-spacing: 1.2px;
-}
-
-.describeSleepHeader {
-    margin-bottom: 25px;
     letter-spacing: 1.2px;
 }
 
@@ -538,7 +494,7 @@ label {
 }
 
 .radio-label, #sleep-feeling {
-    letter-spacing: 1px;
+    letter-spacing: 0.535px;
 }
 
 .filler {
@@ -554,134 +510,68 @@ label {
 
 /* media queries */
 @media all and (min-width: 400px) {
-    .health-img {
-        margin-top: 25px;
+    .h3 {
+        line-height: 1.6;
     }
 
-    .logIn {
+    .entry-nav {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .logIn, .createAccount {
         width: 350px;
         margin-left: auto;
         margin-right: auto;
-        
     }
+}
 
-    .createAccount {
-        width: 350px;
+@media all and (min-width: 640px) {
+    .log-container, .updated-log-js, .previous-entries-header, .new-log-entry, .describeSleepHeader {
+        width: 600px;
         margin-left: auto;
         margin-right: auto;
+    }   
+}
+
+@media all and (min-width: 768px) {
+    .homepage-sleep-info {
+        background-color: #1A0033;
+        width: 100%;
+        height: 100%;
+        letter-spacing: 0.75px;
+        height: 530px;
+        padding: 55px 35px 0 35px;
+        margin: 0 auto;
     }
     
-   .sleep-info {
-       font-size: 1.1em;
-       padding-top: 35px;
-       padding-left: 40px;
-       padding-right: 40px;
-       /* padding-top: 75px; */
-   }
-}
-
-@media all and (min-width: 640px) {
-    .log-container, .updated-log-js {
-        width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+    .sleep-info {
+        height: 50px;
+        text-align: center;
+        font-family: 'Antic Slab';
+        color: #D9FAFF;
     }
-
-    .previous-entries-header {
-        width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+    
+    img {
+        display: block;
+        height: 100%;
+        margin: 30px auto;
     }
-
-    .new-log-entry {
-        width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+    
+    .homepage-sleep-info>div {
+        box-sizing: border-box;
+        float: left;
+        width: 30%;
+        margin-right: 4.5%;
     }
-
-    .describeSleepHeader {
-        width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+    
+    .homepage-sleep-info>div:last-child {
+        margin-right: 0;
     }
 }
 
-  @media all and (min-width: 1080px) {
+@media all and (min-width: 1080px) {
     body {
         margin: 0px;
     }
-
-      .sleep-info {
-          display: inline-block;
-          width: 256px;
-          margin-left: 40px;
-          margin-right: 40px;
-          font-size: 1.1em;
-          padding-left: 0px;
-          padding-right: 0px;
-      }
-
-      .entry-nav {
-          margin-top: -63px;
-          margin-left: 15px;
-          margin-right: 15px;
-      }
-
-      .homepage-sleep-info {
-          text-align: center;
-          margin-top: 80px;
-          position: relative;
-          /* bottom: -94px; */
-      }
-
-      .heart {
-        position: relative;
-        bottom: 60px;
-      }
-
-      .heart-text {
-          position: relative;
-          bottom: 56px;
-      }
-
-      .clock {
-          position: relative;
-          top: -101px;
-      }
-
-      .clock-text {
-          position: relative;
-          top: -92px;
-      }
-
-      .journal {
-          position: relative;
-          bottom: 102px;
-      }
-
-      .journal-text {
-          position: relative;
-          bottom: 92px;
-      }
-  }
-
-  @media all and (min-width: 1500px) {
-      .sleep-info {
-        width: 400px;
-      }
-
-      .heart {
-        position: relative;
-        bottom: 60px;
-      }
-
-      .heart-text {
-        position: relative;
-        top: -55px;
-      }
-
-      .entry-nav {
-          padding-left: 10px;
-          padding-right: 10px;
-      }
-  }
+}
