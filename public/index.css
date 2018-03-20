@@ -525,7 +525,23 @@ label {
     .logIn, .createAccount {
         margin-top: 145px;
     }
+
+    .radio-label {
+        letter-spacing: -0.33px;
+    }
 } 
+/* for mobile devices landscape mode */
+@media all and (min-width: 667px) {
+    .logIn {
+        margin-bottom: 100px;
+        margin-top: -45px;
+    }
+
+    .createAccount {
+        margin-top: 10px;
+    }
+}
+
 @media all and (min-width: 400px) {
     .h3 {
         line-height: 1.6;
