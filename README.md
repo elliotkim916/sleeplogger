@@ -7,7 +7,7 @@ sleep was.
 ## **Motivation**
 I believe sleep is very important to one's health and I felt like I wasn't getting enough of it.  Therefore, I wanted to create an 
 application that informed me based on my age how much sleep I should be getting day to day, keep track of the number of hours I slept, 
-& note how my sleep was so that I can accurately see how much sleep I should be getting.
+& note how my sleep was so that I can accurately see how much sleep I should be getting and the quality of my sleep.
 
 ## **Screenshots**
 
