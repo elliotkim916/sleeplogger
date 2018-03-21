@@ -529,16 +529,26 @@ label {
     .radio-label {
         letter-spacing: -0.33px;
     }
+
+    .create-account-error, .password-wrong {
+        margin-top: 290px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 } 
+
 /* for mobile devices landscape mode */
-@media all and (min-width: 667px) {
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
     .logIn {
         margin-bottom: 100px;
-        margin-top: -45px;
     }
 
     .createAccount {
-        margin-top: 10px;
+        margin-bottom: 100px;
     }
 }
 
