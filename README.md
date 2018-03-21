@@ -48,8 +48,8 @@ Edit Previous Sleep Entry:
 
 ## **Features**
 * Create a new Sleep Log entry
-* Edit any existing Sleep Log Entry
-* Delete any existing Sleep Log Entry
+* Edit any existing Sleep Log entry
+* Delete any existing Sleep Log entry
 * See all Sleep Log entries posted
 
 ## **Demo**
