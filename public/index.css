@@ -146,7 +146,7 @@ span {
     margin-top: 65px;
 }
 
-fieldset {
+.feel {
     border: 0 none;
 }
 
@@ -558,6 +558,11 @@ and (orientation: landscape) {
 
     .create-account-error, .password-wrong {
         margin-top: 150px;
+    }
+
+    .new-entry {
+        left: 2px;
+        right: 2px;
     }
 }
 
