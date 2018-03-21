@@ -509,8 +509,11 @@ label {
 }
 
 /* media queries */
-/* for mobile devices */
-@media all and (min-width: 375px) {
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
     .entry-nav {
         padding-left: 20px;
         padding-right: 20px;
@@ -529,16 +532,32 @@ label {
     .radio-label {
         letter-spacing: -0.33px;
     }
+
+    .create-account-error, .password-wrong {
+        margin-top: 290px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 } 
+
 /* for mobile devices landscape mode */
-@media all and (min-width: 667px) {
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
     .logIn {
         margin-bottom: 100px;
-        margin-top: -45px;
+        margin-top: -85px;
     }
 
     .createAccount {
-        margin-top: 10px;
+        margin-bottom: 100px;
+        margin-top: 15px;
+    }
+
+    .create-account-error, .password-wrong {
+        margin-top: 150px;
     }
 }
 
