@@ -75,6 +75,7 @@ function putSleepLog(path, newHours, newFeeling, newDescription, callback) {
     });
 }
 
+// this function allows only one log to be edited at a time
 function toggleLogEditing(index) {
     STORE.map((log, idx) => {
         log.isEditing = (idx === index ? !log.isEditing : false);
@@ -380,7 +381,6 @@ function requestJWT(username, password) {
         success: function(resultData) {
             localStorage.setItem('token', resultData.authToken);
             localStorage.setItem('id', resultData.userID);
-            console.log(resultData);
             $.ajax({
                 type: 'GET',
                 url: 'api/protected',
