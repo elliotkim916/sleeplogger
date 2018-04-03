@@ -4,6 +4,7 @@ const SLEEPLOG_ENDPOINT = '/api/logs';
 
 let STORE = [];
 
+
 function getSleepLogs() {
     $.ajax({
         type: 'GET',
@@ -17,6 +18,7 @@ function getSleepLogs() {
             STORE = [];
             for (let i=0; i<data.length; i++) {
                 const getData = {
+                    created: data[i].created,
                     hoursOfSleep: data[i].hoursOfSleep,
                     feeling: data[i].feeling,
                     description: data[i].description,
@@ -25,6 +27,19 @@ function getSleepLogs() {
                     } 
                    STORE.push(getData);
                 }
+
+                STORE.sort(function(a, b) {
+                    if (a.created > b.created) {
+                        return -1;
+                    }
+
+                    if (b.created > a.created) {
+                        return 1;
+                    }
+
+                    return 0;
+                });
+                
                 renderSleepLog(STORE);
                 enterApp();
         }
@@ -100,7 +115,7 @@ function updateEventListener() {
             created: currentDate,
             _id: currentID
         }
-
+        console.log(currentLogObj.created);
         let currentObject = STORE.find(function(object) {
             if (object._id === currentLogObj._id) {
                 return object;
@@ -124,9 +139,9 @@ function updateEventListener() {
                 return object;
             }
         });
-
         const cancelObject = Object.assign(targetObj, {isEditing:false});
         const cancelledInput = cancelLog.html(generateSleepLog(targetObj));
+        console.log(targetObj);
     });
     
     // clicking on the save button if updating 
@@ -204,7 +219,7 @@ function renderSleepLog(data) {
 function generateSleepLog(log) {
     let postHTML = (`
     <div class="log-container" logID="${log._id}">
-        <h3 class="date">${moment(log.created).format('LLLL').slice(0, -8)}</h3>
+        <h3 class="date">${moment(log.created).format('dddd, MMMM Do YYYY')}</h3>
         <p class="hours"><span class="filler">Slept : </span>${log.hoursOfSleep} Hours</p>
         <p class="feeling"><span class="filler">Felt : </span>${log.feeling}</p>
         <p class="description"><span class="filler">Comments : </span>${log.description}</p>
@@ -248,6 +263,15 @@ function submitSleepLog() {
 
         postSleepLog(SLEEPLOG_ENDPOINT, totalHoursSlept, sleepFeeling, sleepLogText, function(data) {
             STORE.push(data);
+            STORE.sort(function(a, b) {
+                if (a.created > b.created) {
+                    return -1;
+                }
+                if (b.created > a.created) {
+                    return 1;
+                }
+                return 0;
+            });
             renderSleepLog(STORE);
         });
         
