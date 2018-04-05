@@ -4,7 +4,6 @@ const SLEEPLOG_ENDPOINT = '/api/logs';
 
 let STORE = [];
 
-
 function getSleepLogs() {
     $.ajax({
         type: 'GET',
@@ -18,7 +17,7 @@ function getSleepLogs() {
             STORE = [];
             for (let i=0; i<data.length; i++) {
                 const getData = {
-                    created: moment(data[i].created).format('dddd, MMMM Do YYYY'),
+                    created: data[i].created,
                     hoursOfSleep: data[i].hoursOfSleep,
                     feeling: data[i].feeling,
                     description: data[i].description,
@@ -98,7 +97,7 @@ function updateEventListener() {
     $('.sleep-logs-list').on('click', '.update-log', function(event) {
         event.preventDefault();
         const toUpdateLogInput = $(event.currentTarget).closest('.log-container');
-        const currentDate = toUpdateLogInput.find('.date').text();
+        const currentDate = toUpdateLogInput.find('.date').attr('the_date');
         const currentHours = toUpdateLogInput.find('.hours').text().replace(' Hours', '').replace(' hours', '').replace('hours', '').replace('Hours', '').replace('HOURS', '').replace('Slept : ', '');
         const currentFeeling = toUpdateLogInput.find('.feeling').text().replace('Felt : ', '');
         const currentDescription = toUpdateLogInput.find('.description').text().replace('Comments : ', '');
@@ -135,10 +134,8 @@ function updateEventListener() {
                 return object;
             }
         });
-        const cancelObj = Object.assign(targetObj, {isEditing:false});
-        console.log(cancelObj);
-        const cancelledInput = cancelLog.html(generateSleepLog(cancelObj));
-        
+        Object.assign(targetObj, {isEditing:false});
+        const cancelledInput = cancelLog.html(generateSleepLog(targetObj));
     });
     
     // clicking on the save button if updating 
@@ -148,7 +145,7 @@ function updateEventListener() {
         const editedHours = editedLogInput.find('.update-hours').val().replace(' Hours', '').replace(' hours', '').replace('hours', '').replace('Hours', '').replace('HOURS', '').replace('Slept : ', '').replace('Slept ', '');
         const editedFeeling = editedLogInput.find('.update-feeling').val().replace('Felt : ', '').replace('Felt', '');
         const editedDescription = editedLogInput.find('.update-description').val().replace('Comments : ', '').replace('Comments', '');
-        const sameDate = editedLogInput.find('.update-date').text();
+        const sameDate = editedLogInput.find('.update-date').attr('the_date');
         const sameID = editedLogInput.attr('logID');
        
         const newLogObj = {
@@ -216,7 +213,7 @@ function renderSleepLog(data) {
 function generateSleepLog(log) {
     let postHTML = (`
     <div class="log-container" logID="${log._id}">
-        <h3 class="date">${log.created}</h3>
+        <h3 class="date" the_date="${log.created}">${moment(log.created).format('dddd, MMMM Do YYYY')}</h3>
         <p class="hours"><span class="filler">Slept : </span>${log.hoursOfSleep} Hours</p>
         <p class="feeling"><span class="filler">Felt : </span>${log.feeling}</p>
         <p class="description"><span class="filler">Comments : </span>${log.description}</p>
@@ -229,7 +226,7 @@ function generateSleepLog(log) {
     if (log.isEditing) {
         postHTML = (`
         <form class="updated-log-js" logID="${log._id}">
-            <h3 class="update-date">${log.created}</h3>
+            <h3 class="update-date" the_date="${log.created}">${moment(log.created).format('dddd, MMMM Do YYYY')}</h3>
             <input class="update-hours" placeholder="How many hours did you sleep?" value="${log.hoursOfSleep} Hours" aria-label="hours-slept"><br>
             <input class="update-feeling" placeholder="How did you feel after waking up?" value="${log.feeling}" aria-label="feeling-once-awake"><br>
             <textarea class="update-description" placeholder="Additional details?" aria-label="extra-details-about-sleep">${log.description}</textarea><br>
@@ -242,6 +239,20 @@ function generateSleepLog(log) {
     return postHTML; 
 }
 
+function generateNoMorePosts() {
+    return `
+    <div class="back-to-screen">
+        <h3>Sorry, only one post allowed per day!</h3>
+        <button class="back-to-screen-btn">Okay</button>
+    </div>`
+}
+
+function backToAllLogsPage() {
+$('body').on('click', 'back-to-screen-btn', function(event) {
+    console.log('clicked');
+    });
+}
+
 function submitSleepLog() {
     $('.new-entry').on('submit', function(event) {
         event.preventDefault();
@@ -250,7 +261,7 @@ function submitSleepLog() {
         const sleepFeeling = $('input[name=feeling]:checked').val();
         const sleepLogDescription = $(event.currentTarget).find('.js-sleep-log');
         const sleepLogText = sleepLogDescription.val();
-        console.log(sleepHours);
+        
         const submitLog = {
             hoursOfSleep: totalHoursSlept,
             feeling: sleepFeeling,
@@ -259,18 +270,16 @@ function submitSleepLog() {
         }
 
         postSleepLog(SLEEPLOG_ENDPOINT, totalHoursSlept, sleepFeeling, sleepLogText, function(data) {
-            console.log(data);
             STORE.push(data);
-            console.log(STORE);
-            // STORE.sort(function(a, b) {
-            //     if (a.created > b.created) {
-            //         return -1;
-            //     }
-            //     if (b.created > a.created) {
-            //         return 1;
-            //     }
-            //     return 0;
-            // });
+            STORE.sort(function(a, b) {
+                if (a.created > b.created) {
+                    return -1;
+                }
+                if (b.created > a.created) {
+                    return 1;
+                }
+                return 0;
+            });
             renderSleepLog(STORE);
         });
         
@@ -510,6 +519,7 @@ function demo() {
 }
 
 $(function() {
+    backToAllLogsPage();
     backToHomepage();
     demo();
     backToCreateAcct(); 
