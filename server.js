@@ -20,7 +20,7 @@ app.use('/api/logs', logsRouter);
 
 // CORS
 app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', '*'); // any origin, can be elliotkim.heroku, etc. 
     res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
     res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
     if (req.method === 'OPTIONS') {
@@ -81,6 +81,8 @@ function closeServer() {
 // When we open this file in order to import app and runServer in a test module, 
 // we don't want the server to automatically run, and this conditional block makes that possible.
 
+// if my main process is this module, then run the runServer function
+// ex. if I do npm test, then the main is not this module, so runServer will NOT run, and the test will run instead!
 if (require.main === module) {
     runServer(DATABASE_URL).catch(err => console.error(err));
 }
