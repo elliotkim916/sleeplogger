@@ -1,0 +1,634 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins';
+    background-color: #11224C;
+    margin: -5px;
+}
+
+header {
+    font-family: 'Poppins';
+    color: #D9FAFF;
+    margin-bottom: 100px;
+}
+
+textarea .update-description::placeholder {
+    font-style: italic;
+}
+
+navigation {
+    display: block;
+    position: relative;
+    width: 100%;
+    float: right;
+    margin-bottom: 85px;
+    margin-top: 25px;
+    margin-right: 25px;
+    letter-spacing: 1.2px;
+}
+
+.nav-sign-up {
+    text-decoration: none;
+    color: #D9FAFF;
+    float: right;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.nav-log-in, .nav-demo {
+    text-decoration: none;
+    color: #D9FAFF;
+    float: right;
+    margin-right: 40px;
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.4;
+}
+
+.demo-account {
+    display: block;
+    margin-top: 30px;
+    letter-spacing: 0.75px;
+}
+
+.demo-account-header {
+    margin-bottom: 7px;
+}
+
+h1 {
+    display: inline;
+    font-size: 35px;
+}
+
+.h3 {
+    margin-top: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+    letter-spacing: 1px;
+}
+
+
+/* nav bar */
+.entry-nav {
+    color: #D9FAFF;
+    position: relative;
+    margin-top: 20px;
+}
+
+.nav-logout {
+    text-decoration: none;
+    color: #D9FAFF;
+    font-weight: bold;
+    float: right;
+    letter-spacing: 1.2px;
+}
+
+.nav-logger {
+    margin-left: 15px;
+}
+
+span {
+    font-weight: bold;
+    letter-spacing: 0.44px;
+}
+
+.logger {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.homepage-sleep-info {
+    background-color: #1A0033; 
+    padding: 80px 25px 50px 25px;
+}
+
+.sleep-info {
+    font-family: 'Antic Slab';
+    font-size: 1.1em;
+    color: #D9FAFF;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.text {
+    margin-bottom: 85px;
+}
+
+.health-img {
+    width: 50px;
+    height: 50px;
+}
+
+.sign-up {
+    padding-bottom: 100px;
+}
+
+.new-sleep-entry {
+    margin: 0 auto;
+}
+
+.new-entry {
+    background-color: #1A0033;
+    margin: 0px auto;
+    color: #D9FAFF;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 30px;
+    padding-top: 5px;
+    margin-top: 65px;
+}
+
+.feel {
+    border: 0 none;
+}
+
+.feel, .incorrect-password, .account-error {
+    line-height: 1.4;
+}
+
+#hoursOfSleep, #describeSleep {
+    display: block;
+    width: 95%;
+    margin-bottom: 35px;
+    padding-bottom: 3px;
+    border-style: none;  
+    background-color: #1A0033;
+    border-bottom: 1px solid #D9FAFF;
+    font-size: 17px;
+    font-family: 'Poppins';
+    color: #D9FAFF;
+}
+
+.sleep-logs-list {
+    margin: 0px auto;
+    color: #D9FAFF;
+}
+
+.previous-entries-header {
+    color: #D9FAFF;
+    margin-top: 35px;
+    margin-bottom: 75px;
+    letter-spacing: 1.2px;
+}
+
+.log-container, .updated-log-js {
+    display: block;
+    width: 100%;
+    margin-top: -15px;
+    margin-bottom: 90px;
+    font-size: 17px;
+    color: #D9FAFF;
+}
+
+/* size of inputs in new sleep entry and previous sleep entry */
+.update-hours, .update-feeling, .update-description {
+    display: block;
+    width: 95%;
+    padding-bottom: 3px;
+    border-style: none;
+    background-color: #11224C;
+    border-bottom: 1px solid #D9FAFF;
+    color: #D9FAFF;
+    font-style: normal;
+}
+
+.update-hours {
+    margin-top: 20px;
+}
+
+.description, #hoursOfSleep {
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+/* buttons */
+.signup-button, .login-button {
+    width: 75px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.update-log, .delete-log, .save-log, .cancel-log {
+    margin-top: 15px;
+    width: 45%;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #84A644;
+    border-color: #84A644;
+    color: #D9FAFF;
+    font-family: poppins;
+    letter-spacing: 1.2px;
+}
+
+.password-wrong {
+   text-align: center;
+   color: #D9FAFF;
+   position: relative;
+   margin-top: 400px;
+   margin-left: auto;
+   margin-right: auto;
+   letter-spacing: 1.2px;
+}
+
+.incorrect, .tooShort {
+    position: relative;
+    margin: 0px auto;
+}
+
+.create-account-error {
+    text-align: center;
+    color: #D9FAFF;
+    position: relative;
+    margin-top: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.account-error-heading {
+    padding-left: 30px;
+    padding-right: 30px;
+    letter-spacing: 1.2px;
+}
+
+.back-to-login-btn, .back-to-create-btn {
+    margin-top: -5px;
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #84A644;
+    border-color: #84A644;
+    color: #D9FAFF;
+    font-family: poppins;
+    letter-spacing: 1.2px;
+}
+
+.delete-log, .cancel-log {
+    background-color: #125367;
+    border-color: #125367;
+}
+
+.sign-up-here-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 75px;
+    width: 165px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-family: 'Poppins';
+    background-color: #84A644;
+    border-color: #84A644;
+    color: #D9FAFF;
+    letter-spacing: 1.2px;
+}
+
+/* cancel & delete button */
+.cancel-log, .delete-log {
+    margin-left: 20px;
+}
+
+/* used to move span tag further below */
+.signup-button, .login-button {
+    width: 100%;
+    margin-bottom: 25px;
+    background-color: #84A644;
+    border-color: #84A644;
+    font-family: 'Poppins';
+    color: #D9FAFF;
+    letter-spacing: 1.2px;
+}
+
+.line {
+    border-bottom: 2px solid #1A0033;
+    margin-top: 82px;
+    width: 95%;
+}
+
+.submit-log {
+    width: 45%;
+    margin-bottom: 10px;
+    background-color: #84A644;
+    border-color: #84A644;
+    font-family: 'Poppins';
+    color: #D9FAFF; 
+    height: 35px;
+    border-radius: 5px;
+    font-size: 1em;
+    letter-spacing: 1.2px;
+}
+
+.submit-log:hover, .update-log:hover, .delete-log:hover,
+.sign-up-here-button:hover, .signup-button:hover, .login-button:hover,
+.back-to-login-btn:hover, .back-to-create-btn:hover, .save-log:hover, .cancel-log:hover,
+.home-btn:hover {
+    cursor: pointer;
+}
+
+.log-in, .createAccount {
+    margin: 0px;
+    color: #D9FAFF;
+    margin-top: 100px;
+}
+
+/* input in new sleep entry */
+.js-sleep-log,  {
+    margin-top: 3px;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.create-acct-header {
+    color: #D9FAFF;
+}
+
+.create-account {
+    margin: 0px auto;
+}
+
+.login-here, .signup-here {
+    color: #D9FAFF;
+    margin-left: 5px;
+}
+
+#username, #existingUsername {
+    margin-top: 25px;
+}
+
+#username, #password, #existingUsername, #existingPassword {
+    display: block;
+    width: 100%;
+    border-style: none;
+    background-color: #11224C;
+    border-bottom: 1px solid #D9FAFF;
+    color: #D9FAFF;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+#username:focus, #password:focus, #existingUsername:focus, #existingPassword:focus, 
+#hoursOfSleep:focus, #describeSleep:focus, .update-hours:focus, .update-feeling:focus,
+.update-description:focus, .submit-log:focus, .update-log:focus, .delete-log:focus,
+.save-log:focus, .cancel-log:focus, .login-button:focus, .sign-up-here-button:focus,
+.signup-button:focus, .back-to-login-btn:focus, .back-to-create-btn:focus {
+    outline: none;
+}
+
+#username::placeholder, #password::placeholder, #existingUsername::placeholder, #existingPassword::placeholder, 
+#hoursOfSleep::placeholder, #describeSleep::placeholder, .update-hours, .update-feeling, .update-description {
+    color: #D9FAFF;
+    font-style: italic;
+    font-family: 'Poppins';
+    font-size: 1.06em;
+}
+
+.update-hours::placeholder, .update-feeling::placeholder,
+.update-description::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 0.92em;
+    color: #D9FAFF;
+}
+
+/* distance beneath inputs */
+#hoursOfSleep {
+    margin-top: 35px;
+}
+
+#refreshed {
+    margin-top: 10px;
+}
+
+#littleMore {
+    margin-bottom: 30px;
+}
+
+/* update inputs */
+.update-hours, .update-feeling, .update-description {
+    margin-bottom: 8px;
+}
+
+.logout-button {
+    text-decoration: none;
+    color: #D9FAFF;
+}
+
+header, .sign-up {
+    text-align: center;
+}
+
+label, .hours, .feeling, .description {
+    font-family: 'Poppins';
+    font-size: 1.06em;
+    margin-top: -3px;
+}
+
+.hours, .feeling, .description, .update-hours, .update-feeling, .update-description,
+#hoursOfSleep, #describeSleep {
+    letter-spacing: 0.65px;
+}
+
+label {
+    margin-left: 15px;
+}
+
+.all-sleep-entries {
+    margin-top: 595px;
+    padding-left: 40px;
+    padding-right: 35px;
+}
+
+.logIn {
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    padding-left: 12px;
+    padding-right: 13px;
+}
+
+.log-in-header, .create-acct-header {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    letter-spacing: 1.2px;
+}
+
+.createAccount {
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    padding-left: 12px;
+    padding-right: 13px;
+}
+
+.date, .describeSleepHeader {
+    margin-bottom: 25px;
+    letter-spacing: 1.2px;
+}
+
+.update-date {
+    letter-spacing: 1.2px;
+}
+
+/* button icons */
+.svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14 {
+    width: 1.5em;
+}
+
+.svg-inline--fa {
+    height: 0.92em;
+}
+
+.radio-label, #sleep-feeling {
+    letter-spacing: 0.535px;
+}
+
+.filler {
+    font-weight: normal;
+    color: #84A644;
+    margin-right: 15px;
+    letter-spacing: 1px;
+}
+
+.demo {
+    line-height: 9px;
+}
+
+/* media queries */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .entry-nav {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .new-entry {
+        left: 2px;
+        right: 2px;
+        padding-bottom: 7px;
+    }
+
+    .logIn, .createAccount {
+        margin-top: 145px;
+    }
+
+    .radio-label {
+        letter-spacing: -0.33px;
+    }
+
+    .create-account-error, .password-wrong {
+        margin-top: 290px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+} 
+
+/* for mobile devices landscape mode */
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    .logIn {
+        margin-bottom: 100px;
+        margin-top: -85px;
+    }
+
+    .createAccount {
+        margin-bottom: 100px;
+        margin-top: 15px;
+    }
+
+    .create-account-error, .password-wrong {
+        margin-top: 150px;
+    }
+
+    .new-entry {
+        left: 2px;
+        right: 2px;
+    }
+}
+
+@media all and (min-width: 400px) {
+    .h3 {
+        line-height: 1.6;
+    }
+
+    .entry-nav {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .logIn, .createAccount {
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media all and (min-width: 640px) {
+    .log-container, .updated-log-js, .previous-entries-header, .new-log-entry, .describeSleepHeader {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }   
+}
+
+@media all and (min-width: 768px) {
+    .homepage-sleep-info {
+        background-color: #1A0033;
+        width: 100%;
+        height: 100%;
+        letter-spacing: 0.75px;
+        height: 530px;
+        padding: 55px 35px 0 35px;
+        margin: 0 auto;
+    }
+    
+    .sleep-info {
+        height: 50px;
+        text-align: center;
+        font-family: 'Antic Slab';
+        color: #D9FAFF;
+    }
+    
+    img {
+        display: block;
+        height: 100%;
+        margin: 30px auto;
+    }
+    
+    .homepage-sleep-info>div {
+        box-sizing: border-box;
+        float: left;
+        width: 30%;
+        margin-right: 4.5%;
+    }
+    
+    .homepage-sleep-info>div:last-child {
+        margin-right: 0;
+    }
+}
+
+@media all and (min-width: 1080px) {
+    body {
+        margin: 0px;
+    }
+}

@@ -1,37 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Sleep Log</title>
-    <link href="index.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <header>
-      <h1>Sleep Log</h1>
-    </header>
+    <title>Sleep Logger</title>
     
-    <div>
-      <form>
-      <h3>New Sleep Entry</h3>
-      <legend>How was your sleep?</legend>
-        <label for="goodSleep">Good</label>
-        <input type="radio" id="goodSleep" name="sleepRating">
-      
-        <label for="badSleep">Bad</label>
-        <input type="radio" id="badSleep" name="sleepRating"><br>
-        
-        <label for="describeSleep">Describe your sleep</label><br>
-        <input type="text" id="describeSleep">
-      </form>
-      
-      <div>
-      <h3>
-        Previous Sleep Entries
-      </h3>
+    <link href="https://fonts.googleapis.com/css?family=Antic+Slab|Poppins:400,600" rel="stylesheet">
+    <link href="normalize.css" rel="stylesheet" type="text/css" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <navigation>
+        <a href="#" class="nav-sign-up">SIGN UP</a>
+        <a href="#" class="nav-log-in">LOG IN</a>
+        <a href="#" class="nav-demo">DEMO</a>
+      </navigation>
+
+      <header>
+        <h1>S L E E P</h1> <h1 class="logger">L O G G E R</h1>
+        <h3 class="h3">Keep track of how much you sleep because your rest is vital</h3>
+        <button class="sign-up-here-button">SIGN UP HERE</button>
+      </header>
+    </main>
+    
+    <div class="homepage-sleep-info">
+      <div class="sleep-info">
+        <img src="img/pulse.png" alt="health logo" class="health-img heart"> 
+        <p class="heart-text text">Sleep is an important indicator of overall health and well-being.  We spend up to one-third
+          of our lives asleep, and the overall state of our "sleep-health" remains an essential question
+          throughout our lifespan.
+        </p>
+      </div>
+
+      <div class="sleep-info">
+        <img src="img/alarm-clock.png" alt="alarm clock logo" class="health-img clock">
+        <p class="clock-text text">Sleep needs are individual and change as you age.  Within a day, newborns need a total of 14-17 hours, infants
+          need a total of 12-15 hours, and school age children need 9-11 hours.  Teenagers need 8-10 hours, and young adults and above need 7-9 hours.
+        </p>
+      </div>
+
+      <div class="sleep-info">
+        <img src="img/diary.png" alt="diary logo" class="health-img journal">
+        <p class="journal-text text">Based on your age, are you getting enough sleep?  This app is a simple and effective tool for keeping
+          track of how many hours you slept, noting how you felt when you woke up, and saving any other details you'd 
+          like to add about your rest. 
+        </p>
       </div>
     </div>
-    
-    <script src="index.js"></script>
+
+    <div class="create-account">
+      <form class="createAccount account">
+        <h1 class="home-btn">S L E E P</h1> <h1 class="logger home-btn">L O G G E R</h1>
+        <h2 class="create-acct-header">Create an account</h2>
+          <input type="text" id="username" name="username" placeholder="Enter username" aria-label="create-username" required><br>
+          <input type="password" id="password" name="password" placeholder="Enter password" aria-label="create-password" required><br>
+          <button type="submit" class="signup-button">SIGN UP</button><br>
+          <span class="login-now">Already have an account? <a href="#" class="login-here">Log in here</a></span>
+      </form>
+    </div>
+
+    <div class="incorrect-password"></div>
+    <div class="account-error"></div>
+
+    <div class="log-in">
+      <form class="logIn account">
+          <h1 class="home-btn">S L E E P</h1> <h1 class="logger home-btn">L O G G E R</h1>
+          <h2 class="log-in-header">Log in</h2>
+            <input type="text" id="existingUsername" name="username" placeholder="Enter username" aria-label="username" required><br>
+            <input type="password" id="existingPassword" name="password" placeholder="Enter password" aria-label="password" required><br>
+            <button type="submit" class="login-button">LOG IN</button>
+            <span class="login-now">Don't have an account? <a href="#" class="signup-here">Sign up here</a></span>
+            <div class="demo-account">
+              <h3 class="demo-account-header">Demo Account</h3>
+              <p class="demo">Username : demouser</p>
+              <p class="demo">Password : demopassword</p>
+            </div>
+      </form>
+    </div>
+
+    <div class="new-sleep-entry">
+      <nav class="entry-nav">
+        <span>S L E E P</span><span class="nav-logger">L O G G E R</span>
+        <a href="#" class="nav-logout">LOG OUT</a>
+      </nav>
+
+      <form class="new-entry">
+        <h2 class="describeSleepHeader">Describe your sleep</h2>
+        <div class="new-log-entry">
+          <fieldset class="feel">
+            <input type="text" id="hoursOfSleep" name="hoursOfSleep" placeholder="Enter # of hours slept" aria-label="hours-slept" required><br>
+            
+            <span id="sleep-feeling">How do you feel after waking up?</span><br>
+            <input type="radio" id="refreshed" name="feeling" value="Refreshed & well-rested" aria-labelledby="sleep-feeling" required>
+            <label for="refreshed" class="radio-label">Refreshed & well-rested</label><br>
+            <input type="radio" id="tired" name="feeling" value="Still tired" aria-labelledby="sleep-feeling">
+            <label for="tired" class="radio-label">Still tired</label><br>
+            <input type="radio" id="average" name="feeling" value="Just average" aria-labelledby="sleep-feeling">
+            <label for="average" class="radio-label">Just average</label><br>
+            <input type="radio" id="littleMore" name="feeling" value="Could use a little more sleep" aria-labelledby="sleep-feeling">
+            <label for="littleMore" class="radio-label">Could use a little more sleep</label><br>
+            
+            <textarea type="text" id="describeSleep" class="js-sleep-log" placeholder="Enter additional details" aria-label="additional-details-about-sleep"></textarea>
+            <button type="submit" role="button" class="submit-log"><i class="fas fa-check"></i> SAVE</button>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+      
+    <div class="all-sleep-entries">
+      <h2 class="previous-entries-header">Previous Sleep Entries</h2>
+      <div id="sleepLogs" class="sleep-logs-list"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
