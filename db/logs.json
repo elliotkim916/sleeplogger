@@ -1,37 +1,37 @@
 [    
-    { 
-        "hoursOfSleep": 8,
-        "feeling": "Refreshed & well-rested",
-        "description": "Slept a full 8 hours with no interruptions!",
-        "creator": "333333333333333333333300",
-        "created": "Mon, 19 Mar 2018 02:03:27 GMT"
-    },
-    {   
-        "hoursOfSleep": 5,
-        "feeling": "Still tired",
-        "description": "Barely got any sleep, and it was hard to fall asleep because of noisy neighbors!",
-        "creator": "333333333333333333333300",
-        "created": "Tue, 20 Mar 2018 02:03:27 GMT"
-    },
-    { 
-        "hoursOfSleep": 12,
-        "feeling": "Just average",
-        "description": "Sleep was amazing! Felt so energized when I woke up.",
-        "creator": "333333333333333333333300",
-        "created": "Wed, 21 Mar 2018 02:03:27 GMT"
-    },
-    { 
-        "hoursOfSleep": 6,
-        "feeling": "Just average",
-        "description": "I got like 6 hours of sleep in and I definitely need more..",
-        "creator": "222222222222222222222200",
-        "created": "Thu, 22 Mar 2018 02:03:27 GMT"
-    },
-    { 
-        "hoursOfSleep": 5,
-        "feeling": "Still tired",
-        "description": "Stayed up last night practicing for tomorrow's set!",
-        "creator": "111111111111111111111100",
-        "created": "Fri, 23 Mar 2018 02:03:27 GMT"
-    }
+  { 
+    "hoursOfSleep": 8,
+    "feeling": "Refreshed & well-rested",
+    "description": "Slept a full 8 hours with no interruptions!",
+    "creator": "333333333333333333333300",
+    "created": "Mon, 19 Mar 2018 02:03:27 GMT"
+  },
+  {   
+    "hoursOfSleep": 5,
+    "feeling": "Still tired",
+    "description": "Barely got any sleep, and it was hard to fall asleep because of noisy neighbors!",
+    "creator": "333333333333333333333300",
+    "created": "Tue, 20 Mar 2018 02:03:27 GMT"
+  },
+  { 
+    "hoursOfSleep": 12,
+    "feeling": "Just average",
+    "description": "Sleep was amazing! Felt so energized when I woke up.",
+    "creator": "333333333333333333333300",
+    "created": "Wed, 21 Mar 2018 02:03:27 GMT"
+  },
+  { 
+    "hoursOfSleep": 6,
+    "feeling": "Just average",
+    "description": "I got like 6 hours of sleep in and I definitely need more..",
+    "creator": "222222222222222222222200",
+    "created": "Thu, 22 Mar 2018 02:03:27 GMT"
+  },
+  { 
+    "hoursOfSleep": 5,
+    "feeling": "Still tired",
+    "description": "Stayed up last night practicing for tomorrow's set!",
+    "creator": "111111111111111111111100",
+    "created": "Fri, 23 Mar 2018 02:03:27 GMT"
+  }
 ]
