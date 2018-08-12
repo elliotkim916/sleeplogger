@@ -165,6 +165,9 @@ span {
   font-size: 17px;
   font-family: 'Poppins';
   color: #D9FAFF;
+  border-style: none;
+  border-bottom: 1px solid white;
+  border-radius: 0;
 }
 
 .sleep-logs-list {
@@ -377,6 +380,9 @@ span {
   margin-bottom: 10px;
   font-size: 1em;
   letter-spacing: 1px;
+  border-style: none;
+  border-bottom: 1px solid white;
+  border-radius: 0;
 }
 
 #username:focus, #password:focus, #existingUsername:focus, #existingPassword:focus, 
