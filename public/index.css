@@ -5,13 +5,13 @@
 
 body {
   font-family: 'Poppins';
-  background-color: #11224C;
+  background-color: #11224c;
   margin: -5px;
 }
 
 header {
   font-family: 'Poppins';
-  color: #D9FAFF;
+  color: #d9faff;
   margin-bottom: 100px;
 }
 
@@ -32,15 +32,16 @@ navigation {
 
 .nav-sign-up {
   text-decoration: none;
-  color: #D9FAFF;
+  color: #d9faff;
   float: right;
   margin-right: 15px;
   font-weight: bold;
 }
 
-.nav-log-in, .nav-demo {
+.nav-log-in,
+.nav-demo {
   text-decoration: none;
-  color: #D9FAFF;
+  color: #d9faff;
   float: right;
   margin-right: 40px;
   font-weight: bold;
@@ -72,17 +73,16 @@ h1 {
   letter-spacing: 1px;
 }
 
-
 /* nav bar */
 .entry-nav {
-  color: #D9FAFF;
+  color: #d9faff;
   position: relative;
   margin-top: 20px;
 }
 
 .nav-logout {
   text-decoration: none;
-  color: #D9FAFF;
+  color: #d9faff;
   font-weight: bold;
   float: right;
   letter-spacing: 1.2px;
@@ -99,18 +99,18 @@ span {
 
 .logger {
   display: inline-block;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .homepage-sleep-info {
-  background-color: #1A0033; 
+  background-color: #1a0033;
   padding: 80px 25px 50px 25px;
 }
 
 .sleep-info {
   font-family: 'Antic Slab';
   font-size: 1.1em;
-  color: #D9FAFF;
+  color: #d9faff;
   line-height: 1.4;
   text-align: center;
 }
@@ -133,9 +133,9 @@ span {
 }
 
 .new-entry {
-  background-color: #1A0033;
+  background-color: #1a0033;
   margin: 0px auto;
-  color: #D9FAFF;
+  color: #d9faff;
   position: absolute;
   width: 100%;
   left: 0;
@@ -150,21 +150,24 @@ span {
   border: 0 none;
 }
 
-.feel, .incorrect-password, .account-error {
+.feel,
+.incorrect-password,
+.account-error {
   line-height: 1.4;
 }
 
-#hoursOfSleep, #describeSleep {
+#hoursOfSleep,
+#describeSleep {
   display: block;
   width: 95%;
   margin-bottom: 35px;
   padding-bottom: 3px;
-  border-style: none;  
-  background-color: #1A0033;
-  border-bottom: 1px solid #D9FAFF;
+  border-style: none;
+  background-color: #1a0033;
+  border-bottom: 1px solid #d9faff;
   font-size: 17px;
   font-family: 'Poppins';
-  color: #D9FAFF;
+  color: #d9faff;
   border-style: none;
   border-bottom: 1px solid white;
   border-radius: 0;
@@ -172,34 +175,37 @@ span {
 
 .sleep-logs-list {
   margin: 0px auto;
-  color: #D9FAFF;
+  color: #d9faff;
 }
 
 .previous-entries-header {
-  color: #D9FAFF;
+  color: #d9faff;
   margin-top: 35px;
   margin-bottom: 75px;
   letter-spacing: 1.2px;
 }
 
-.log-container, .updated-log-js {
+.log-container,
+.updated-log-js {
   display: block;
   width: 100%;
   margin-top: -15px;
   margin-bottom: 90px;
   font-size: 17px;
-  color: #D9FAFF;
+  color: #d9faff;
 }
 
 /* size of inputs in new sleep entry and previous sleep entry */
-.update-hours, .update-feeling, .update-description {
+.update-hours,
+.update-feeling,
+.update-description {
   display: block;
   width: 95%;
   padding-bottom: 3px;
   border-style: none;
-  background-color: #11224C;
-  border-bottom: 1px solid #D9FAFF;
-  color: #D9FAFF;
+  background-color: #11224c;
+  border-bottom: 1px solid #d9faff;
+  color: #d9faff;
   font-style: normal;
 }
 
@@ -207,50 +213,56 @@ span {
   margin-top: 20px;
 }
 
-.description, #hoursOfSleep {
+.description,
+#hoursOfSleep {
   margin-top: 8px;
   margin-bottom: 10px;
 }
 
 /* buttons */
-.signup-button, .login-button {
+.signup-button,
+.login-button {
   width: 75px;
   height: 35px;
   border-radius: 5px;
   font-size: 1em;
 }
 
-.update-log, .delete-log, .save-log, .cancel-log {
+.update-log,
+.delete-log,
+.save-log,
+.cancel-log {
   margin-top: 15px;
   width: 45%;
   height: 35px;
   border-radius: 5px;
   font-size: 1em;
-  background-color: #84A644;
-  border-color: #84A644;
-  color: #D9FAFF;
+  background-color: #84a644;
+  border-color: #84a644;
+  color: #d9faff;
   font-family: poppins;
   letter-spacing: 1.2px;
 }
 
 .password-wrong {
-   text-align: center;
-   color: #D9FAFF;
-   position: relative;
-   margin-top: 400px;
-   margin-left: auto;
-   margin-right: auto;
-   letter-spacing: 1.2px;
+  text-align: center;
+  color: #d9faff;
+  position: relative;
+  margin-top: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 1.2px;
 }
 
-.incorrect, .tooShort {
+.incorrect,
+.tooShort {
   position: relative;
   margin: 0px auto;
 }
 
 .create-account-error {
   text-align: center;
-  color: #D9FAFF;
+  color: #d9faff;
   position: relative;
   margin-top: 400px;
   margin-left: auto;
@@ -263,20 +275,22 @@ span {
   letter-spacing: 1.2px;
 }
 
-.back-to-login-btn, .back-to-create-btn {
+.back-to-login-btn,
+.back-to-create-btn {
   margin-top: -5px;
   width: 90px;
   height: 35px;
   border-radius: 5px;
   font-size: 1em;
-  background-color: #84A644;
-  border-color: #84A644;
-  color: #D9FAFF;
+  background-color: #84a644;
+  border-color: #84a644;
+  color: #d9faff;
   font-family: poppins;
   letter-spacing: 1.2px;
 }
 
-.delete-log, .cancel-log {
+.delete-log,
+.cancel-log {
   background-color: #125367;
   border-color: #125367;
 }
@@ -291,30 +305,32 @@ span {
   border-radius: 5px;
   font-size: 1.1em;
   font-family: 'Poppins';
-  background-color: #84A644;
-  border-color: #84A644;
-  color: #D9FAFF;
+  background-color: #84a644;
+  border-color: #84a644;
+  color: #d9faff;
   letter-spacing: 1.2px;
 }
 
 /* cancel & delete button */
-.cancel-log, .delete-log {
+.cancel-log,
+.delete-log {
   margin-left: 20px;
 }
 
 /* used to move span tag further below */
-.signup-button, .login-button {
+.signup-button,
+.login-button {
   width: 100%;
   margin-bottom: 25px;
-  background-color: #84A644;
-  border-color: #84A644;
+  background-color: #84a644;
+  border-color: #84a644;
   font-family: 'Poppins';
-  color: #D9FAFF;
+  color: #d9faff;
   letter-spacing: 1.2px;
 }
 
 .line {
-  border-bottom: 2px solid #1A0033;
+  border-bottom: 2px solid #1a0033;
   margin-top: 82px;
   width: 95%;
 }
@@ -322,60 +338,73 @@ span {
 .submit-log {
   width: 45%;
   margin-bottom: 10px;
-  background-color: #84A644;
-  border-color: #84A644;
+  background-color: #84a644;
+  border-color: #84a644;
   font-family: 'Poppins';
-  color: #D9FAFF; 
+  color: #d9faff;
   height: 35px;
   border-radius: 5px;
   font-size: 1em;
   letter-spacing: 1.2px;
 }
 
-.submit-log:hover, .update-log:hover, .delete-log:hover,
-.sign-up-here-button:hover, .signup-button:hover, .login-button:hover,
-.back-to-login-btn:hover, .back-to-create-btn:hover, .save-log:hover, .cancel-log:hover,
+.submit-log:hover,
+.update-log:hover,
+.delete-log:hover,
+.sign-up-here-button:hover,
+.signup-button:hover,
+.login-button:hover,
+.back-to-login-btn:hover,
+.back-to-create-btn:hover,
+.save-log:hover,
+.cancel-log:hover,
 .home-btn:hover {
   cursor: pointer;
 }
 
-.log-in, .createAccount {
+.log-in,
+.createAccount {
   margin: 0px;
-  color: #D9FAFF;
+  color: #d9faff;
   margin-top: 100px;
 }
 
 /* input in new sleep entry */
-.js-sleep-log,  {
+.js-sleep-log {
   margin-top: 3px;
   margin-bottom: 10px;
   font-size: 0.95em;
 }
 
 .create-acct-header {
-  color: #D9FAFF;
+  color: #d9faff;
 }
 
 .create-account {
   margin: 0px auto;
 }
 
-.login-here, .signup-here {
-  color: #D9FAFF;
+.login-here,
+.signup-here {
+  color: #d9faff;
   margin-left: 5px;
 }
 
-#username, #existingUsername {
+#username,
+#existingUsername {
   margin-top: 25px;
 }
 
-#username, #password, #existingUsername, #existingPassword {
+#username,
+#password,
+#existingUsername,
+#existingPassword {
   display: block;
   width: 100%;
   border-style: none;
-  background-color: #11224C;
-  border-bottom: 1px solid #D9FAFF;
-  color: #D9FAFF;
+  background-color: #11224c;
+  border-bottom: 1px solid #d9faff;
+  color: #d9faff;
   margin-top: 5px;
   margin-bottom: 10px;
   font-size: 1em;
@@ -385,28 +414,50 @@ span {
   border-radius: 0;
 }
 
-#username:focus, #password:focus, #existingUsername:focus, #existingPassword:focus, 
-#hoursOfSleep:focus, #describeSleep:focus, .update-hours:focus, .update-feeling:focus,
-.update-description:focus, .submit-log:focus, .update-log:focus, .delete-log:focus,
-.save-log:focus, .cancel-log:focus, .login-button:focus, .sign-up-here-button:focus,
-.signup-button:focus, .back-to-login-btn:focus, .back-to-create-btn:focus {
+#username:focus,
+#password:focus,
+#existingUsername:focus,
+#existingPassword:focus,
+#hoursOfSleep:focus,
+#describeSleep:focus,
+.update-hours:focus,
+.update-feeling:focus,
+.update-description:focus,
+.submit-log:focus,
+.update-log:focus,
+.delete-log:focus,
+.save-log:focus,
+.cancel-log:focus,
+.login-button:focus,
+.sign-up-here-button:focus,
+.signup-button:focus,
+.back-to-login-btn:focus,
+.back-to-create-btn:focus {
   outline: none;
 }
 
-#username::placeholder, #password::placeholder, #existingUsername::placeholder, #existingPassword::placeholder, 
-#hoursOfSleep::placeholder, #describeSleep::placeholder, .update-hours, .update-feeling, .update-description {
-  color: #D9FAFF;
+#username::placeholder,
+#password::placeholder,
+#existingUsername::placeholder,
+#existingPassword::placeholder,
+#hoursOfSleep::placeholder,
+#describeSleep::placeholder,
+.update-hours,
+.update-feeling,
+.update-description {
+  color: #d9faff;
   font-style: italic;
   font-family: 'Poppins';
   font-size: 1.06em;
 }
 
-.update-hours::placeholder, .update-feeling::placeholder,
+.update-hours::placeholder,
+.update-feeling::placeholder,
 .update-description::placeholder {
   font-family: 'Poppins';
   font-style: normal;
   font-size: 0.92em;
-  color: #D9FAFF;
+  color: #d9faff;
 }
 
 /* distance beneath inputs */
@@ -423,27 +474,39 @@ span {
 }
 
 /* update inputs */
-.update-hours, .update-feeling, .update-description {
+.update-hours,
+.update-feeling,
+.update-description {
   margin-bottom: 8px;
 }
 
 .logout-button {
   text-decoration: none;
-  color: #D9FAFF;
+  color: #d9faff;
 }
 
-header, .sign-up {
+header,
+.sign-up {
   text-align: center;
 }
 
-label, .hours, .feeling, .description {
+label,
+.hours,
+.feeling,
+.description {
   font-family: 'Poppins';
   font-size: 1.06em;
   margin-top: -3px;
 }
 
-.hours, .feeling, .description, .update-hours, .update-feeling, .update-description,
-#hoursOfSleep, #describeSleep {
+.hours,
+.feeling,
+.description,
+.update-hours,
+.update-feeling,
+.update-description,
+#hoursOfSleep,
+#describeSleep {
   letter-spacing: 0.65px;
 }
 
@@ -466,7 +529,8 @@ label {
   padding-right: 13px;
 }
 
-.log-in-header, .create-acct-header {
+.log-in-header,
+.create-acct-header {
   margin-top: 30px;
   margin-bottom: 20px;
   letter-spacing: 1.2px;
@@ -481,7 +545,8 @@ label {
   padding-right: 13px;
 }
 
-.date, .describeSleepHeader {
+.date,
+.describeSleepHeader {
   margin-bottom: 25px;
   letter-spacing: 1.2px;
 }
@@ -491,7 +556,8 @@ label {
 }
 
 /* button icons */
-.svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-14 {
+.svg-inline--fa.fa-w-16,
+.svg-inline--fa.fa-w-14 {
   width: 1.5em;
 }
 
@@ -499,13 +565,14 @@ label {
   height: 0.92em;
 }
 
-.radio-label, #sleep-feeling {
+.radio-label,
+#sleep-feeling {
   letter-spacing: 0.535px;
 }
 
 .filler {
   font-weight: normal;
-  color: #84A644;
+  color: #84a644;
   margin-right: 15px;
   letter-spacing: 1px;
 }
@@ -515,11 +582,7 @@ label {
 }
 
 /* media queries */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .entry-nav {
     padding-left: 20px;
     padding-right: 20px;
@@ -531,7 +594,8 @@ label {
     padding-bottom: 7px;
   }
 
-  .logIn, .createAccount {
+  .logIn,
+  .createAccount {
     margin-top: 145px;
   }
 
@@ -539,19 +603,16 @@ label {
     letter-spacing: -0.33px;
   }
 
-  .create-account-error, .password-wrong {
+  .create-account-error,
+  .password-wrong {
     margin-top: 290px;
     padding-left: 25px;
     padding-right: 25px;
   }
-} 
+}
 
 /* for mobile devices landscape mode */
-@media only screen 
-and (min-device-width: 375px) 
-and (max-device-width: 667px) 
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: landscape) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .logIn {
     margin-bottom: 100px;
     margin-top: -85px;
@@ -562,7 +623,8 @@ and (orientation: landscape) {
     margin-top: 15px;
   }
 
-  .create-account-error, .password-wrong {
+  .create-account-error,
+  .password-wrong {
     margin-top: 150px;
   }
 
@@ -582,7 +644,8 @@ and (orientation: landscape) {
     padding-right: 20px;
   }
 
-  .logIn, .createAccount {
+  .logIn,
+  .createAccount {
     width: 350px;
     margin-left: auto;
     margin-right: auto;
@@ -590,20 +653,29 @@ and (orientation: landscape) {
 }
 
 @media only screen and (max-width: 375px) {
-  .radio-label, #sleep-feeling, 
-  .hours, .feeling, .description, 
-  .update-hours, .update-feeling, 
-  .update-description, #hoursOfSleep, 
+  .radio-label,
+  #sleep-feeling,
+  .hours,
+  .feeling,
+  .description,
+  .update-hours,
+  .update-feeling,
+  .update-description,
+  #hoursOfSleep,
   #describeSleep {
     font-size: 15px;
   }
 }
 @media all and (min-width: 640px) {
-  .log-container, .updated-log-js, .previous-entries-header, .new-log-entry, .describeSleepHeader {
+  .log-container,
+  .updated-log-js,
+  .previous-entries-header,
+  .new-log-entry,
+  .describeSleepHeader {
     width: 600px;
     margin-left: auto;
     margin-right: auto;
-  }   
+  }
 }
 
 @media only screen and (max-width: 399px) {
@@ -618,7 +690,7 @@ and (orientation: landscape) {
 
 @media all and (min-width: 768px) {
   .homepage-sleep-info {
-    background-color: #1A0033;
+    background-color: #1a0033;
     width: 100%;
     height: 100%;
     letter-spacing: 0.75px;
@@ -626,28 +698,28 @@ and (orientation: landscape) {
     padding: 55px 35px 0 35px;
     margin: 0 auto;
   }
-  
+
   .sleep-info {
     height: 50px;
     text-align: center;
     font-family: 'Antic Slab';
-    color: #D9FAFF;
+    color: #d9faff;
   }
-  
+
   img {
     display: block;
     height: 100%;
     margin: 30px auto;
   }
-  
-  .homepage-sleep-info>div {
+
+  .homepage-sleep-info > div {
     box-sizing: border-box;
     float: left;
     width: 30%;
     margin-right: 4.5%;
   }
-  
-  .homepage-sleep-info>div:last-child {
+
+  .homepage-sleep-info > div:last-child {
     margin-right: 0;
   }
 }
